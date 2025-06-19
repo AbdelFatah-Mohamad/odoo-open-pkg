@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-name= "ks_dn_advance.KsDashboardNinjaHeader" t-inherit="ks_dashboard_ninja.KsDashboardNinjaHeader" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('ks_custom_date_filter')]" position="after">
+            <t t-if='state.ks_dashboard_item_length != 0'>
+                <button class="btn btn-primary ks_start_tv_dashboard" aria-expanded="false" data-toggle="tooltip" data-placement="top" title="Play"
+                        t-on-click="startTvDashboard" style="margin-right:4px">
+                    <img src="/ks_dashboard_ninja/static/description/images/icons/play-btn.svg" alt=""/>
+<!--                    <span id="play_button">Play</span>-->
+                </button>
+                <button class="btn btn-primary ks_dashboard_print_pdf d-md-block " aria-expanded="false" data-toggle="tooltip" data-placement="top" title="Print Dashboard" style="margin-right:4px"
+                       t-on-click="ks_dash_print">
+                    <img src="/ks_dashboard_ninja/static/description/images/icons/print-btn.svg" alt=""/>
+<!--                    <span id="print_dashboard">Print Dashboard</span>-->
+                </button>
+
+                <button class="btn btn-primary ks_dashboard_send_email d-md-block" aria-expanded="false" data-toggle="tooltip" data-placement="top" title="Email" t-on-click="ks_send_mail" style="margin-right:4px">
+                    <img src="/ks_dashboard_ninja/static/description/images/icons/mail-btn.svg" alt=""/>
+                </button>
+            </t>
+        </xpath>>
+    </t>
+
+    <t t-name="ks_dn_advance.ks_main_body_container" t-inherit="ks_dashboard_ninja.ks_main_body_container" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('ks_dashboard_main_content')]" position="replace">
+            <div class="ks_dashboard_main_content" t-ref="ks_main_body">
+                <t t-if="state.ks_dashboard_item_length != 0">
+                    <div class="ks_dashboard_item_content grid-stack ks_dashboard_items_list m-3" gs-w="36"/>
+                        <t t-call="ks_dashboard_item_template"/>
+                </t>
+        </div>
+        </xpath>
+    </t>
+</templates>
