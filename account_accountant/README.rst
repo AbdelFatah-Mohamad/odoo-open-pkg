@@ -1,54 +1,46 @@
-==================
-Odoo 18 Accounting
-==================
+.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+    :alt: License: LGPL-3
 
-This Module will adds following accounting features to Odoo 18 community edition:
-Financial Reports, Asset Management, Budget Management, Bank Statement Import,
-Daily Reports, Customer Follow Ups and Recurring Payments
-
-
-Common FAQ
-==========
-1. How to skip in payment status and directly move to paid status ?
-a) https://www.youtube.com/watch?v=eWxfy86Byog
-
-Installation
-============
-
-To install this module, you need to:
-
-Download the module and add it to your Odoo addons folder. Afterward, log on to
-your Odoo server and go to the Apps menu. Trigger the debug mode and update the
-list by clicking on the "Update Apps List" link. Now install the module by
-clicking on the install button.
-
-Upgrade
-============
-
-To upgrade this module, you need to:
-
-Download the module and add it to your Odoo addons folder. Restart the server
-and log on to your Odoo server. Select the Apps menu and upgrade the module by
-clicking on the upgrade button.
-
+Odoo 18 Full Accounting Kit for Community
+=========================================
+Full accounting kit for Odoo 18 community editions
 
 Configuration
 =============
+No configuration
 
-There is Nothing to Configure
+Company
+-------
+* `Cybrosys Techno Solutions <https://cybrosys.com/>`__
 
+License
+-------
+General Public License, Version 3 (LGPL v3).
+(http://www.gnu.org/licenses/lgpl-3.0-standalone.html)
 
 Credits
-=======
+-------
+Developer: (V17) Risvana A R , Contact: odoo@cybrosys.com
 
-Contributors
-------------
+Contacts
+--------
+* Mail Contact : odoo@cybrosys.com
+* Website : https://cybrosys.com
 
-* Odoo Mates <odoomates@gmail.com>
-* Walnut Software Solutions <info@walnutit.com>
+Bug Tracker
+-----------
+Bugs are tracked on GitHub Issues. In case of trouble, please check there if your issue has already been reported.
 
+Maintainer
+==========
+.. image:: https://cybrosys.com/images/logo.png
+   :target: https://cybrosys.com
 
-Author & Maintainer
--------------------
+This module is maintained by Cybrosys Technologies.
 
-This module is maintained by the Odoo Mates
+For support and more information, please visit `Our Website <https://cybrosys.com/>`__
+
+Further information
+===================
+HTML Description: `<static/description/index.html>`__

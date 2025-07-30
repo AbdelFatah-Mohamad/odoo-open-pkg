@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_payment_form_inherit_check_management" model="ir.ui.view">
+        <field name="name">account.payment.view.form.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_cancel']" position="attributes">
+                <attribute name="invisible" separator=" or " add="main_payment_id"></attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_post']" position="attributes">
+                <attribute name="invisible" separator=" or " add="main_payment_id"></attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="invisible" separator=" or " add="main_payment_id"></attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="button_open_checks" type="object" class="oe_stat_button" icon="fa-checks" groups="account.group_account_user,account.group_account_readonly">
+                    <div class="o_form_field o_stat_info">
+                        <field name="checks_count" />
+                        <span class="o_stat_text">Checks</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="check_book_id" domain="[('journal_id','=',journal_id),('state','in',['generated','in_use'])]" required="journal_type == 'bank' and is_check_payment == True and partner_type =='supplier' and is_journal_check_box != True  " invisible="journal_type != 'bank' or is_check_payment != True or partner_type !='supplier' or is_journal_check_box == True"/>
+                <field name="is_check_payment" widget="boolean_toggle" invisible="1" />
+                <field name="multi_payments" widget="boolean_toggle" readonly="state in ['in_process', 'paid']" />
+            </xpath>
+            <xpath expr="//div[@class='oe_title']" position="inside">
+                <h2 invisible="not main_payment_id"><field name="main_payment_id" readonly="1"/></h2>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <field name="is_journal_check_box" invisible="1"/>
+                    <field name="journal_type" invisible="1"/>
+                    <!-- <field name="journal_type" invisible="is_internal_transfer == True or partner_type =='supplier' and is_journal_check_box == True"/> -->
+                    <!-- <page name="checks_many_transfer" string="Transfer Checks"  invisible="journal_type != 'bank' or is_check_payment != True">
+                        <field name="checks_many_ids" mode="list,form" domain="[('journal_id','=',journal_id),('state','not in',['cashed','endorsed'])]" context="{'default_payment_id':id,'default_journal_id':journal_id}" options="{'create':[('is_journal_check_box','=',False),('state','=','draft')]}" readonly="state != 'draft'">
+                        </field>
+                    </page> -->
+
+                    <page name="checks_books_many" string="Pay with Checks"  invisible="check_book_id == False or journal_type != 'bank' or is_check_payment != True or partner_type !='supplier'">
+                        <!-- ,('state','=','collected') -->
+                        <field name="checks_many_ids" mode="list,form" domain="[('check_book_id','=',check_book_id),('state','=','check_book'),('payment_id','=',False)]" context="{'default_payment_id':id,'default_journal_id':journal_id,'default_order':'due_date desc'}" options="{'create':false}" readonly="state != 'draft'">
+                            <list create="0" delete="true" edit="true" editable="bottom" default_order="due_date desc">
+                                <field name="state" column_invisible="1" />
+                                <field name="name" readonly="1"/>
+                                <field name="check_no" readonly="1"/>
+                                <field name="due_date" required="1"/>
+                                <field name="amount" />
+                                <field name="currency_id" readonly="1"/>
+                                <field name="journal_id" readonly="1"/>
+                                <button name="%(odoo_check_managment.invoice_res_bank_print_action)d" type="action" invisible="state not in ('cashed', 'endorsed','deposited')" string="Print Cheque" icon="fa-money" widget="statinfo" groups="account.group_account_manager"/>
+                            </list>
+                        </field>
+                    </page>
+
+                    <page name="checks_many" string="Pay with Checks"  invisible="check_book_id != False or journal_type != 'bank' or is_check_payment != True or partner_type !='supplier' or is_journal_check_box != True">
+                        <field name="checks_many_ids" mode="list,form" domain="[('journal_id','=',journal_id),('check_book_id','=',False)]" context="{'default_payment_id':id,'default_journal_id':journal_id}" options="{'create':[('is_journal_check_box','=',False),('state','=','draft')]}" readonly="state != 'draft'">
+                        </field>
+                    </page>
+                    <field name="id" invisible="1"/>
+                    <page name="checks" string="Checks" invisible="journal_type != 'bank' or is_check_payment != True or  is_journal_check_box == False or partner_type != 'customer'">
+                        <field name="check_ids" widget="checks_x2many" mode="list,form" force_save="1" context="{'default_journal_id':journal_id,'default_payment_id':id}" options="{'delete': [('state', 'not in', ['in_process', 'paid'])],'create':['|',('is_journal_check_box', '=', True),('partner_type','=','supplier'),('state','=','draft')]}" readonly="state  in ['in_process', 'paid']">
+                            <list editable="top">
+                                <field name="payment_state" optional="hide" invisible="1"/>
+                                <field name="state" optional="hide" column_invisible="1"/>
+                                <field name="name" />
+                                <field name="check_no" />
+                                <field name="due_date" required="1"/>
+                                <field name="currency_id" widget="many2one" />
+                                <field name="amount" sum="total" readonly="payment_state == 'posted' or state  != 'collected'"/>
+                                <field name="journal_id" widget="many2one" />
+                                <field name="bank_id" widget="many2one" readonly="payment_state == 'posted' or state  != 'collected'" />
+                                <field name="payment_id" column_invisible="1"/>
+                                <button name="%(invoice_res_bank_print_action)d" type="action" invisible="state not in ('cashed', 'endorsed','deposited')" string="Print Cheque" icon="fa-money" widget="statinfo" groups="account.group_account_manager"/>
+                            </list>
+                        </field>
+                        <group col="12" >
+                            <group colspan="8">
+                                <field name="descriptions" placeholder="Terms and Conditions" colspan="2" nolabel="1"/>
+                            </group>
+                            <!-- Totals (only invoices / receipts) -->
+                            <group colspan="4">
+                                <group class="oe_subtotal_footer" >
+                                    <field name="amount" nolabel="1" colspan="2"/>
+                                    <field name="total_check_amount" colspan="2" nolabel="1" />
+                                    <field name="due_amount" class="oe_subtotal_footer_separator"/>
+                                </group>
+                            </group>
+                        </group>
+                    </page>
+                    <field name="main_payment_id" invisible="1"/>
+                    <page name="multi_payments" string="Other Payments" invisible="main_payment_id or not multi_payments">
+                        <field name="multi_payments_ids" readonly="state in ('posted', 'paid')" context="{'default_partner_id':partner_id,'default_partner_type':partner_type,'default_payment_type':payment_type}">
+                            <list create="true" delete="true" edit="true" editable="top">
+                                <field name="company_id" column_invisible="1"/>
+                                <field name="name" string="Name" readonly="1" column_invisible="not parent.name"/>
+                                <field name="partner_id" widget="many2one_avatar" readonly="1" force_save="1" />
+                                <field name="partner_type" column_invisible="1"/>
+                                <field name="payment_type" readonly="1" force_save="1"/>
+                                <field name="memo" />
+                                <field name="journal_id" widget="many2one" domain="[('type','in',['cash','bank']),('is_check_box','=',False),('is_returned_check_box','=',False)]" force_save="1"/>
+                                <field name="payment_method_id" />
+                                <field name="amount" />
+                                <field name="amount_company_currency_signed" sum="total" />
+                                <field name="currency_id" />
+                                <field name="company_currency_id" column_invisible="1" />
+                                <field name="state" readonly="1"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_move_line_tree_inherit_check_management" model="ir.ui.view">
+        <field name="name">account.move.line.view.list.inherit</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="check_id" widget="many2one" optional="show" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- <record id="view_account_move_line_list_bank_rec_widget" model="ir.ui.view">
+        <field name="name">view_account_move_line_list_bank_rec_widget</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account_accountant.view_account_move_line_list_bank_rec_widget"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="check_id" widget="many2one" optional="show" />
+            </xpath>
+        </field>
+    </record> -->
+
+
+</odoo>

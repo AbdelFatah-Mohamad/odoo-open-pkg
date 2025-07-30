@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_payment_receipt_document_checks" name="checks" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="//table[@name='invoices']" position="before">
+            <div class="oe_structure">
+                <h4 t-if="o.is_check_payment">Checks:-</h4>
+                <table class="table" style="text-align:center;" t-if="o.is_check_payment">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Check NO.</th>
+                            <th>Due Date</th>
+                            <th>Bank</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-if="len(o.checks_many_ids) > 0">
+                            <t t-set="checks" t-value="o.checks_many_ids" />
+                        </t>
+                        <t t-if="len(o.check_ids) > 0">
+                            <t t-set="checks" t-value="o.check_ids" />
+                        </t>
+
+                        <t t-foreach="checks" t-as="check">
+                            <tr>
+                                <td>
+                                    <t t-esc="check.name" />
+                                </td>
+                                <td>
+                                    <t t-esc="check.check_no" />
+                                </td>
+                                <td>
+                                    <t t-esc="check.due_date" />
+                                </td>
+                                <td>
+                                    <t t-esc="check.bank_id.name" />
+                                </td>
+                                <td>
+                                    <t t-esc="check.amount" t-options="{'widget': 'monetary', 'display_currency': check.currency_id}" />
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td colspan="4">Total Amount of Checks</td>
+                            <td>
+                                <t t-esc="o.total_check_amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}" />
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h4 t-if="o.multi_payments_ids and o.multi_payments">Other Payments:-</h4>
+                <table class="table" style="text-align:center;" t-if="o.multi_payments_ids and o.multi_payments">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Payment Date</th>
+                            <th t-if="values['display_payment_method']">Payment Method</th>
+                            <th>Amount</th>
+                            <th>Amount Currency</th>
+                            <th>Sample Memo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="total_other_payments" t-value="0"/>
+                        <t t-foreach="o.multi_payments_ids" t-as="payment">
+                            <tr>
+                                <td>
+                                    <span t-field="payment.name" />
+                                </td>
+                                <td>
+                                    <span t-field="payment.date" />
+                                </td>
+                                <td t-if="values['display_payment_method']">
+                                    <span t-field="payment.payment_method_id" />
+                                </td>
+                                <td>
+                                    <span t-field="payment.amount" t-options="{'widget': 'monetary', 'display_currency': payment.currency_id}" />
+                                </td>
+                                <td>
+                                    <span t-field="payment.amount_company_currency_signed" t-options="{'widget': 'monetary', 'display_currency': payment.company_currency_id}" />
+                                    <t t-set="total_other_payments" t-value="total_other_payments + payment.amount_company_currency_signed" />
+                                </td>
+                                <td>
+                                    <span t-field="payment.memo" />
+                                </td>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td t-att-colspan="4 if values['display_payment_method'] else 6">Total Amount of Other Payments(<span t-field="o.company_currency_id" />)</td>
+                            <td>
+                                <t t-esc="total_other_payments" t-options="{'widget': 'monetary', 'display_currency': o.company_currency_id}" />
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

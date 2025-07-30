@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="account_check_management_menu" name="Check Management" groups="account.group_account_invoice" parent="account.menu_finance" sequence="10" />
+    <menuitem
+    id="model_account_check_tag_menu"
+    name="Account Check Tag"
+    action="action_account_check_tag"
+    groups="account.group_account_manager"
+    parent="account_check_management_menu"
+    sequence="1"/>
+
+    <menuitem id="res_banks_menu" name="Banks" action="res_bank_action" parent="account_check_management_menu" sequence="2"/>
+    <menuitem id="res_bank_attribute_menu" name="Bank Attributes" action="res_bank_attribute_action" parent="account_check_management_menu" sequence="3"/>
+    <menuitem id="account_checks_book_menu" name="Check Books" action="odoo_check_managment.action_account_check_book" parent="account_check_management_menu" sequence="9" />
+    <menuitem id="account_checks_menu" name="Checks" parent="account_check_management_menu" sequence="10" />
+    <menuitem id="account_check_in_menu_act" name="Checks In" parent="account_checks_menu" action="odoo_check_managment.account_check_in_action" sequence="1" />
+    <menuitem id="account_check_out_menu_act" name="Checks Out" parent="account_checks_menu" action="odoo_check_managment.account_check_out_action" sequence="1" />
+
+</odoo>

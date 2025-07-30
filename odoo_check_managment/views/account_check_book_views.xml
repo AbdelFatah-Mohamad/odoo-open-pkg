@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View account.check.book View Tree -->
+    <record id="view_account_check_book_tree" model="ir.ui.view">
+        <field name="name">view.account.check.book.list</field>
+        <field name="model">account.check.book</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="account_number"/>
+                <field name="journal_id" />
+                <field name="bank_id" />
+                <field name="currency_id" />
+                <field name="check_no_from" />
+                <field name="num_of_check" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View account.check.book form -->
+    <record id="view_account_check_book_form" model="ir.ui.view">
+        <field name="name">view.account.check.book.form</field>
+        <field name="model">account.check.book</field>
+        <field name="arch" type="xml">
+            <form string="Account Check Book">
+                <header>
+                    <button string="Generate Checks" name="generate_checks" invisible="state != 'draft'" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" readonly="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name..." readonly="1"/>
+                        </h1>
+                        <label for="account_number"/>
+                        <h2>
+                            <field name="account_number" placeholder="Account Number..."/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="is_cancelled_check" invisible="1"/>
+                            <field name="journal_id" domain="[('type','=','bank')]" readonly="state != 'draft'" />
+                            <field name="bank_id" readonly="state != 'draft'"/>
+                            <field name="currency_id" />
+                        </group>
+                        <group>
+                            <field name="check_no_from" readonly="state != 'draft'"/>
+                            <field name="num_of_check" readonly="state != 'draft'"/>
+                        </group>
+                    </group>
+                    <field name="check_ids" readonly="state != 'draft'">
+                        <list create="0" edit="1">
+                            <field name="payment_id" column_invisible="1"/>
+                            <field name="name" />
+                            <field name="check_no" />
+                            <field name="due_date"  required="1"/>
+                            <field name="state" />
+                            <field name="bank_id" />
+                            <field name="check_type" />
+                            <button name="%(invoice_res_bank_print_action)d" type="action" invisible="state not in ('cashed', 'endorsed','deposited')" string="Print Cheque" icon="fa-money" widget="statinfo" groups="account.group_account_manager"/>
+                            <button string="Cancel" name="action_cancel_state" invisible="payment_id != False" type="object" class="oe_highlight"/>
+                            <field name="cancel_reason" column_invisible="not parent.is_cancelled_check" invisible="state != 'cancelled'" />
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View account.check.book search -->
+    <record id="view_account_check_book_search" model="ir.ui.view">
+        <field name="name">view.account.check.book.search</field>
+        <field name="model">account.check.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="account_number" />
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="default_name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="bank_id" name="default_bank_id" domain="[]" context="{'group_by':'bank_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action account.check.book -->
+    <record id="action_account_check_book" model="ir.actions.act_window">
+        <field name="name">Account Check Book</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.check.book</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

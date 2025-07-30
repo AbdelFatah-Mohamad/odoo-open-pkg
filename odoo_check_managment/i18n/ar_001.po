@@ -1,0 +1,1969 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_check_managment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-24 17:51+0000\n"
+"PO-Revision-Date: 2025-06-24 17:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_payment__journal_type
+msgid ""
+"\n"
+"        Select 'Sale' for customer invoices journals.\n"
+"        Select 'Purchase' for vendor bills journals.\n"
+"        Select 'Cash', 'Bank' or 'Credit Card' for journals that are used in customer or vendor payments.\n"
+"        Select 'General' for miscellaneous operations journals.\n"
+"        "
+msgstr ""
+"\n"
+"        اختر 'بيع' ليوميات فواتير العملاء.\n"
+"        اختر 'شراء' ليوميات فواتير الموردين.\n"
+"        اختر 'نقدي' أو 'بنك' أو 'بطاقة ائتمان' لليوميات المستخدمة في مدفوعات العملاء أو الموردين.\n"
+"        اختر 'عام' ليوميات العمليات المتنوعة.\n"
+"        "
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_minimal_layout
+msgid "&lt;!DOCTYPE html&gt;"
+msgstr "&lt;!DOCTYPE html&gt;"
+
+#. module: odoo_check_managment
+#: model:ir.actions.report,print_report_name:odoo_check_managment.report_checks_issued_bank_account_move_line
+msgid "'Checks Issued Bank'"
+msgstr "'شيكات صادرة من البنك'"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__third_party
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__third_party_name
+msgid "3rd Party"
+msgstr "طرف ثالث"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "<option value=\"\"> --- Attribute --- </option>"
+msgstr "<option value=\"\"> --- السمة --- </option>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid ""
+"<span class=\"\">Check Preview</span>\n"
+"                                        <span class=\"fa fa-long-arrow-right\"/>"
+msgstr ""
+"<span class=\"\">معاينة الشيك</span>\n"
+"                                        <span class=\"fa fa-long-arrow-left\"/>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid ""
+"<span class=\"alert alert-info fa fa-info-circle\" style=\"margin-bottom:0px;\">\n"
+"                                            Select check attribute one by one then drag box on check image to fill all the perameters automatically and then click on update button.\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"alert alert-info fa fa-info-circle\" style=\"margin-bottom:0px;\">\n"
+"                                            حدد سمة الشيك واحدة تلو الأخرى ثم اسحب المربع على صورة الشيك لملء جميع المعلمات تلقائيًا ثم انقر فوق زر التحديث.\n"
+"                                        </span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "<span class=\"o_stat_text\">Checks</span>"
+msgstr "<span class=\"o_stat_text\">الشيكات</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid ""
+"<span style=\"font-size: 36px;\">\n"
+"                                        <b>\n"
+"                                            Check Attributes : \n"
+"                                        </b>\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"font-size: 36px;\">\n"
+"                                        <b>\n"
+"                                            سمات الشيك : \n"
+"                                        </b>\n"
+"                                    </span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>As Off Date:</span>"
+msgstr "<span>حتى تاريخ:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>Bank check option:</span>"
+msgstr "<span>خيار شيك البنك:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>CheckBoos:</span>"
+msgstr "<span>دفاتر الشيكات:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>Destination Journals:</span>"
+msgstr "<span>يوميات الوجهة:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>From Due Date:</span>"
+msgstr "<span>من تاريخ الاستحقاق:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>From Issue Date:</span>"
+msgstr "<span>من تاريخ الإصدار:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>Journals:</span>"
+msgstr "<span>اليوميات:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>Partners:</span>"
+msgstr "<span>الشركاء:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>Source Journals:</span>"
+msgstr "<span>يوميات المصدر:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>To Due Date:</span>"
+msgstr "<span>إلى تاريخ الاستحقاق:</span>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "<span>To Issue Date:</span>"
+msgstr "<span>إلى تاريخ الإصدار:</span>"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+msgid "A payment must always belongs to a bank or cash journal."
+msgstr "يجب أن ينتمي الدفع دائمًا إلى يومية بنكية أو نقدية."
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_history_print_pdf_report
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_print_pdf_report
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_priview
+msgid "A/C Pay"
+msgstr "دفع لـ ح/"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__ac_pay
+msgid "A/C Pay Label"
+msgstr "تسمية دفع لـ ح/"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/bank_statment_line.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_bank_statement_line
+msgid "Account Bank Statement Line"
+msgstr "بند كشف الحساب البنكي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_bank_statement_line__account_check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move__account_check_id
+msgid "Account Check"
+msgstr "شيك حساب"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_bank_transfer_form
+msgid "Account Check Bank Transfer"
+msgstr "تحويل بنكي لشيك حساب"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_account_check_book
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_form
+msgid "Account Check Book"
+msgstr "دفتر شيكات الحساب"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_account_check_cancel_reason
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_cancel_reason_form
+msgid "Account Check Cancel Reason"
+msgstr "سبب إلغاء شيك الحساب"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_account_check_tag
+#: model:ir.ui.menu,name:odoo_check_managment.model_account_check_tag_menu
+msgid "Account Check Tag"
+msgstr "وسم شيك الحساب"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__account_date
+msgid "Account Date"
+msgstr "تاريخ الحساب"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_journal.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_journal
+msgid "Account Journal"
+msgstr "دفتر اليومية"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_move.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_move
+msgid "Account Move"
+msgstr "قيد اليومية"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_move_line.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_move_line
+msgid "Account Move Line"
+msgstr "عنصر اليومية"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__account_number
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__account_number
+msgid "Account Number"
+msgstr "رقم الحساب"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_form
+msgid "Account Number..."
+msgstr "رقم الحساب..."
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_account_check
+msgid "AccountCheck"
+msgstr "شيك حساب"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_bank_transfer.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_check_bank_transfer
+msgid "AccountCheckBankTransfer"
+msgstr "تحويل بنكي لشيك حساب"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_account_check_book
+msgid "AccountCheckBook"
+msgstr "دفتر شيكات الحساب"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_cancel_reason.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_check_cancel_reason
+msgid "AccountCheckCancelReason"
+msgstr "سبب إلغاء شيك الحساب"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_account_check_tag
+msgid "AccountCheckTag"
+msgstr "وسم شيك حساب"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_account_payment
+msgid "AccountPayment"
+msgstr "الدفعات"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_return_check.py:0
+#: model:ir.model,name:odoo_check_managment.model_account_check_return_check
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_return_check_form
+msgid "Account_check_return_check"
+msgstr "إرجاع_شيك_الحساب"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_needaction
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_exception_decoration
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_state
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_type_icon
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_cancel_reason_form
+msgid "Add"
+msgstr "إضافة"
+
+#. module: odoo_check_managment
+#. odoo-javascript
+#: code:addons/odoo_check_managment/static/src/components/custom_x2many/x2many_field_extension.js:0
+msgid "Add: %s"
+msgstr "إضافة: %s"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__all
+msgid "All Checks"
+msgstr "كل الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__amount
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__amount
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__amount_box
+msgid "Amount Box"
+msgstr "مربع المبلغ"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "Amount Currency"
+msgstr "عملة المبلغ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__amount_in_words
+msgid "Amount In Words"
+msgstr "المبلغ بالكلمات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__amount_in_words_line2
+msgid "Amount In Words Line 2"
+msgstr "المبلغ بالكلمات السطر 2"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__amount_line_1
+msgid "Amount Line 1 (in words)"
+msgstr "السطر 1 للمبلغ (بالكلمات)"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__amount_line_2
+msgid "Amount Line 2 (in words)"
+msgstr "السطر 2 للمبلغ (بالكلمات)"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__analytic_distribution
+msgid "Analytic Distribution"
+msgstr "التوزيع التحليلي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__analytic_precision
+msgid "Analytic Precision"
+msgstr "الدقة التحليلية"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__as_off_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__as_off_date
+msgid "As Off Date"
+msgstr "حتى تاريخ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_attachment_count
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__attribute
+msgid "Attribute"
+msgstr "السمة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Attribute Name"
+msgstr "اسم السمة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_bank_transfer__transfer_type__bank
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Bank"
+msgstr "البنك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Bank Address"
+msgstr "عنوان البنك"
+
+#. module: odoo_check_managment
+#: model:ir.ui.menu,name:odoo_check_managment.res_bank_attribute_menu
+msgid "Bank Attributes"
+msgstr "سمات البنك"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_res_bank
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__bank_id
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Bank Check"
+msgstr "البنك"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_res_bank_attribute
+msgid "Bank Check Attribute"
+msgstr "سمة شيك بنكي"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.res_bank_attribute_action
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_attribute_view_tree
+msgid "Bank Check Attributes"
+msgstr "سمات الشيكات البنكية"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/bank_rec_widget.py:0
+#: model:ir.model,name:odoo_check_managment.model_bank_rec_widget
+msgid "Bank Rec Widget"
+msgstr "أداة التسوية البنكية لبند كشف حساب واحد "
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/bank_rec_widget_line.py:0
+#: model:ir.model,name:odoo_check_managment.model_bank_rec_widget_line
+msgid "Bank Rec Widget Line"
+msgstr "بند أداة التسوية البنكية "
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__payment_state__bank_statment
+msgid "Bank Statment"
+msgstr "كشف حساب بنكي"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_form
+msgid "Bank Transfer"
+msgstr "تحويل بنكي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__bank_check_option
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__bank_check_option
+msgid "Bank check option"
+msgstr "خيار شيك البنك"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.res_bank_action
+#: model:ir.ui.menu,name:odoo_check_managment.res_banks_menu
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_tree
+msgid "Banks"
+msgstr "البنوك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__bottom_displacement
+msgid "Bottom displacement"
+msgstr "الإزاحة السفلية"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__operation_time
+msgid "CH OP Date"
+msgstr "تاريخ عملية الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__operation_check_state
+msgid "CH OP State"
+msgstr "حالة عملية الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank__check_measure_unit__cm
+msgid "CM"
+msgstr "سم"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "CSS Attributes"
+msgstr "سمات CSS"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__operation_type__cancel
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.invoice_res_bank_print_form_view
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_bank_transfer_form
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_form
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_cancel_reason_form
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_return_check_form
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_checks_issued_bank_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_cancel_reason.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__cancel_reason
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__name
+msgid "Cancel Reason"
+msgstr "سبب الإلغاء"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__cancelled
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__payment_state__cancel
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__cancelled
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__cancelled
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__cashed
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__cashed
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__cashed
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__cashed
+msgid "Cashed"
+msgstr "تم صرفه"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__x_studio_chk_due_date
+msgid "Ch Due Date"
+msgstr "تاريخ استحقاق الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_bank_statement_line__check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__check_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__check_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__check_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_bank_rec_widget__check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_bank_rec_widget_line__check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__check_id
+msgid "Check"
+msgstr "شيك"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_res_bank_attribute_line
+msgid "Check Attribute Line"
+msgstr "سطر سمة الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank__check_attribute_line_ids
+msgid "Check Attributes"
+msgstr "سمات الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__bank_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__bank_id
+msgid "Check Bank"
+msgstr "بنك الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__check_book_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__check_book_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__check_book_id
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__check_book
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__check_book
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__check_book
+msgid "Check Book"
+msgstr "دفتر شيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_journal__check_books_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__check_book_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__check_book_ids
+#: model:ir.ui.menu,name:odoo_check_managment.account_checks_book_menu
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_journal_inherit_check_management
+msgid "Check Books"
+msgstr "دفاتر الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_bank_transfer__transfer_type__check_box
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__check_book
+msgid "Check Box"
+msgstr "صندوق الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__check_has_amount_line2
+msgid "Check Has Amount Line2"
+msgstr "الشيك له سطر ثان للمبلغ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__check_has_pay_line2
+msgid "Check Has Pay Line2"
+msgstr "الشيك له سطر ثان للمستفيد"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank__check_height
+msgid "Check Hight"
+msgstr "ارتفاع الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank__check_image
+msgid "Check Image"
+msgstr "صورة الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__source_journal_id
+msgid "Check Journal"
+msgstr "يومية الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.ui.menu,name:odoo_check_managment.account_check_management_menu
+msgid "Check Management"
+msgstr "إدارة الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__check_no
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Check NO."
+msgstr "رقم الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.actions.report,name:odoo_check_managment.res_bank_print_report
+msgid "Check Preview"
+msgstr "معاينة الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.invoice_res_bank_print_action
+#: model:ir.actions.report,name:odoo_check_managment.res_bank_leaf_print_report
+msgid "Check Print"
+msgstr "طباعة الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__check_state
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "Check State"
+msgstr "حالة الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__check_tag_ids
+msgid "Check Tags"
+msgstr "وسوم الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__check_type
+msgid "Check Type"
+msgstr "نوع الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank__check_width
+msgid "Check Width"
+msgstr "عرض الشيك"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_check_book.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__check_ids
+msgid "Check_ids"
+msgstr "معرفات_الشيكات"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_form
+msgid "Checkbox Transfer"
+msgstr "تحويل صندوق الشيكات"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+#: model:ir.actions.act_window,name:odoo_check_managment.account_check_in_action
+#: model:ir.actions.act_window,name:odoo_check_managment.account_check_out_action
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_bank_statement_line__checks_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_journal__checks_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move__checks_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__checks_many_ids
+#: model:ir.ui.menu,name:odoo_check_managment.account_checks_menu
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_journal_inherit_check_management
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_move_inherit_odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "Checks"
+msgstr "الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__checks_count
+msgid "Checks Count"
+msgstr "عدد الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.ui.menu,name:odoo_check_managment.account_check_in_menu_act
+msgid "Checks In"
+msgstr "شيكات واردة"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_checks_issued_bank_wizard
+#: model:ir.actions.report,name:odoo_check_managment.report_checks_issued_bank_account_move_line
+#: model:ir.ui.menu,name:odoo_check_managment.checks_issued_bank_menu
+msgid "Checks Issued Bank"
+msgstr "شيكات صادرة من البنك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_checks_issued_bank_wizard_form
+msgid "Checks Issued Bank Wizard"
+msgstr "معالج الشيكات الصادرة من البنك"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_checks_issued_bank_wizard_history
+msgid "Checks Issued Bank Wizard History per User"
+msgstr "سجل معالج الشيكات الصادرة من البنك لكل مستخدم"
+
+#. module: odoo_check_managment
+#: model:ir.ui.menu,name:odoo_check_managment.account_check_out_menu_act
+msgid "Checks Out"
+msgstr "شيكات صادرة"
+
+#. module: odoo_check_managment
+#: model:account.payment.method,name:odoo_check_managment.account_payment_method_check_in
+msgid "Checks in"
+msgstr "شيكات واردة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_bank_statement_line__journal_check_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move__journal_check_id
+msgid "Checks journal"
+msgstr "يومية الشيكات"
+
+#. module: odoo_check_managment
+#: model:account.payment.method,name:odoo_check_managment.account_payment_method_check_out
+msgid "Checks out"
+msgstr "شيكات صادرة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Checks:-"
+msgstr "الشيكات:-"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model,name:odoo_check_managment.model_checks_issued_bank_wizard
+msgid "ChecksIssuedBankWizard"
+msgstr "معالج الشيكات الصادرة من البنك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "City"
+msgstr "المدينة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Co-ordinate"
+msgstr "الإحداثيات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__collected
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__collected
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__collected
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__collected
+msgid "Collected (CheckBox)"
+msgstr "محصل (صندوق الشيكات)"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__color
+msgid "Color Index"
+msgstr "فهرس الألوان"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Configure Attributes"
+msgstr "تكوين السمات"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Country"
+msgstr "الدولة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__create_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__create_uid
+msgid "Created by"
+msgstr "تم إنشاؤه بواسطة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__create_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤه في"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__currency_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__currency_ids
+msgid "Currencies"
+msgstr "العملات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__currency_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__currency_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__currency_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__currency_id
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+msgid "Currency"
+msgstr "العملة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__partner_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__partner_id
+msgid "Customer/Vendor"
+msgstr "العميل/المورد"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__date_format__ddmmyyyy
+msgid "DD MM YYYY"
+msgstr "يوم شهر سنة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__date_format__dd/mm/yyyy
+msgid "DD/MM/YYYY"
+msgstr "يوم/شهر/سنة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__check_date
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__date_format
+msgid "Date Format"
+msgstr "صيغة التاريخ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__date
+msgid "Date On Check"
+msgstr "التاريخ على الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__demo_data
+msgid "Demo Data For Preview"
+msgstr "بيانات تجريبية للمعاينة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__demo_data_date
+msgid "Demo Date For Preview"
+msgstr "تاريخ تجريبي للمعاينة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__deposited
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__deposited
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__deposited
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__deposited
+msgid "Deposited"
+msgstr "مودع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__descriptions
+msgid "Descriptions"
+msgstr "الأوصاف"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "Destination"
+msgstr "الوجهة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__destination_journal_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move_line__destination_journal_id
+msgid "Destination Journal"
+msgstr "يومية الوجهة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__display_name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__distribution_analytic_account_ids
+msgid "Distribution Analytic Account"
+msgstr "حساب تحليلي للتوزيع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_book__state__draft
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__payment_state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__due_amount
+msgid "Due Amount"
+msgstr "المبلغ المستحق"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__due_date
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__endorsed
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__endorsed
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__endorsed
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__endorsed
+msgid "Endorsed"
+msgstr "مجٌير"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_book__state__finished
+msgid "Finished"
+msgstr "منتهي"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/bank.py:0
+msgid ""
+"First you have to set bank check attributes. Then you will be able to "
+"configure attribute(s) values"
+msgstr ""
+"يجب عليك أولاً تعيين سمات الشيك البنكي. بعد ذلك ستتمكن من تكوين قيم "
+"السمة (السمات)"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_follower_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_partner_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (شركاء)"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__font_family
+msgid "Font Family"
+msgstr "نوع الخط"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__font_size
+msgid "Font Size"
+msgstr "حجم الخط"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__activity_type_icon
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font awesome مثال fa-tasks"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__from_due_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__from_due_date
+msgid "From Due Date"
+msgstr "من تاريخ الاستحقاق"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__from_issue_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__from_issue_date
+msgid "From Issue Date"
+msgstr "من تاريخ الإصدار"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_form
+msgid "Generate Checks"
+msgstr "إنشاء شيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_book__state__generated
+msgid "Generated"
+msgstr "تم إنشاؤه"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_tag_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__has_message
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__height
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Height"
+msgstr "الارتفاع"
+
+#. module: odoo_check_managment
+#: model:ir.model.constraint,message:odoo_check_managment.constraint_checks_issued_bank_wizard_history_user_id_uniq
+msgid "History must be unique per user!"
+msgstr "يجب أن يكون السجل فريدًا لكل مستخدم!"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_exception_icon
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__activity_exception_icon
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__message_needaction
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__message_has_error
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__message_has_sms_error
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__message_has_error
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__image
+msgid "Image"
+msgstr "صورة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__check_type__in
+msgid "In"
+msgstr "وارد"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__payment_state__in_process
+msgid "In Process"
+msgstr "قيد التنفيذ"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_book__state__in_use
+msgid "In Use"
+msgstr "قيد الاستخدام"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank__check_measure_unit__in
+msgid "Inches"
+msgstr "بوصة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__operation_type__internal
+msgid "Internal Transfer"
+msgstr "تحويل داخلي"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_invoice_print_res_bank_wizard
+msgid "Invoice Print Bank Check Wizard"
+msgstr "معالج طباعة شيك بنكي للفاتورة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_journal__is_check_box
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__is_journal_check_box
+msgid "Is Check Box"
+msgstr "هل هو صندوق شيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_is_follower
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_is_follower
+msgid "Is Follower"
+msgstr "هل هو متابع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_bank_statement_line__is_return
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move__is_return
+msgid "Is Return"
+msgstr "هل هو مرتجع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_journal__is_returned_check_box
+msgid "Is Returned Check Box"
+msgstr "هل هو صندوق شيكات مرتجعة"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__is_check_payment
+msgid "Is check payment?"
+msgstr "هل هو دفع بشيك؟"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_bank_statement_line__is_check
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_move__is_check
+msgid "Is check!"
+msgstr "هل هو شيك!"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,help:odoo_check_managment.field_checks_issued_bank_wizard__from_issue_date
+msgid "Issue Date of the Check is payment date of the check"
+msgstr "تاريخ إصدار الشيك هو تاريخ دفع الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__journal_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__journal_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__journal_id
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+msgid "Journal"
+msgstr "اليومية"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__journal_bank_id
+msgid "Journal Bank"
+msgstr "يومية البنك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__move_id
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"include one and only one outstanding payments/receipts account."
+msgstr ""
+"قيد اليومية %s غير صالح. للمتابعة، يجب أن تتضمن بنود اليومية حساب "
+"مدفوعات/مقبوضات معلقة واحد فقط."
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"include one and only one receivable/payable account (with an exception of "
+"internal transfers)."
+msgstr ""
+"قيد اليومية %s غير صالح. للمتابعة، يجب أن تتضمن بنود اليومية حساب "
+"ذمم دائنة/مدينة واحد فقط (باستثناء التحويلات الداخلية)."
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"share the same currency."
+msgstr ""
+"قيد اليومية %s غير صالح. للمتابعة، يجب أن تشترك بنود اليومية في نفس "
+"العملة."
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"share the same partner."
+msgstr ""
+"قيد اليومية %s غير صالح. للمتابعة، يجب أن تشترك بنود اليومية في نفس "
+"الشريك."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__journal_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__journal_ids
+msgid "Journals"
+msgstr "اليوميات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__dest_journal_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__dest_journal_ids
+msgid "Journals Destination"
+msgstr "يوميات الوجهة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__source_journal_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__source_journal_ids
+msgid "Journals Source"
+msgstr "يوميات المصدر"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__write_uid
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_cancel_reason__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__write_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Left Displacement"
+msgstr "الإزاحة اليسرى"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__left_displacement
+msgid "Left displacement"
+msgstr "الإزاحة اليسرى"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__letter_spacing
+msgid "Letter Spacing"
+msgstr "تباعد الأحرف"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank__check_measure_unit__mm
+msgid "MM"
+msgstr "مم"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__date_format__mmddyyyy
+msgid "MM DD YYYY"
+msgstr "شهر يوم سنة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__date_format__mm/dd/yyyy
+msgid "MM/DD/YYYY"
+msgstr "شهر/يوم/سنة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__main_payment_id
+msgid "Main Payment"
+msgstr "الدفع الرئيسي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank__max_char_in_line1
+msgid "Maximum Characters"
+msgstr "الحد الأقصى للأحرف"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_res_bank__max_char_in_line1
+msgid ""
+"Maximum characters in 'Amount in words Line1' field.\n"
+" Aplicable if Check attributes has both attributes(Amount In words Line1 & Amount In words Line2)"
+msgstr ""
+"الحد الأقصى للأحرف في حقل 'المبلغ بالكلمات السطر 1'.\n"
+" قابل للتطبيق إذا كانت سمات الشيك تحتوي على كلتا السمتين (المبلغ بالكلمات السطر 1 والمبلغ بالكلمات السطر 2)"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank__check_measure_unit
+msgid "Measurement Unit"
+msgstr "وحدة القياس"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_has_error
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__multi_payments
+msgid "Multi Payment?"
+msgstr "دفع متعدد؟"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__multi_payments_ids
+msgid "Multi Payments"
+msgstr "مدفوعات متعددة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__my_activity_date_deadline
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute__name
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__name
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_tag_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "Name"
+msgstr "الاسم"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_form
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_cancel_reason_form
+msgid "Name..."
+msgstr "الاسم..."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_date_deadline
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_summary
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_type_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_needaction_counter
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__num_of_check
+msgid "Number of Checks"
+msgstr "عدد الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_has_error_counter
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__message_needaction_counter
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__message_has_error_counter
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__operation_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__operation_type
+msgid "Operation"
+msgstr "العملية"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_form
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "Other Payments"
+msgstr "مدفوعات أخرى"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Other Payments:-"
+msgstr "مدفوعات أخرى:-"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__check_type__out
+msgid "Out"
+msgstr "صادر"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "PX"
+msgstr "بكسل"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__payment_state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__partner_id
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_return_check__return_to__partner
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__partner_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__partner_ids
+msgid "Partners"
+msgstr "الشركاء"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__pay_line1
+msgid "Pay Line 1"
+msgstr "سطر الدفع 1"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__res_bank_attribute__attribute__pay_line2
+msgid "Pay Line 2"
+msgstr "سطر الدفع 2"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__pay_name_line1
+msgid "Pay To"
+msgstr "ادفعوا لأمر"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__pay_name_line2
+msgid "Pay To Line2"
+msgstr "ادفعوا لأمر السطر 2"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "Pay with Checks"
+msgstr "الدفع بالشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__payment_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__payment_id
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__operation_type__payment
+msgid "Payment"
+msgstr "الدفع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__payment_date
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_account_payment_method
+msgid "Payment Methods"
+msgstr "طرق الدفع "
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__payment_state
+msgid "Payment State"
+msgstr "حالة الدفع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__payment_type
+msgid "Payment Type"
+msgstr "نوع الدفع"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_bank_transfer.py:0
+msgid "Please Confirm Payments First."
+msgstr "يرجى تأكيد المدفوعات أولاً."
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_return_check.py:0
+msgid "Please Create Journal For Return Checks."
+msgstr "يرجى إنشاء يومية للشيكات المرتجعة."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_invoice_print_res_bank_wizard__is_preview
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_checks_issued_bank_wizard_form
+msgid "Print"
+msgstr "طباعة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.invoice_res_bank_print_form_view
+msgid "Print Check"
+msgstr "طباعة الشيك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_form
+msgid "Print Cheque"
+msgstr "طباعة الشيك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.invoice_res_bank_print_form_view
+msgid "Print Preview"
+msgstr "معاينة الطباعة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Px"
+msgstr "بكسل"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__rating_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__operation_type__reconcile
+msgid "Reconcile"
+msgstr "تسوية"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_ir_actions_report
+msgid "Report Action"
+msgstr "إجراء التقرير"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__operation_type__reset_reconcile
+msgid "Reset Reconcile"
+msgstr "إعادة تعيين التسوية"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Reset Values"
+msgstr "إعادة تعيين القيم"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__activity_user_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_account_check_return_check
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_return_check_form
+msgid "Return Cashed Check"
+msgstr "إرجاع شيك مصروف"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_form
+msgid "Return Check"
+msgstr "إرجاع شيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_journal__return_check_account
+msgid "Return Check Account"
+msgstr "حساب الشيكات المرتجعة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_return_check__return_to__check_box
+msgid "Return Check Box"
+msgstr "صندوق الشيكات المرتجعة"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_return_check.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__return_data
+msgid "Return Date"
+msgstr "تاريخ الإرجاع"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_return_check.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_return_check__return_to
+msgid "Return To"
+msgstr "إرجاع إلى"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_form
+msgid "Return To Return Checkbox Journal Account"
+msgstr "إرجاع إلى حساب يومية صندوق الشيكات المرتجعة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__returned
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__returned
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__returned
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__returned
+msgid "Returned"
+msgstr "مرتجع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__returned_to_partner
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check_operation__state__returned_to_partner
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__returned_to_partner
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__returned_to_partner
+msgid "Returned To Partner"
+msgstr "مرتجع إلى الشريك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__right_displacement
+msgid "Right displacement"
+msgstr "الإزاحة اليمنى"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__message_has_sms_error
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Sample Memo"
+msgstr "مذكرة عينة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_view_search
+msgid "Search Bank"
+msgstr "بحث عن بنك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Select Check Attribute"
+msgstr "حدد سمة الشيك"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_tag__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_checks_issued_bank_account_move_line_view
+msgid "Source"
+msgstr "المصدر"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__check_no_from
+msgid "Start From"
+msgstr "البدء من"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_check_book.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__payment_state
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__state
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__state
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__state
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "State"
+msgstr "الحالة"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__activity_state
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد فات بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط له: أنشطة مستقبلية."
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Street 2..."
+msgstr "الشارع 2..."
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "Street..."
+msgstr "الشارع..."
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "Terms and Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__currency_id
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__currency_id
+#: model:ir.model.fields,help:odoo_check_managment.field_invoice_print_res_bank_wizard__currency_id
+msgid "The currency used to enter statement"
+msgstr "العملة المستخدمة لإدخال الكشف"
+
+#. module: odoo_check_managment
+#: model_terms:ir.actions.act_window,help:odoo_check_managment.action_account_check_tag
+msgid "There is no examples click here to add new Account Check Tag."
+msgstr "لا توجد أمثلة، انقر هنا لإضافة وسم شيك حساب جديد."
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__action_date
+msgid "Time"
+msgstr "الوقت"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__to_due_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__to_due_date
+msgid "To Due Date"
+msgstr "إلى تاريخ الاستحقاق"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/checks_issued_bank_wizard.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard__to_issue_date
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__to_issue_date
+msgid "To Issue Date"
+msgstr "إلى تاريخ الإصدار"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Top Displacement"
+msgstr "الإزاحة العلوية"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__top_displacement
+msgid "Top displacement"
+msgstr "الإزاحة العلوية"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.account_check_view_tree
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.report_payment_receipt_document_checks
+msgid "Total Amount of Checks"
+msgstr "إجمالي مبلغ الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__total_check_amount
+msgid "Total Check Amount"
+msgstr "إجمالي مبلغ الشيك"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_bank_transfer_form
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/wizard/account_check_bank_transfer.py:0
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__transfer_date
+msgid "Transfer Date"
+msgstr "تاريخ التحويل"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_account_check_bank_transfer_bank
+msgid "Transfer To Bank"
+msgstr "تحويل إلى البنك"
+
+#. module: odoo_check_managment
+#: model:ir.actions.act_window,name:odoo_check_managment.action_account_check_bank_transfer_checkbox
+msgid "Transfer To Checkbox"
+msgstr "تحويل إلى صندوق الشيكات"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_bank_transfer__transfer_type
+msgid "Transfer Type"
+msgstr "نوع التحويل"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_payment__journal_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__activity_exception_decoration
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Update"
+msgstr "تحديث"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Uploaded Scanned Copy :"
+msgstr "نسخة ممسوحة ضوئيًا محملة :"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_operation__user_id
+#: model:ir.model.fields,field_description:odoo_check_managment.field_checks_issued_bank_wizard_history__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_checks_issued_bank_wizard_form
+msgid "View"
+msgstr "عرض"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check__website_message_ids
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check__website_message_ids
+#: model:ir.model.fields,help:odoo_check_managment.field_account_check_book__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_res_bank_attribute_line__width
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Width"
+msgstr "العرض"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "X<sub>1 </sub>"
+msgstr "X<sub>1 </sub>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "X<sub>2</sub>"
+msgstr "X<sub>2</sub>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Y<sub>1 </sub>"
+msgstr "Y<sub>1 </sub>"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.res_bank_management_template
+msgid "Y<sub>2</sub>"
+msgstr "Y<sub>2</sub>"
+
+#. module: odoo_check_managment
+#. odoo-python
+#: code:addons/odoo_check_managment/models/account_payment.py:0
+msgid ""
+"You can't create a new payment without an outstanding payments/receipts "
+"account set either on the company or the %s payment method in the %s "
+"journal."
+msgstr ""
+"لا يمكنك إنشاء دفعة جديدة بدون تعيين حساب مدفوعات/مقبوضات معلقة إما "
+"على الشركة أو طريقة الدفع %s في يومية %s."
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_res_bank_form
+msgid "ZIP"
+msgstr "الرمز البريدي"
+
+#. module: odoo_check_managment
+#: model:ir.model,name:odoo_check_managment.model_account_check_operation
+msgid "account.check.operation"
+msgstr "account.check.operation"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_check_book_search
+msgid "bank_id"
+msgstr "bank_id"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_check__state__draft
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__account_move_line__operation_check_state__draft
+#: model:ir.model.fields.selection,name:odoo_check_managment.selection__checks_issued_bank_wizard__bank_check_option__draft
+msgid "draft"
+msgstr "مسودة"
+
+#. module: odoo_check_managment
+#: model:ir.model.fields,field_description:odoo_check_managment.field_account_check_book__is_cancelled_check
+msgid "is_cancelled_check"
+msgstr "is_cancelled_check"
+
+#. module: odoo_check_managment
+#: model:ir.actions.report,print_report_name:odoo_check_managment.res_bank_print_report
+msgid "object.name"
+msgstr "object.name"
+
+#. module: odoo_check_managment
+#: model:ir.actions.report,print_report_name:odoo_check_managment.res_bank_leaf_print_report
+msgid "object.pay_name_line1"
+msgstr "object.pay_name_line1"
+
+#. module: odoo_check_managment
+#: model_terms:ir.ui.view,arch_db:odoo_check_managment.view_account_payment_form_inherit_check_management
+msgid "total"
+msgstr "الإجمالي"

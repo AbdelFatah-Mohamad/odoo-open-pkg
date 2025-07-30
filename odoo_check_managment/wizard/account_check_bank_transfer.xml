@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View account.check.bank.transfer form -->
+    <record id="view_account_check_bank_transfer_form" model="ir.ui.view">
+        <field name="name">view.account.check.bank.transfer.form</field>
+        <field name="model">account.check.bank.transfer</field>
+        <field name="arch" type="xml">
+            <form string="Account Check Bank Transfer">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="check_ids" invisible="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="transfer_type" invisible="1"/>
+                            <field name="journal_bank_id" invisible="transfer_type != 'bank'" domain="[('currency_id','=',currency_id),('is_check_box','=',False),('is_returned_check_box','=',False),('type','=','bank')]"/>
+                            <field name="journal_bank_id" invisible="transfer_type == 'bank'" domain="[('currency_id','=',currency_id),('is_check_box','=',True),('is_returned_check_box','=',False),('type','=','bank')]"/>
+                        </group>
+                        <group>
+                            <field name="transfer_date" />
+                        </group>
+                    
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="transfer" type="object" string="Transfer" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action account.check.bank.transfer -->
+    <!-- <record id="action_account_check_bank_transfer" model="ir.actions.act_window">
+        <field name="name">Account Check Bank Transfer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.check.bank.transfer</field>
+        <field name="context">{"default_check_ids":active_ids}</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record> -->
+    <record id="action_account_check_bank_transfer_bank" model="ir.actions.act_window">
+        <field name="name">Transfer To Bank</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.check.bank.transfer</field>
+        <field name="context">{"default_check_ids":active_ids, "default_transfer_type": "bank"}</field>
+        <field name="view_mode">form</field>
+        <field name="binding_model_id" ref="odoo_check_managment.model_account_check"/>
+        <field name="target">new</field>
+    </record>
+    <record id="action_account_check_bank_transfer_checkbox" model="ir.actions.act_window">
+        <field name="name">Transfer To Checkbox</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.check.bank.transfer</field>
+        <field name="context">{"default_check_ids":active_ids, "default_transfer_type": "check_box"}</field>
+        <field name="view_mode">form</field>
+        <field name="binding_model_id" ref="odoo_check_managment.model_account_check"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

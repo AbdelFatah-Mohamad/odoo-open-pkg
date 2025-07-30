@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_inherit_odoo_check_managment" model="ir.ui.view">
+        <field name="name">account.move.view.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="is_check" invisible="move_type != 'entry'" />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="checks" string="Checks" invisible="is_check == False">
+                    <group>
+                        <group>
+                            <field name="journal_check_id" readonly="state == 'posted'"/>
+                        </group>
+                        <group>
+                            <field name="account_check_id" required="journal_check_id and state != 'posted'" readonly="state == 'posted'"/>
+                        </group>
+                    </group>
+                    <field name="checks_ids" domain="[('journal_id','=',journal_check_id),('state','in',['endorsed','cashed'])]" readonly="journal_check_id == False or state == 'posted'" options="{'create':False,'edit':False}" />
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//list//field[@name='name']" position="after">
+                <field name="check_id" widget="many2one" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

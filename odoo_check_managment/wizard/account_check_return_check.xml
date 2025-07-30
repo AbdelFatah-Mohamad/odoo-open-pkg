@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View account_check_return_check form -->
+    <record id="view_account_check_return_check_form" model="ir.ui.view">
+        <field name="name">view.account_check_return_check.form</field>
+        <field name="model">account_check_return_check</field>
+        <field name="arch" type="xml">
+            <form string="Account_check_return_check">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="check_ids" force_save="1" invisible="1" />
+                            <field name="return_to" required="1"/>
+                        </group>
+                        <group>
+                            <field name="return_data" required="1"/>
+                        </group>
+                    
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="return_cashed_checks" type="object" string="Return Cashed Check" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action account_check_return_check -->
+    <record id="action_account_check_return_check" model="ir.actions.act_window">
+        <field name="name">Return Check</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account_check_return_check</field>
+        <field name="view_mode">form</field>
+        <field name="context" >{"default_check_ids":active_ids}</field>
+        <field name="binding_model_id" ref="odoo_check_managment.model_account_check"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

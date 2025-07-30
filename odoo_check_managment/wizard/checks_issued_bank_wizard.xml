@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View checks.issued.bank.wizard form -->
+    <record id="view_checks_issued_bank_wizard_form" model="ir.ui.view">
+        <field name="name">view.checks.issued.bank.wizard.form</field>
+        <field name="model">checks.issued.bank.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Checks Issued Bank Wizard">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="from_issue_date"  />
+                            <field name="from_due_date" />
+                            <field name="bank_check_option" required="1" />
+                        </group>
+                        <group>
+                            <field name="to_issue_date"  />
+                            <field name="to_due_date" />
+                            <field name="as_off_date" required="1" />
+                            <field name="partner_ids" widget="many2many_tags" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="journal_ids" widget="many2many_tags" />
+                        <field name="currency_ids" widget="many2many_tags" />
+                        <field name="source_journal_ids" widget="many2many_tags" />
+                        <field name="dest_journal_ids" widget="many2many_tags" />
+                        <field name="check_book_ids" domain="[('journal_id', 'in', journal_ids)]" widget="many2many_tags" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="view" type="object" string="View" class="oe_highlight"/>
+                    <button name="print" type="object" string="Print" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action checks.issued.bank.wizard -->
+    <record id="action_checks_issued_bank_wizard" model="ir.actions.act_window">
+        <field name="name">Checks Issued Bank</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">checks.issued.bank.wizard</field>
+        <field name="view_mode">form</field>
+        <!-- <field name="binding_model_id" ref="addon.model_model_name"/> -->
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="checks_issued_bank_menu"
+        name="Checks Issued Bank"
+        action="odoo_check_managment.action_checks_issued_bank_wizard"
+        parent="account.menu_finance_reports"/>
+
+
+</odoo>

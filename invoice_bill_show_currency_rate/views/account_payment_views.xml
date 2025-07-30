@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- View account.payment form -->
+    <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">view.account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="replace">
+                <label for="date" />
+                <div name="currency_rate" class="d-flex">
+                    <field name="date" readonly="state != 'draft'"  />
+                    <!-- <span class="oe_inline o_form_label mx-3"> rate </span> -->
+                    <field name="currency_rate" invisible="state in ['in_process', 'paid']" force_save="1"/>
+                    <field name="confirmed_rate" readonly="True" force_save="1" invisible="state not in ['in_process', 'paid']" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

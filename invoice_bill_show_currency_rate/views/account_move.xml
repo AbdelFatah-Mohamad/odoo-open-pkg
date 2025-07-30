@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="account_move_inherit_form_view" model="ir.ui.view">
+        <field name="name">Currency Rate</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field name="currency_rate" force_save="1" invisible="state in ['posted']" />
+                <field name="confirmed_rate" readonly="True" invisible="state not in ['posted']" />
+            </xpath>
+            <xpath expr="//field[@name='invoice_date']" position="attributes">
+                <attribute name="required">move_type in ['out_invoice','in_invoice'] </attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']" position="attributes">
+                <attribute name="context">{
+                    'default_currency_rate':1/currency_rate,'default_move_type': context.get('default_move_type'),
+                    'journal_id': journal_id,
+                    'default_partner_id': commercial_partner_id,
+                    'default_currency_id': currency_id or company_currency_id,
+                    'default_display_type': 'product',
+                    'quick_encoding_vals': quick_encoding_vals,
+                    }</attribute>
+            </xpath>
+            <!-- <xpath expr="//div[@name='journal_div']" position="after">
+                <label for="currency_rate" invisible="state == 'posted' or move_type not in ['out_invoice','in_invoice']"/>
+                <label for="confirmed_rate" invisible="state != 'posted' or move_type not in ['out_invoice','in_invoice']"/>
+                <div name="currency_rate" class="d-flex" invisible=" move_type not in ['out_invoice','in_invoice']">
+                    <field name="currency_rate" invisible="state == 'posted'"/>
+                    <field name="confirmed_rate" readonly="True" invisible="state != 'posted'" />
+                    <span class="oe_inline o_form_label mx-3"> in </span>
+                    <field name="rate_date" readonly="state == 'posted'" force_save="1" />
+                </div>
+            </xpath> -->
+        </field>
+    </record>
+</odoo>

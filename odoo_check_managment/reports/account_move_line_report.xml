@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <record id="paperformat_A4" model="report.paperformat">
+        <field name="name">Paper Name</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">3</field>
+        <field name="dpi">96</field>
+    </record> -->
+
+    <record id="report_checks_issued_bank_account_move_line" model="ir.actions.report">
+        <field name="name">Checks Issued Bank</field>
+        <field name="model">checks.issued.bank.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo_check_managment.report_checks_issued_bank_account_move_line_view</field>
+        <field name="report_file">odoo_check_managment.report_checks_issued_bank_account_move_line_view</field>
+        <field name="print_report_name">'Checks Issued Bank'</field>
+        <!-- <field name="binding_model_id" ref="model_account_move_line"/> -->
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_checks_issued_bank_account_move_line_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row mb3 border">
+                            <div class="row">
+                                <div class="col-6">
+                                    <t t-if="doc.from_issue_date">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span>From Issue Date:</span>
+                                            </div>
+                                            <div class="col-8">
+                                                <span>
+                                                    <t t-esc="doc.from_issue_date" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="doc.from_due_date">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span>From Due Date:</span>
+                                            </div>
+                                            <div class="col-8">
+                                                <span>
+                                                    <t t-esc="doc.from_due_date" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="doc.bank_check_option">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span>Bank check option:</span>
+                                            </div>
+                                            <div class="col-8">
+                                                <span>
+                                                    <t t-esc="doc.bank_check_option" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                                <div class="col-6">
+                                    <t t-if="doc.to_issue_date">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span>To Issue Date:</span>
+                                            </div>
+                                            <div class="col-8">
+                                                <span>
+                                                    <t t-esc="doc.to_issue_date" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="doc.to_due_date">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span>To Due Date:</span>
+                                            </div>
+                                            <div class="col-8">
+                                                <span>
+                                                    <t t-esc="doc.to_due_date" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-if="doc.from_issue_date">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <span>As Off Date:</span>
+                                            </div>
+                                            <div class="col-8">
+                                                <span>
+                                                    <t t-esc="doc.as_off_date" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                                <t t-if="len(doc.partner_ids) > 0">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <span>Partners:</span>
+                                        </div>
+                                        <div class="col-10">
+                                            <span>
+                                                <t t-esc="' - '.join(doc.partner_ids.mapped('name'))" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="len(doc.journal_ids) > 0">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <span>Journals:</span>
+                                        </div>
+                                        <div class="col-10">
+                                            <span>
+                                                <t t-esc="' - '.join(doc.journal_ids.mapped('name'))" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="len(doc.source_journal_ids) > 0">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <span>Source Journals:</span>
+                                        </div>
+                                        <div class="col-10">
+                                            <span>
+                                                <t t-esc="' - '.join(doc.source_journal_ids.mapped('name'))" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="len(doc.dest_journal_ids) > 0">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <span>Destination Journals:</span>
+                                        </div>
+                                        <div class="col-10">
+                                            <span>
+                                                <t t-esc="' - '.join(doc.dest_journal_ids.mapped('name'))" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                                <t t-if="len(doc.check_book_ids) > 0">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <span>CheckBoos:</span>
+                                        </div>
+                                        <div class="col-10">
+                                            <span>
+                                                <t t-esc="' - '.join(doc.check_book_ids.mapped('name'))" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Partner</th>
+                                    <th>Amount Currency</th>
+                                    <th>Due Date</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Check State</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.lines()" t-as="line">
+                                    <td>
+                                        <span t-field="line.check_id" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.partner_id" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.amount_currency" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.x_studio_chk_due_date" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.source_journal_id" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.destination_journal_id" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.operation_check_state" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.operation_time" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

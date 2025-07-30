@@ -1,0 +1,4132 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_accountant
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-09 19:32+0000\n"
+"PO-Revision-Date: 2021-02-09 19:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid " (copy)"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid " (grouped)"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__entry_count
+msgid "# Asset Entries"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__depreciation_nbr
+msgid "# of Depreciation Lines"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__installment_nbr
+msgid "# of Installment Lines"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/credit_limit.py:0
+#: code:addons/account_accountant/models/credit_limit.py:0
+#: code:addons/language_translation/account_accountant/models/credit_limit.py:0
+#: code:addons/language_translation/account_accountant/models/credit_limit.py:0
+#, python-format
+msgid "%s is in  Blocking Stage and has a due amount of %s %s to pay"
+msgstr "%s befindet sich in der Blockierungsphase und muss einen fälligen Betrag von% s %s zahlen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+msgid ": Bank Book Report"
+msgstr ": Bankbuchbericht"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+msgid ": Cash Book Report"
+msgstr ": Kassenbuchbericht"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+msgid ": Day Book Report"
+msgstr ": Tagesbuchbericht"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid ": General ledger"
+msgstr ": Hauptbuch"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid ": Trial Balance"
+msgstr ": Probebilanz"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+msgid ""
+"<br/>\n"
+"                                    <strong>Date to :</strong>"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_kanban
+msgid "<i class=\"fa fa-building\" role=\"img\" aria-label=\"Enterprise\"/>"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+msgid "<span>Comp</span>"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "<span>Not due</span>"
+msgstr "<span> Nicht fällig </ span>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+msgid "<strong>Balance</strong>"
+msgstr "<strong> Balance </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+msgid "<strong>Company:</strong>"
+msgstr "<strong> Unternehmen: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+msgid "<strong>Credit</strong>"
+msgstr "<strong> Guthaben </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "<strong>Date from :</strong>"
+msgstr "<strong> Datum von: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "<strong>Date to :</strong>"
+msgstr "<strong> Datum bis: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+msgid "<strong>Debit</strong>"
+msgstr "<strong> Lastschrift </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "<strong>Display Account:</strong>"
+msgstr "<strong> Konto anzeigen: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid "<strong>Display Account</strong>"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "<strong>Entries Sorted By:</strong>"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "<strong>Journal:</strong>"
+msgstr "<strong> Journal: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid "<strong>Journals:</strong>"
+msgstr "<strong> Zeitschriften: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+msgid "<strong>Name</strong>"
+msgstr "<strong> Name </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "<strong>Partner's:</strong>"
+msgstr "<strong> Partner: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "<strong>Period Length (days)</strong>"
+msgstr "<strong> Periodenlänge (Tage) </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+msgid "<strong>Purchase</strong>"
+msgstr "<strong> Kauf </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid "<strong>Sorted By:</strong>"
+msgstr "<strong> Sortiert nach: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "<strong>Start Date:</strong>"
+msgstr "<strong> Startdatum: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "<strong>Target Moves:</strong>"
+msgstr "<strong> Zielbewegungen: </ strong>"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "<strong>Total</strong>"
+msgstr "<strong> Gesamt </ strong>"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/payment_matching.py:0
+#: code:addons/language_translation/account_accountant/models/payment_matching.py:0
+#, python-format
+msgid "A reconciliation must involve at least 2 move lines."
+msgstr "Eine Abstimmung muss mindestens 2 Bewegungslinien umfassen."
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_res_partner__warning_stage
+#: model:ir.model.fields,help:account_accountant.field_res_users__warning_stage
+msgid ""
+"A warning message will appear once the selected customer is crossed warning "
+"amount. Set its value to 0.00 to disable this feature"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model,name:account_accountant.model_account_account
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+#, python-format
+msgid "Account"
+msgstr "Konto"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_aged_trial_balance
+msgid "Account Aged Trial balance Report"
+msgstr "Kontostand-Testguthabenbericht"
+
+#. module: account_accountant
+#: model:ir.actions.server,name:account_accountant.account_asset_cron_ir_actions_server
+#: model:ir.cron,cron_name:account_accountant.account_asset_cron
+#: model:ir.cron,name:account_accountant.account_asset_cron
+msgid "Account Asset: Generate asset entries"
+msgstr "Konto-Asset: Generieren Sie Asset-Einträge"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_bank_book_report
+msgid "Account Bank Book Report"
+msgstr "Account Bank Book Report"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_cash_book_report
+msgid "Account Cash Book Report"
+msgstr "Konto Kassenbuchbericht"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_common_account_report
+msgid "Account Common Account Report"
+msgstr "Konto Gemeinsamer Kontobericht"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_common_partner_report
+msgid "Account Common Partner Report"
+msgstr "Bericht des gemeinsamen Partners des Kontos"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__date
+msgid "Account Date"
+msgstr "Kontodatum"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_day_book_report
+msgid "Account Day Book Report"
+msgstr "Account Day Book Report"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_followup
+msgid "Account Follow-up"
+msgstr "Konto-Follow-up"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_report_partner_ledger
+msgid "Account Partner Ledger"
+msgstr "Account Partner Ledger"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_print_journal
+msgid "Account Print Journal"
+msgstr "Finanz-Journal drucken"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_reconciliation_widget
+msgid "Account Reconciliation widget"
+msgstr "Widget zur Kontoabstimmung"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_recurring_entries_line
+msgid "Account Recurring Entries Line"
+msgstr "Wiederkehrende Kontoeintragszeile"
+
+#. module: account_accountant
+#: model:ir.actions.client,name:account_accountant.action_account_invoice_report_all
+#: model:ir.model,name:account_accountant.model_account_financial_report
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__children_ids
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_search
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_tree
+msgid "Account Report"
+msgstr "Kontobericht"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__account_report_id
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__account_report_id
+#: model:ir.ui.menu,name:account_accountant.menu_account_financial_reports_tree
+msgid "Account Reports"
+msgstr "Kontoberichte"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Account Total"
+msgstr "Kontosumme"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__type__account_type
+msgid "Account Type"
+msgstr "Konto Typ"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__account_type_ids
+msgid "Account Types"
+msgstr "Kontotypen"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__account_depreciation_id
+msgid "Account used in the depreciation entries, to decrease the asset value."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__account_depreciation_expense_id
+msgid ""
+"Account used in the periodical entries, to record a part of the asset as "
+"expense."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__account_asset_id
+msgid ""
+"Account used to record the purchase of the asset at its original price."
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.res_config_settings_view_accounting_kit
+msgid "Accounting"
+msgstr "Buchhaltung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_recurring_payments_form_view
+msgid "Accounting Info"
+msgstr "Buchhaltungsinfo"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_recurring_payments
+msgid "Accounting Recurring Payment"
+msgstr "Buchhaltung Wiederkehrende Zahlung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_asset.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_asset.js:0
+#, python-format
+msgid "Accounting entries waiting for manual verification"
+msgstr "Buchhaltungseinträge warten auf manuelle Überprüfung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__account_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__account_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__account_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__account_ids
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__type__accounts
+msgid "Accounts"
+msgstr "Konten"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_needaction
+msgid "Action Needed"
+msgstr "Handlungsbedarf"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__active
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__active_limit
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__active_limit
+msgid "Active Credit Limit"
+msgstr "Aktives Kreditlimit"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Additional Options"
+msgstr "Zusatzoptionen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_line_form
+msgid "After"
+msgstr "Nach dem"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_aged_balance_view
+#: model:ir.actions.report,name:account_accountant.action_report_aged_partner_balance
+#: model:ir.ui.menu,name:account_accountant.menu_aged_trial_balance
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Aged Partner Balance"
+msgstr "Alter Partner Guthaben"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_agedpartnerbalance
+msgid "Aged Partner Balance Report"
+msgstr "Gealterter Partnerbilanzbericht"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Aged Payable"
+msgstr "Im Alter zahlbar"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Aged Receivable"
+msgstr "Gealterte Forderung"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_balance_report__display_account__all
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__display_account__all
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__display_account__all
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_common_account_report__display_account__all
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_general_ledger__display_account__all
+msgid "All"
+msgstr "Alle"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__target_move__all
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__target_move__all
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_day_book_report__target_move__all
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "All Entries"
+msgstr "Alle Einträge"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__target_move__posted
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__target_move__posted
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_day_book_report__target_move__posted
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_flow
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "All Posted Entries"
+msgstr "Alle geposteten Einträge"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "All accounts"
+msgstr "Alle Konten"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid "All accounts'"
+msgstr "Alle Konten"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid ""
+"All invoices and payments have been matched, your accounts' balances are "
+"clean."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__amount
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__amount
+#, python-format
+msgid "Amount"
+msgstr "Menge"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__depreciation_value
+msgid "Amount of Depreciation Lines"
+msgstr "Höhe der Abschreibungslinien"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__installment_value
+msgid "Amount of Installment Lines"
+msgstr "Anzahl der Ratenzeilen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Analytic Acc."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__account_analytic_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__analytic_account_id
+msgid "Analytic Account"
+msgstr "Analytisches Konto"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Analytic Tags."
+msgstr "Analytische Tags."
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__asset_id
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__asset_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Asset"
+msgstr "Anlagegut"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__account_asset_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Asset Account"
+msgstr "Anlagenkonto"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line__asset_category_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_invoice_asset_category
+msgid "Asset Category"
+msgstr "Asset-Kategorie"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.asset_modify_form
+msgid "Asset Durations to Modify"
+msgstr "Zu ändernde Asset-Dauer"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line__asset_end_date
+msgid "Asset End Date"
+msgstr "Enddatum des Assets"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__asset_method_time
+msgid "Asset Method Time"
+msgstr "Asset-Methodenzeit"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__name
+msgid "Asset Name"
+msgstr "Asset-Name"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line__asset_start_date
+msgid "Asset Start Date"
+msgstr "Startdatum des Assets"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__name
+#: model:ir.model.fields,field_description:account_accountant.field_product_product__asset_category_id
+#: model:ir.model.fields,field_description:account_accountant.field_product_template__asset_category_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Asset Type"
+msgstr "Asset-Typ"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_asset_asset_list_normal_purchase
+#: model:ir.ui.menu,name:account_accountant.menu_action_account_asset_asset_list_normal_purchase
+msgid "Asset Types"
+msgstr "Asset-Typen"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_asset_category
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__asset_category_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_tree
+msgid "Asset category"
+msgstr "Asset-Kategorie"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "Asset created"
+msgstr "Asset erstellt"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_asset_depreciation_line
+msgid "Asset depreciation line"
+msgstr "Abschreibungslinie für Vermögenswerte"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "Asset sold or disposed. Accounting entry awaiting for validation."
+msgstr "Verkauf oder Veräußerung von Vermögenswerten. Buchhaltungseintrag wartet auf Validierung."
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_asset_asset
+msgid "Asset/Revenue Recognition"
+msgstr "Vermögens- / Ertragsrealisierung"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_assets0
+#: model:ir.actions.act_window,name:account_accountant.action_account_asset_asset_form
+#: model:ir.ui.menu,name:account_accountant.menu_action_account_asset_asset_form
+#: model:ir.ui.menu,name:account_accountant.menu_action_asset_asset_report
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_purchase_tree
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+msgid "Assets"
+msgstr "Vermögenswerte"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_asset_asset_report
+#: model:ir.model,name:account_accountant.model_asset_asset_report
+#: model_terms:ir.ui.view,arch_db:account_accountant.action_account_asset_report_graph
+#: model_terms:ir.ui.view,arch_db:account_accountant.action_account_asset_report_pivot
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Assets Analysis"
+msgstr "Vermögensanalyse"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_statement_line__asset_depreciation_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__asset_depreciation_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__asset_depreciation_ids
+msgid "Assets Depreciation Lines"
+msgstr "Abschreibungslinien für Vermögenswerte"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.menu_finance_config_assets
+msgid "Assets and Revenues"
+msgstr "Vermögenswerte und Einnahmen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Assets in closed state"
+msgstr "Vermögenswerte im geschlossenen Zustand"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Assets in draft and open states"
+msgstr "Vermögenswerte in Entwurfs- und offenen Zuständen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Assets in draft state"
+msgstr "Vermögenswerte im Entwurfszustand"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Assets in running state"
+msgstr "Assets im laufenden Zustand"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_attachment_count
+msgid "Attachment Count"
+msgstr "Anzahl der Anhänge"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_reports_audit
+msgid "Audit Reports"
+msgstr "Prüfberichte"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__open_asset
+msgid "Auto-confirm Assets"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__0
+msgid "Automatic formatting"
+msgstr "Automatische Formatierung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "BANK AND CASH BALANCE"
+msgstr "BANK- UND BARGELDGLEICHGEWICHT"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "Balance"
+msgstr "Balance"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_balancesheet0
+#: model:ir.actions.act_window,name:account_accountant.action_balance_sheet_report
+#: model:ir.ui.menu,name:account_accountant._account_financial_reports_balance_sheet
+msgid "Balance Sheet"
+msgstr "Bilanz"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_bank_book_menu
+msgid "Bank Book"
+msgstr "Bank Buch"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_bank_book_view
+#: model:ir.actions.report,name:account_accountant.action_report_bank_book
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_bank_book_form_view
+msgid "Bank Book Report"
+msgstr "Bankbuchbericht"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_matching.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_matching.js:0
+#, python-format
+msgid "Bank Reconciliation"
+msgstr "Bankabstimmung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__bank_reference
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment_register__bank_reference
+msgid "Bank Reference"
+msgstr "Bankreferenz"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "Base Amount"
+msgstr "Basisbetrag"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__blocking_stage
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__blocking_stage
+msgid "Blocking Amount"
+msgstr "Sperrbetrag"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_aged_balance_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_bank_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_cash_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_day_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_update_lock_date_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.asset_modify_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_depreciation_confirmation_wizard
+msgid "Cancel"
+msgstr "Stornieren"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_res_partner__blocking_stage
+#: model:ir.model.fields,help:account_accountant.field_res_users__blocking_stage
+msgid ""
+"Cannot make sales once the selected customer is crossed blocking amount.Set "
+"its value to 0.00 to disable this feature"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_cash_book_menu
+msgid "Cash Book"
+msgstr "Kassenbuch"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_cash_book_view
+#: model:ir.actions.report,name:account_accountant.action_report_cash_book
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_cash_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_day_book_form_view
+msgid "Cash Book Report"
+msgstr "Kassenbuchbericht"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_cash_flow_report
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_cash_flow
+msgid "Cash Flow Report"
+msgstr "Cashflow-Bericht"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_cash_flow0
+#: model:ir.actions.act_window,name:account_accountant.action_cash_flow_report
+#: model:ir.actions.report,name:account_accountant.action_report_cash_flow
+#: model:ir.ui.menu,name:account_accountant.menu_account_cash_flow_report
+msgid "Cash Flow Statement"
+msgstr "Geldflussrechnung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_account__cash_flow_type
+msgid "Cash Flow type"
+msgstr "Cashflow-Typ"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.cash_in_financial0
+#: model:account.financial.report,name:account_accountant.cash_in_from_operation0
+#: model:account.financial.report,name:account_accountant.cash_in_investing0
+msgid "Cash In"
+msgstr "Cash In"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.cash_out_financial1
+#: model:account.financial.report,name:account_accountant.cash_out_investing1
+#: model:account.financial.report,name:account_accountant.cash_out_operation1
+msgid "Cash Out"
+msgstr "Auszahlen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__category_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Category"
+msgstr "Kategorie"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Category of asset"
+msgstr "Kategorie des Vermögenswerts"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Check all"
+msgstr "Alles überprüfen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Check that you have no bank statement lines to"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__open_asset
+msgid ""
+"Check this if you want to automatically confirm the assets of this category "
+"when created by invoices."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__group_entries
+msgid "Check this if you want to group the generated entries by categories."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__cheque_reference
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment_register__cheque_reference
+msgid "Cheque Reference"
+msgstr "Referenz überprüfen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Choose counterpart or Create Write-off"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__method
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__method
+msgid ""
+"Choose the method to use to compute the amount of depreciation lines.\n"
+"  * Linear: Calculated on basis of: Gross Value / Number of Depreciations\n"
+"  * Degressive: Calculated on basis of: Residual Value * Degressive Factor"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__method_time
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__method_time
+msgid ""
+"Choose the method to use to compute the dates and number of entries.\n"
+"  * Number of Entries: Fix the number of entries and the time between 2 depreciations.\n"
+"  * Ending Date: Choose the time between 2 depreciations and the date the depreciations won't go beyond."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_asset_depreciation_confirmation_wizard__date
+msgid ""
+"Choose the period for which you want to automatically post the depreciation "
+"lines of running assets"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.actions.act_window,help:account_accountant.action_account_recurring_payments_view
+msgid "Click to create new recurring payment template"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__state__close
+#: model:ir.model.fields.selection,name:account_accountant.selection__asset_asset_report__state__close
+#, python-format
+msgid "Close"
+msgstr "Schließen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Close statement"
+msgstr "Anweisung schließen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Closed"
+msgstr "Geschlossen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "Code"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__label_filter
+msgid "Column Label"
+msgstr "Spaltenbeschriftung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__company_id
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__company_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__name
+msgid "Company Name"
+msgstr "Name der Firma"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.cash_flow_report_view
+msgid "Comparison"
+msgstr "Vergleich"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__method
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__method
+msgid "Computation Method"
+msgstr "Berechnungsmethode"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_depreciation_confirmation_wizard
+msgid "Compute Asset"
+msgstr "Asset berechnen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Compute Depreciation"
+msgstr "Abschreibung berechnen"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguration "
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Congrats, you're all done!"
+msgstr "Herzlichen Glückwunsch, Sie sind fertig!"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Create a counterpart"
+msgstr "Erstellen Sie ein Gegenstück"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Create model"
+msgstr "Modell erstellen"
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/asset_depreciation_confirmation_wizard.py:0
+#: code:addons/language_translation/account_accountant/wizard/asset_depreciation_confirmation_wizard.py:0
+#, python-format
+msgid "Created Asset Moves"
+msgstr "Asset Moves erstellt"
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/asset_depreciation_confirmation_wizard.py:0
+#: code:addons/language_translation/account_accountant/wizard/asset_depreciation_confirmation_wizard.py:0
+#, python-format
+msgid "Created Revenue Moves"
+msgstr "Erstellt Umsatzbewegungen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__create_uid
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__create_date
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "Credit"
+msgstr "Anerkennung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__credit_account
+msgid "Credit Account"
+msgstr "Kreditkonto"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_customer_form
+msgid "Credit Limit"
+msgstr "Kreditlimit"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__enable_credit_limit
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__enable_credit_limit
+msgid "Credit Limit Enabled"
+msgstr "Kreditlimit aktiviert"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__depreciated_value
+msgid "Cumulative Depreciation"
+msgstr "Kumulierte Abschreibung"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__currency_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#, python-format
+msgid "Currency"
+msgstr "Währung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Current"
+msgstr "Aktuell"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__amount
+msgid "Current Depreciation"
+msgstr "Aktuelle Abschreibung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_config_settings__customer_credit_limit
+msgid "Customer Credit Limit"
+msgstr "Kundenkreditlimit"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Customer Invoice"
+msgstr "Kundenrechnung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Customer/Vendor Matching"
+msgstr "Kunden- / Lieferanten-Matching"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_reports_daily_reports
+msgid "Daily Reports"
+msgstr "Tägliche Berichte"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: model:ir.ui.menu,name:account_accountant.menu_accounting_dashboard
+#, python-format
+msgid "Dashboard"
+msgstr "Instrumententafel"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__date
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__date
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__date
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__sortby__sort_date
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__sortby__sort_date
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_print_journal__sort_selection__date
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_general_ledger__sortby__sort_date
+#: model:ir.model.fields.selection,name:account_accountant.selection__cash_flow_report__filter_cmp__filter_date
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#, python-format
+msgid "Date"
+msgstr "Datum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__date_to_cmp
+msgid "Date End"
+msgstr "Datum Ende"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__date_from_cmp
+msgid "Date Start"
+msgstr "Start Datum"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Date of asset"
+msgstr "Datum des Vermögenswerts"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Date of asset purchase"
+msgstr "Datum des Kaufs des Vermögenswerts"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Date of depreciation"
+msgstr "Datum der Abschreibung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.cash_flow_report_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.financial_report_wiz_modified
+msgid "Dates"
+msgstr "Termine"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_day_book_menu
+msgid "Day Book"
+msgstr "Tagebuch"
+
+#. module: account_accountant
+#: model:ir.actions.report,name:account_accountant.day_book_pdf_report
+msgid "Day Book PDF Report"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_day_book_view
+#: model:ir.model,name:account_accountant.model_report_account_accountant_day_book_report_template
+msgid "Day Book Report"
+msgstr "Tagesbuchbericht"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__recurring_period__days
+msgid "Days"
+msgstr "Tage"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "Debit"
+msgstr "Lastschrift"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__debit_account
+msgid "Debit Account"
+msgstr "Konto belasten"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Deferred Revenue Account"
+msgstr "Konto für abgegrenzte Einnahmen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_product_product__deferred_revenue_category_id
+#: model:ir.model.fields,field_description:account_accountant.field_product_template__deferred_revenue_category_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Deferred Revenue Type"
+msgstr "Typ der abgegrenzten Einnahmen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+msgid "Deferred Revenues"
+msgstr "Aufgeschobene Einnahmen"
+
+#. module: account_accountant
+#: model_terms:ir.actions.act_window,help:account_accountant.action_account_followup_definition_form
+msgid "Define follow-up levels and their related actions"
+msgstr "Definieren Sie Follow-up-Ebenen und die damit verbundenen Aktionen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__method__degressive
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_category__method__degressive
+msgid "Degressive"
+msgstr "Degressiv"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__method_progress_factor
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__method_progress_factor
+msgid "Degressive Factor"
+msgstr "Degressiver Faktor"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Depreciation"
+msgstr "Abschreibung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Depreciation Board"
+msgstr "Abschreibungsausschuss"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__depreciation_date
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__depreciation_date
+msgid "Depreciation Date"
+msgstr "Abschreibungsdatum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__account_depreciation_id
+msgid "Depreciation Entries: Asset Account"
+msgstr "Abschreibungsbuchungen: Anlagenkonto"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__account_depreciation_expense_id
+msgid "Depreciation Entries: Expense Account"
+msgstr "Abschreibungsbuchungen: Aufwandskonto"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__move_id
+msgid "Depreciation Entry"
+msgstr "Abschreibungsbuchung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Depreciation Information"
+msgstr "Abschreibungsinformationen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__depreciation_line_ids
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Depreciation Lines"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Depreciation Method"
+msgstr "Abschreibungsmethode"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Depreciation Month"
+msgstr "Abschreibungsmonat"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__name
+msgid "Depreciation Name"
+msgstr "Abschreibungsname"
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/asset_modify.py:0
+#: code:addons/language_translation/account_accountant/wizard/asset_modify.py:0
+#, python-format
+msgid "Depreciation board modified"
+msgstr "Abschreibungsausschuss geändert"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "Depreciation line posted."
+msgstr "Abschreibungszeile gebucht."
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__description
+#, python-format
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_recurring_payments_form_view
+msgid "Description..."
+msgstr "Beschreibung..."
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.financial_report_wiz_modified
+msgid "Discard"
+msgstr "Verwerfen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__display_account
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__display_account
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__display_account
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__display_account
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__display_account
+msgid "Display Accounts"
+msgstr "Konten anzeigen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__debit_credit
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__debit_credit
+msgid "Display Debit/Credit Columns"
+msgstr "Debit- / Kreditspalten anzeigen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_account__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_journal__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment_register__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_reconciliation_widget__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_product_template__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_day_book_report_template__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_agedpartnerbalance__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_bank_book__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_cash_book__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_cash_flow__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_financial__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_general_ledger__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_journal_audit__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_partnerledger__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_tax__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_trial_balance__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__display_name
+#: model:ir.model.fields,field_description:account_accountant.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__display_detail__detail_flat
+msgid "Display children flat"
+msgstr "Kinder flach anzeigen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__display_detail__detail_with_hierarchy
+msgid "Display children with hierarchy"
+msgstr "Zeigen Sie untergeordnete Elemente mit Hierarchie an"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__display_detail
+msgid "Display details"
+msgstr "Details anzeigen"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "Disposal Move"
+msgstr "Entsorgungsumzug"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "Disposal Moves"
+msgstr "Entsorgungsbewegungen"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "Document closed."
+msgstr "Dokument geschlossen."
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__state__draft
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__state__draft
+#: model:ir.model.fields.selection,name:account_accountant.selection__asset_asset_report__state__draft
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Draft"
+msgstr "Entwurf"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Due Date"
+msgstr "Geburtstermin"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__delay
+msgid "Due Days"
+msgstr "Fällige Tage"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__effective_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment_register__effective_date
+msgid "Effective Date"
+msgstr "Datum des Inkrafttretens"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_payment__effective_date
+#: model:ir.model.fields,help:account_accountant.field_account_payment_register__effective_date
+msgid "Effective date of PDC"
+msgstr "Datum des Inkrafttretens der PDC"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/payment_matching.py:0
+#: code:addons/language_translation/account_accountant/models/payment_matching.py:0
+#, python-format
+msgid "Either pass both debit and credit or none."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__enable_filter
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__enable_filter
+msgid "Enable Comparison"
+msgstr "Vergleich aktivieren"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.es_config_settings_view_form_account_accountant
+msgid "Enable credit limit for customers"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__date_to
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__date_to
+msgid "End Date"
+msgstr "Enddatum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__method_end
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__method_time__end
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_category__method_time__end
+msgid "Ending Date"
+msgstr "Ende"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__method_end
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__method_end
+msgid "Ending date"
+msgstr "Ende"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__sort_selection
+msgid "Entries Sorted by"
+msgstr "Buchungen sortiert nach"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid "Entry Label"
+msgstr "Eintragsetikett"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_expense0
+msgid "Expense"
+msgstr "Kosten"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Extended Filters..."
+msgstr "Erweiterte Filter ..."
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "External link"
+msgstr "Externer Link"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__filter_cmp
+msgid "Filter by"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Filter on account, label, partner, amount,..."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_financial
+msgid "Financial Report"
+msgstr "Finanzbericht"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__style_overwrite
+msgid "Financial Report Style"
+msgstr "Stil des Finanzberichts"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_financial_report_tree
+#: model:ir.model,name:account_accountant.model_financial_report
+msgid "Financial Reports"
+msgstr "Finanzbericht"
+
+#. module: account_accountant
+#: model:ir.actions.report,name:account_accountant.financial_report_pdf
+msgid "Financial reports"
+msgstr "Finanzbericht"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_financing_activity1
+msgid "Financing Activities"
+msgstr "Finanzierungstätigkeit"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__followup_id
+msgid "Follow Ups"
+msgstr "Follow Ups"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__name
+msgid "Follow-Up Action"
+msgstr "Folgemaßnahme"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__followup_line_ids
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_tree
+msgid "Follow-up"
+msgstr "Nachverfolgen"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_followup_line
+msgid "Follow-up Criteria"
+msgstr "Follow-up-Kriterien"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_followup_menu
+msgid "Follow-up Levels"
+msgstr "Follow-up-Ebenen"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_view_list_customer_statements
+#: model:ir.ui.menu,name:account_accountant.customer_statements_menu
+msgid "Follow-up Reports"
+msgstr "Follow-up-Berichte"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_tree_view
+msgid "Follow-up Reports Tree View"
+msgstr "Baumansicht für Folgeberichte"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_line_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_line_tree
+msgid "Follow-up Steps"
+msgstr "Folgeschritte"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_follower_ids
+msgid "Followers"
+msgstr "Anhänger"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Follower (Kanäle)"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__followup_status
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__followup_status
+msgid "Followup status"
+msgstr "Follow-up-Status"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_financial_report__sign
+msgid ""
+"For accounts that are typically more debited than credited and that you "
+"would like to print as negative amounts in your reports, you should reverse "
+"the sign of the balance; e.g.: Expense account. The same applies for "
+"accounts that are typically more credited than debited and that you would "
+"like to print as positive amounts in your reports; e.g.: Income account."
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.actions.act_window,help:account_accountant.action_account_followup_definition_form
+msgid ""
+"For each step, specify the actions to be taken and delay in days. It is\n"
+"                possible to use print and e-mail templates to send specific messages to\n"
+"                the customer."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/report/account_bank_book.py:0
+#: code:addons/account_accountant/report/account_cash_book.py:0
+#: code:addons/account_accountant/report/account_day_book.py:0
+#: code:addons/account_accountant/report/cash_flow_report.py:0
+#: code:addons/account_accountant/report/general_ledger_report.py:0
+#: code:addons/account_accountant/report/report_aged_partner.py:0
+#: code:addons/account_accountant/report/report_journal_audit.py:0
+#: code:addons/account_accountant/report/report_partner_ledger.py:0
+#: code:addons/account_accountant/report/report_tax.py:0
+#: code:addons/account_accountant/report/report_trial_balance.py:0
+#: code:addons/language_translation/account_accountant/report/account_bank_book.py:0
+#: code:addons/language_translation/account_accountant/report/account_cash_book.py:0
+#: code:addons/language_translation/account_accountant/report/account_day_book.py:0
+#: code:addons/language_translation/account_accountant/report/cash_flow_report.py:0
+#: code:addons/language_translation/account_accountant/report/general_ledger_report.py:0
+#: code:addons/language_translation/account_accountant/report/report_aged_partner.py:0
+#: code:addons/language_translation/account_accountant/report/report_journal_audit.py:0
+#: code:addons/language_translation/account_accountant/report/report_partner_ledger.py:0
+#: code:addons/language_translation/account_accountant/report/report_tax.py:0
+#: code:addons/language_translation/account_accountant/report/report_trial_balance.py:0
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__view_format
+msgid "Format"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "From now on, you may want to:"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.actions.act_window,help:account_accountant.action_asset_asset_report
+msgid ""
+"From this report, you can have an overview on all depreciations. The\n"
+"            search bar can also be used to personalize your assets depreciation reporting."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_general_ledger_menu
+#: model:ir.actions.report,name:account_accountant.action_report_general_ledger
+#: model:ir.ui.menu,name:account_accountant.menu_general_ledger
+msgid "General Ledger"
+msgstr "Hauptbuch"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_report_general_ledger
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_general_ledger
+msgid "General Ledger Report"
+msgstr "Hauptbuchbericht"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.menu_asset_depreciation_confirmation_wizard
+msgid "Generate Assets Entries"
+msgstr "Aktivieren Sie Asset-Einträge"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_depreciation_confirmation_wizard
+msgid "Generate Entries"
+msgstr "Einträge generieren"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__journal_state
+msgid "Generate Journal As"
+msgstr "Journal generieren als"
+
+#. module: account_accountant
+#: model:ir.actions.server,name:account_accountant.recurring_template_cron_ir_actions_server
+#: model:ir.cron,cron_name:account_accountant.recurring_template_cron
+#: model:ir.cron,name:account_accountant.recurring_template_cron
+msgid "Generate Recurring Entries"
+msgstr "Wiederkehrende Einträge generieren"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_reports_generic_statements
+msgid "Generic Statements"
+msgstr "Allgemeine Anweisungen"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_followup_line__sequence
+msgid "Gives the sequence order when displaying a list of follow-up lines."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Go to bank statement(s)"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Good Job!"
+msgstr "Gut gemacht!"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__gross_value
+msgid "Gross Amount"
+msgstr "Bruttobetrag"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__value
+msgid "Gross Value"
+msgstr "Bruttowert"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Gross value of asset"
+msgstr "Bruttowert des Vermögenswerts"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_search
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Group By"
+msgstr "Gruppiere nach"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Group By..."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__group_entries
+msgid "Group Journal Entries"
+msgstr "Journaleinträge gruppieren"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_statement_line__has_due
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__has_due
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__has_due
+#: model:ir.model.fields,field_description:account_accountant.field_sale_order__has_due
+msgid "Has Due"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__financial_report__view_format__horizontal
+msgid "Horizontal"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_account__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_journal__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment_register__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_reconciliation_widget__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__id
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__id
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__id
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__id
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__id
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__id
+#: model:ir.model.fields,field_description:account_accountant.field_product_template__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_day_book_report_template__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_agedpartnerbalance__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_bank_book__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_cash_book__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_cash_flow__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_financial__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_general_ledger__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_journal_audit__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_partnerledger__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_tax__id
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_trial_balance__id
+#: model:ir.model.fields,field_description:account_accountant.field_res_config_settings__id
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__id
+#: model:ir.model.fields,field_description:account_accountant.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "INVOICES"
+msgstr "RECHNUNGEN"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_needaction
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Wenn diese Option aktiviert ist, erfordern neue Nachrichten Ihre Aufmerksamkeit."
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_has_error
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Wenn diese Option aktiviert ist, weisen einige Nachrichten einen Zustellungsfehler auf."
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_bank_book_report__initial_balance
+#: model:ir.model.fields,help:account_accountant.field_account_cash_book_report__initial_balance
+#: model:ir.model.fields,help:account_accountant.field_account_report_general_ledger__initial_balance
+msgid ""
+"If you selected date, this field allow you to add a row to display the "
+"amount of debit/credit/balance that precedes the filter you've set."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__res_partner__followup_status__in_need_of_action
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_search_view
+msgid "In need of action"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_payment.py:0
+#: code:addons/language_translation/account_accountant/models/account_payment.py:0
+#, python-format
+msgid ""
+"In order to print multiple checks at once, they must belong to the same bank"
+" journal."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__initial_balance
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__initial_balance
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__initial_balance
+msgid "Include Initial Balances"
+msgstr "Anfangsguthaben einschließen"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_income0
+msgid "Income"
+msgstr "Einkommen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Income/Expense"
+msgstr "Einnahmen / Ausgaben"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__prorata
+msgid ""
+"Indicates that the first depreciation entry for this asset have to be done "
+"from the purchase date instead of the first January / Start date of fiscal "
+"year"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__prorata
+msgid ""
+"Indicates that the first depreciation entry for this asset have to be done "
+"from the purchase date instead of the first of January"
+msgstr ""
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_investing_activity0
+msgid "Investing Activities"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__invoice_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+#, python-format
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__invoice_list
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__invoice_list
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_form_view
+msgid "Invoice Details"
+msgstr "Rechnungs-Details"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_is_follower
+msgid "Is Follower"
+msgstr "Ist Anhänger"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_statement_line__is_warning
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__is_warning
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__is_warning
+#: model:ir.model.fields,field_description:account_accountant.field_sale_order__is_warning
+msgid "Is Warning"
+msgstr "Ist Warnung"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_report_partner_ledger__amount_currency
+msgid ""
+"It adds the currency column on report if the currency differs from the "
+"company currency."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/payment_matching.py:0
+#: code:addons/language_translation/account_accountant/models/payment_matching.py:0
+#, python-format
+msgid ""
+"It is mandatory to specify an account and a journal to create a write-off."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__salvage_value
+msgid "It is the amount you plan to have that you cannot depreciate."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__5
+msgid "Italic Text (smaller)"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.payment_matching_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Items"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+msgid "JRNL"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model,name:account_accountant.model_account_journal
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__journal_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__journal_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#, python-format
+msgid "Journal"
+msgstr "Tagebuch"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__sortby__sort_journal_partner
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__sortby__sort_journal_partner
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_general_ledger__sortby__sort_journal_partner
+msgid "Journal & Partner"
+msgstr "Journal & Partner"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+#, python-format
+msgid "Journal Entries"
+msgstr "Journaleinträge"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_move
+msgid "Journal Entry"
+msgstr "Buchungssatz"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_print_journal__sort_selection__move_name
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "Journal Entry Number"
+msgstr "Belegnummer"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_move_line
+msgid "Journal Item"
+msgstr "Buchungszeile"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/payment_matching.py:0
+#: code:addons/language_translation/account_accountant/models/payment_matching.py:0
+#, python-format
+msgid "Journal Items"
+msgstr "Journalelemente"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_matching.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_matching.js:0
+#, python-format
+msgid "Journal Items to Reconcile"
+msgstr "Zu versöhnende Journalelemente"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_journal_audit
+msgid "Journal Report"
+msgstr "Journalbericht"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+msgid "Journal and Partner"
+msgstr "Journal und Partner"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__journal_ids
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__journal_ids
+msgid "Journals"
+msgstr "Journale"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_print_journal_menu
+#: model:ir.actions.report,name:account_accountant.action_report_journal
+#: model:ir.ui.menu,name:account_accountant.menu_print_journal
+msgid "Journals Audit"
+msgstr "Zeitschriftenprüfung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#, python-format
+msgid "Label"
+msgstr "Etikette"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_account____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_journal____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment_register____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_reconciliation_widget____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_product_template____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_day_book_report_template____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_agedpartnerbalance____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_bank_book____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_cash_book____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_cash_flow____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_financial____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_general_ledger____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_journal_audit____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_partnerledger____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_tax____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_report_account_accountant_report_trial_balance____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner____last_update
+#: model:ir.model.fields,field_description:account_accountant.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Last Month"
+msgstr "Letzten Monat"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Last Reconciliation:"
+msgstr "Letzte Versöhnung:"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__write_uid
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_followup__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_asset_depreciation_confirmation_wizard__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__write_date
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Last Year"
+msgstr "Vergangenes Jahr"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__level
+msgid "Level"
+msgstr "Niveau"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_liability0
+#: model:account.financial.report,name:account_accountant.account_financial_report_liabilitysum0
+msgid "Liability"
+msgstr "Haftung"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__method__linear
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_category__method__linear
+msgid "Linear"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__move_check
+msgid "Linked"
+msgstr "Verknüpft"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Load more"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Load more... ("
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__fiscalyear_lock_date
+msgid "Lock Date"
+msgstr "Sperrdatum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_lock_date__period_lock_date
+msgid "Lock Date for Non-Advisers"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.menu_lock_dates
+msgid "Lock Dates"
+msgstr "Termine sperren"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_lock_date
+msgid "Lock date for accounting"
+msgstr "Sperrdatum für die Abrechnung"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.account_update_lock_date_act_window
+msgid "Lock your Fiscal Period"
+msgstr "Sperren Sie Ihre Geschäftsperiode"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Hauptanhang"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__1
+msgid "Main Title 1 (bold, underlined)"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Manual Operations"
+msgstr "Manuelle Bedienung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Match with entries that are not from receivable/payable accounts"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_has_error
+msgid "Message Delivery error"
+msgstr "Fehler bei der Nachrichtenübermittlung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_ids
+msgid "Messages"
+msgstr "Mitteilungen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Miscellaneous Matching"
+msgstr "Sonstiges Matching"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.asset_modify_form
+msgid "Modify"
+msgstr "Ändern"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_asset_modify
+#: model:ir.model,name:account_accountant.model_asset_modify
+#: model_terms:ir.ui.view,arch_db:account_accountant.asset_modify_form
+msgid "Modify Asset"
+msgstr "Asset ändern"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Modify Depreciation"
+msgstr "Abschreibung ändern"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Modify models"
+msgstr "Modelle ändern"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_search
+msgid "Month"
+msgstr "Monat"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_move_line__asset_mrr
+msgid "Monthly Recurring Revenue"
+msgstr "Monatliche wiederkehrende Einnahmen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__recurring_period__months
+msgid "Months"
+msgstr "Monate"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "Move"
+msgstr "Bewegung"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__template_name
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__name
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_financial
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "Name"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+msgid "Net"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Net Profit or Loss"
+msgstr "Nettogewinn oder -verlust"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "New"
+msgstr "Neu"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__remaining_value
+msgid "Next Period Depreciation"
+msgstr "Abschreibung für die nächste Periode"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__next_reminder_date
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__next_reminder_date
+msgid "Next Reminder Date"
+msgstr "Nächstes Erinnerungsdatum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__next_date
+msgid "Next Schedule"
+msgstr "Nächster Zeitplan"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__cash_flow_report__filter_cmp__filter_no
+msgid "No Filters"
+msgstr "Keine Filter"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__res_partner__followup_status__no_action_needed
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_search_view
+msgid "No action needed"
+msgstr "Keine Handlung nötig"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__display_detail__no_detail
+msgid "No detail"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.actions.act_window,help:account_accountant.action_view_list_customer_statements
+msgid "No follow-up to send!"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_lock_date__fiscalyear_lock_date
+msgid ""
+"No users, including Advisers, can edit accounts prior to and inclusive of "
+"this date. Use it for fiscal year locking for example."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__4
+msgid "Normal Text"
+msgstr "Normaler Text"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Not archived"
+msgstr "Nicht archiviert"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__note
+#, python-format
+msgid "Note"
+msgstr "Hinweis"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Nothing to do!"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Anzahl der Aktionen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__method_number
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__method_number
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__method_number
+msgid "Number of Depreciations"
+msgstr "Anzahl der Abschreibungen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__method_time__number
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_category__method_time__number
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Number of Entries"
+msgstr "Anzahl der Einträge"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__method_period
+msgid "Number of Months in a Period"
+msgstr "Anzahl der Monate in einem Zeitraum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_has_error_counter
+msgid "Number of errors"
+msgstr "Anzahl der Fehler"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "One Entry Every"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_lock_date__period_lock_date
+msgid ""
+"Only users with the 'Adviser' role can edit accounts prior to and inclusive "
+"of this date. Use it for period locking inside an open fiscal year, for "
+"example."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_model.js:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_model.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Open balance"
+msgstr "Offene Saldo"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_operation0
+msgid "Operations"
+msgstr "Operationen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_recurring_payments_form_view
+msgid "Other Info"
+msgstr "Andere Information"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_search_view
+msgid "Overdue Invoices"
+msgstr "Überfällige Rechnungen"
+
+#. module: account_accountant
+#: model:account.payment.method,name:account_accountant.account_payment_method_pdc_in
+#: model:account.payment.method,name:account_accountant.account_payment_method_pdc_out
+msgid "PDC"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#, python-format
+msgid "Paid"
+msgstr "Bezahlt"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__parent_id
+msgid "Parent"
+msgstr "Elternteil"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_search
+msgid "Parent Report"
+msgstr "Übergeordneter Bericht"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__partner_id
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__partner_id
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__partner_id
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+#, python-format
+msgid "Partner"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_partner_leadger
+#: model:ir.actions.report,name:account_accountant.action_report_partnerledger
+#: model:ir.ui.menu,name:account_accountant.menu_partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+msgid "Partner Ledger"
+msgstr "Partner-Ledger"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_partnerledger
+msgid "Partner Ledger Report"
+msgstr "Partner-Ledger-Bericht"
+
+#. module: account_accountant
+#: model:ir.ui.menu,name:account_accountant.account_reports_partner
+msgid "Partner Reports"
+msgstr "Partnerberichte"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__result_selection
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__result_selection
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__result_selection
+msgid "Partner's"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Partners"
+msgstr "Partner"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__pay_time__pay_now
+msgid "Pay Directly"
+msgstr "Direkt bezahlen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__pay_time__pay_later
+msgid "Pay Later"
+msgstr "Später bezahlen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__pay_time
+msgid "Pay Time"
+msgstr "Zeit bezahlen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Pay your"
+msgstr "Zahlen Sie Ihre"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_aged_trial_balance__result_selection__supplier
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_common_partner_report__result_selection__supplier
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_partner_ledger__result_selection__supplier
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Payable Accounts"
+msgstr "Kreditorenbuchhaltung"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_followup_definition_form
+msgid "Payment Follow-ups"
+msgstr "Zahlungsnachverfolgung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.matching_account_payment
+msgid "Payment Matching"
+msgstr "Zahlungsabgleich"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_payment
+msgid "Payments"
+msgstr "Zahlungen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.payment_matching_view
+msgid "Payments Matching"
+msgstr "Übereinstimmende Zahlungen"
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_payment.py:0
+#: code:addons/language_translation/account_accountant/models/account_payment.py:0
+#, python-format
+msgid ""
+"Payments to print as a checks must have 'Check' or 'PDC' selected as payment"
+" method and not have already been reconciled"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_payment.py:0
+#: code:addons/language_translation/account_accountant/models/account_payment.py:0
+#, python-format
+msgid "Payments without a customer can't be matched"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__method_period
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__method_period
+msgid "Period Length"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__period_length
+msgid "Period Length (days)"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Periodicity"
+msgstr "Periodizität"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_asset_depreciation_confirmation_wizard
+msgid "Post Depreciation Lines"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_asset.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_asset.js:0
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__move_posted_check
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__move_check
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__journal_state__posted
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+#, python-format
+msgid "Posted"
+msgstr "Gesendet"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__posted_value
+msgid "Posted Amount"
+msgstr "Gebuchter Betrag"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Posted depreciation lines"
+msgstr "Gebuchte Abschreibungszeilen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__sign__1
+msgid "Preserve balance sign"
+msgstr "Preserve balance sign"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Presets config"
+msgstr "Presets config"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_aged_balance_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_bank_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_cash_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_day_book_form_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.financial_report_wiz_modified
+msgid "Print"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_payment.py:0
+#: code:addons/language_translation/account_accountant/models/account_payment.py:0
+#, python-format
+msgid "Print Pre-numbered Checks"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_print_journal__amount_currency
+msgid ""
+"Print Report with the currency column if the currency differs from the "
+"company currency."
+msgstr ""
+"Bei abweichender Währung sollten Auswertungen immer die Spalte Währung mit "
+"beinhalten."
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_profitloss_toreport0
+msgid "Profit (Loss) to report"
+msgstr ""
+
+#. module: account_accountant
+#: model:account.financial.report,name:account_accountant.account_financial_report_profitandloss0
+#: model:ir.actions.act_window,name:account_accountant.action_profit_and_loss_report
+#: model:ir.ui.menu,name:account_accountant.account_financial_reports_profit_loss
+msgid "Profit and Loss"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__prorata
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__prorata
+msgid "Prorata Temporis"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid ""
+"Prorata temporis can be applied only for time method \"number of "
+"depreciations\"."
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+msgid "Purchase"
+msgstr "Kauf"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Purchase Month"
+msgstr "Kaufmonat"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_category__type__purchase
+msgid "Purchase: Asset"
+msgstr "Kauf: Vermögenswert"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_modify__name
+msgid "Reason"
+msgstr "Grund"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_aged_trial_balance__result_selection__customer
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_common_partner_report__result_selection__customer
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_partner_ledger__result_selection__customer
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Receivable Accounts"
+msgstr "Debitorenbuchhaltung"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_aged_trial_balance__result_selection__customer_supplier
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_common_partner_report__result_selection__customer_supplier
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_partner_ledger__result_selection__customer_supplier
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Receivable and Payable Accounts"
+msgstr "Debitoren- und Kreditorenbuchhaltung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Recognition Account"
+msgstr "Anerkennungskonto"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Recognition Income Account"
+msgstr "Ertragskonto"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model_terms:ir.ui.view,arch_db:account_accountant.payment_matching_view
+#, python-format
+msgid "Reconcile"
+msgstr "Versöhnen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__reconciled
+msgid "Reconciled Entries"
+msgstr "Abgestimmte Einträge"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__recurring_interval
+msgid "Recurring Interval"
+msgstr "Wiederkehrendes Intervall"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__recurring_lines
+msgid "Recurring Lines"
+msgstr "Wiederkehrende Linien"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__recurring_period
+msgid "Recurring Period"
+msgstr "Wiederkehrende Periode"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_statement_line__recurring_ref
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__recurring_ref
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__recurring_ref
+msgid "Recurring Ref"
+msgstr "Wiederkehrende Ref"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_recurring_payments_form_view
+msgid "Recurring Template"
+msgstr "Wiederkehrende Vorlage"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_recurring_payments_view
+#: model:ir.ui.menu,name:account_accountant.account_recurring_payments_child1
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_recurring_payments_tree_view
+msgid "Recurring Templates"
+msgstr "Wiederkehrende Vorlagen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model_terms:ir.ui.view,arch_db:account_accountant.day_book_report_template
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_partnerledger
+#, python-format
+msgid "Ref"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__code
+msgid "Reference"
+msgstr "Referenz"
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_payment_register
+msgid "Register Payment"
+msgstr "Zahlung erfassen"
+
+#. module: account_accountant
+#: model:followup.line,name:account_accountant.followup_line_id
+msgid "Reminder"
+msgstr "Erinnerung"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_form
+msgid "Report"
+msgstr "Bericht"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__name
+msgid "Report Name"
+msgstr "Berichtsname"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_aged_balance_view
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_financial_report_search
+msgid "Report Type"
+msgstr "Berichtstyp"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__account_report_id
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__type__account_report
+msgid "Report Value"
+msgstr "Berichtswert"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+#, python-format
+msgid "Residual"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__value_residual
+msgid "Residual Value"
+msgstr "Restwert"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__sign__-1
+msgid "Reverse balance sign"
+msgstr "Reverse Balance Vorzeichen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_asset__state__open
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__state__running
+#: model:ir.model.fields.selection,name:account_accountant.selection__asset_asset_report__state__open
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_asset_report_search
+msgid "Running"
+msgstr "Laufen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS-Zustellungsfehler"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+msgid "Sale"
+msgstr "Verkauf"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_asset_category__type__sale
+msgid "Sale: Revenue Recognition"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+msgid "Sales"
+msgstr "msgid "Der Umsatz""
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__salvage_value
+msgid "Salvage Value"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Save and New"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+msgid "Search Asset Category"
+msgstr "Asset-Kategorie durchsuchen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_filter
+msgid "Search Follow-up"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_render.js:0
+#, python-format
+msgid "Select Partner"
+msgstr "Wählen Sie Partner"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Select a partner or choose a counterpart"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Sell or Dispose"
+msgstr "Verkaufen oder entsorgen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__sequence
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__sequence
+#: model:ir.model.fields,field_description:account_accountant.field_followup_line__sequence
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "Set to Draft"
+msgstr "Auf Entwurf setzen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Settings"
+msgstr "die Einstellungen"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__sign
+msgid "Sign on Reports"
+msgstr "Anmeldeberichte"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Skill Level: 50%"
+msgstr "Fähigkeitsstufe: 50%"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Skip"
+msgstr "Überspringen"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__6
+msgid "Smallest Text"
+msgstr "Kleinster Text"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_render.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_render.js:0
+#, python-format
+msgid "Some fields are undefined"
+msgstr "Einige Felder sind undefiniert"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__sortby
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__sortby
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__sortby
+msgid "Sort by"
+msgstr "Sortieren nach"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__date_from
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__date_from
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__date
+msgid "Starting Date"
+msgstr "Anfangsdatum"
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__method_period
+msgid "State here the time between 2 depreciations, in months"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_depreciation_line__parent_state
+msgid "State of Asset"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__state
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_payments__state
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__state
+msgid "Status"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Supplier Invoice"
+msgstr "Lieferantenrechnung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "TOP 10 CUSTOMERS"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_aged_trial_balance__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_balance_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_book_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_cash_book_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_account_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_common_partner_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_day_book_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_general_ledger__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_cash_flow_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_financial_report__target_move
+#: model:ir.model.fields,field_description:account_accountant.field_kit_account_tax_report__target_move
+msgid "Target Moves"
+msgstr "Filter Buchungen"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+msgid "Tax"
+msgstr "MwSt"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "Tax Amount"
+msgstr "Steuerbetrag"
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_journal_audit
+msgid "Tax Declaration"
+msgstr "Steuererklärung"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Tax Included in Price"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.actions.report,name:account_accountant.action_report_account_tax
+#: model:ir.model,name:account_accountant.model_kit_account_tax_report
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_tax
+#: model:ir.ui.menu,name:account_accountant.menu_tax_report
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_tax
+msgid "Tax Report"
+msgstr "Steuerbericht"
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_tax_report
+msgid "Tax Reports"
+msgstr "Steuerberichte"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Taxes"
+msgstr "Steuern"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "That's on average"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/payment_model.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/payment_model.js:0
+#, python-format
+msgid "The amount %s is not a valid partial amount"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__method_period
+msgid "The amount of time between two depreciations, in months"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_followup_line__delay
+msgid ""
+"The number of days after the due date of the invoice to wait before sending "
+"the reminder.  Could be negative if you want to send a polite alert "
+"beforehand."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__method_number
+#: model:ir.model.fields,help:account_accountant.field_account_asset_category__method_number
+msgid "The number of depreciations needed to depreciate your asset"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_move.py:0
+#: code:addons/language_translation/account_accountant/models/account_move.py:0
+#, python-format
+msgid ""
+"The number of depreciations or the period length of your asset category "
+"cannot be null."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "There is nothing to reconcile."
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_move_form_inherited
+#: model_terms:ir.ui.view,arch_db:account_accountant.header_view
+msgid "This Customer's due amount is"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "This Month"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "This Year"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_move_form_inherited
+#: model_terms:ir.ui.view,arch_db:account_accountant.header_view
+msgid "This customer's <strong>warning limit</strong> has been crossed."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid ""
+"This depreciation is already linked to a journal entry! Please post or "
+"delete it."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_cash_flow_report__label_filter
+msgid ""
+"This label will be displayed on report to show the balance computed for the "
+"given comparison filter."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_cash_flow_report__debit_credit
+#: model:ir.model.fields,help:account_accountant.field_financial_report__debit_credit
+msgid ""
+"This option allows you to get more details about the way your balances are "
+"computed. Because it is space consuming, we do not allow to use it while "
+"doing a comparison."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid ""
+"This page displays all the bank transactions that are to be reconciled and "
+"provides with a neat interface to do so."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "This payment is registered but not reconciled."
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_asset_depreciation_confirmation_wizard
+msgid ""
+"This wizard will post installment/depreciation lines for the selected month.<br/>\n"
+"                        This will generate journal entries for all related installment lines on this period of asset/revenue recognition as well."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__method_time
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__method_time
+msgid "Time Method"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "Time Method Based On"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__2
+msgid "Title 2 (bold)"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__style_overwrite__3
+msgid "Title 3 (bold, smaller)"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "To Check"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_form
+msgid ""
+"To remind customers of paying their invoices, you can\n"
+"                        define different actions depending on how severely\n"
+"                        overdue the customer is. These actions are bundled\n"
+"                        into follow-up levels that are triggered when the due\n"
+"                        date of an invoice has passed a certain\n"
+"                        number of days. If there are other overdue invoices for the\n"
+"                        same customer, the actions of the most\n"
+"                        overdue invoice will be executed."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "To speed up reconciliation, define"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_tree_view
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_agedpartnerbalance
+msgid "Total"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__total_due
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__total_due
+msgid "Total Due"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Total Expenses"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Total Income"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__total_overdue
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__total_overdue
+msgid "Total Overdue"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_bank_statement_line__due_amount
+#: model:ir.model.fields,field_description:account_accountant.field_account_move__due_amount
+#: model:ir.model.fields,field_description:account_accountant.field_account_payment__due_amount
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__due_amount
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__due_amount
+#: model:ir.model.fields,field_description:account_accountant.field_sale_order__due_amount
+msgid "Total Sale"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Transaction"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.actions.act_window,name:account_accountant.action_account_balance_menu
+#: model:ir.actions.report,name:account_accountant.action_report_trial_balance
+#: model:ir.ui.menu,name:account_accountant.menu_Balance_report
+msgid "Trial Balance"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_account_balance_report
+#: model:ir.model,name:account_accountant.model_report_account_accountant_report_trial_balance
+msgid "Trial Balance Report"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__type
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_category__type
+#: model:ir.model.fields,field_description:account_accountant.field_account_financial_report__type
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_search
+msgid "Type"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/report/report_aged_partner.py:0
+#: code:addons/language_translation/account_accountant/report/report_aged_partner.py:0
+#, python-format
+msgid "Unknown Partner"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_asset.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_asset.js:0
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__journal_state__draft
+#, python-format
+msgid "Unposted"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__unposted_value
+msgid "Unposted Amount"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#: code:addons/language_translation/account_accountant/static/src/js/account_dashboard.js:0
+#, python-format
+msgid "Unreconciled"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/template.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/template.xml:0
+#, python-format
+msgid "Unreconciled items"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.account_update_lock_date_form_view
+msgid "Update"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Validate"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_purchase_tree
+msgid "Vendor"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Verify"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__financial_report__view_format__vertical
+msgid "Vertical"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_financial_report__type__sum
+msgid "View"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_res_partner__warning_stage
+#: model:ir.model.fields,field_description:account_accountant.field_res_users__warning_stage
+msgid "Warning Amount"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/credit_limit.py:0
+#: code:addons/language_translation/account_accountant/models/credit_limit.py:0
+#, python-format
+msgid "Warning amount should be less than Blocking amount"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_asset_asset__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__recurring_period__weeks
+msgid "Weeks"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_asset_asset__state
+#: model:ir.model.fields,help:account_accountant.field_account_asset_depreciation_line__parent_state
+msgid ""
+"When an asset is created, the status is 'Draft'.\n"
+"If the asset is confirmed, the status goes in 'Running' and the depreciation lines can be posted in the accounting.\n"
+"You can manually close an asset when the depreciation is over. If the last line of depreciation is posted, the asset automatically goes in that status."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_print_journal__amount_currency
+#: model:ir.model.fields,field_description:account_accountant.field_account_report_partner_ledger__amount_currency
+msgid "With Currency"
+msgstr "Mit Währung"
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_balance_report__display_account__not_zero
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__display_account__not_zero
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__display_account__not_zero
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_common_account_report__display_account__not_zero
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_general_ledger__display_account__not_zero
+msgid "With balance is not equal to 0"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "With balance not equal to zero"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_balance_report__display_account__movement
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_bank_book_report__display_account__movement
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_cash_book_report__display_account__movement
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_common_account_report__display_account__movement
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_report_general_ledger__display_account__movement
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_bank_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_cash_book
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_general_ledger
+#: model_terms:ir.ui.view,arch_db:account_accountant.report_trial_balance
+msgid "With movements"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__res_partner__followup_status__with_overdue_invoices
+msgid "With overdue invoices"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/payment_matching.py:0
+#: code:addons/account_accountant/models/payment_matching.py:0
+#: code:addons/language_translation/account_accountant/models/payment_matching.py:0
+#: code:addons/language_translation/account_accountant/models/payment_matching.py:0
+#, python-format
+msgid "Write-Off"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "Writeoff Date"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_asset_asset_report__name
+msgid "Year"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields.selection,name:account_accountant.selection__account_recurring_payments__recurring_period__years
+msgid "Years"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/account_lock_date.py:0
+#: code:addons/language_translation/account_accountant/wizard/account_lock_date.py:0
+#, python-format
+msgid "You are not allowed to execute this action."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,help:account_accountant.field_account_financial_report__style_overwrite
+msgid ""
+"You can set up here the format you want this record to be displayed. If you "
+"leave the automatic formatting, it will be computed based on the financial "
+"reports hierarchy (auto-computed field 'level')."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "You cannot delete a document is in %s state."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "You cannot delete a document that contains posted entries."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "You cannot delete posted depreciation lines."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/models/account_asset.py:0
+#: code:addons/language_translation/account_accountant/models/account_asset.py:0
+#, python-format
+msgid "You cannot delete posted installment lines."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/account_bank_book_wizard.py:0
+#: code:addons/account_accountant/wizard/account_cash_book_wizard.py:0
+#: code:addons/language_translation/account_accountant/wizard/account_bank_book_wizard.py:0
+#: code:addons/language_translation/account_accountant/wizard/account_cash_book_wizard.py:0
+#, python-format
+msgid "You must choose a Start Date"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/general_ledger.py:0
+#: code:addons/language_translation/account_accountant/wizard/general_ledger.py:0
+#, python-format
+msgid "You must define a Start Date"
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/aged_partner.py:0
+#: code:addons/language_translation/account_accountant/wizard/aged_partner.py:0
+#, python-format
+msgid "You must set a period length greater than 0."
+msgstr ""
+
+#. module: account_accountant
+#: code:addons/account_accountant/wizard/aged_partner.py:0
+#: code:addons/language_translation/account_accountant/wizard/aged_partner.py:0
+#, python-format
+msgid "You must set a start date."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "You reconciled"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "and follow-up customers"
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model,name:account_accountant.model_asset_depreciation_confirmation_wizard
+msgid "asset.depreciation.confirmation.wizard"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_followup_followup_line_form
+msgid "days overdue, do the following actions:"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "e.g. Computers"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_asset_form
+msgid "e.g. Laptop iBook"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_form_view
+msgid "has no due amount."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "have been reconciled automatically."
+msgstr ""
+
+#. module: account_accountant
+#: model:ir.model.fields,field_description:account_accountant.field_account_recurring_entries_line__tmpl_id
+msgid "id"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.asset_modify_form
+#: model_terms:ir.ui.view,arch_db:account_accountant.view_account_asset_category_form
+msgid "months"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "reconcile"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "reconciliation models"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "remaining)"
+msgstr ""
+
+#. module: account_accountant
+#: model_terms:ir.ui.view,arch_db:account_accountant.customer_statements_form_view
+msgid "report"
+msgstr "Bericht"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "seconds per transaction."
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "statement lines"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "transactions in"
+msgstr ""
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "unpaid invoices"
+msgstr "unbezahlte Rechnungen"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "unreconciled entries"
+msgstr "nicht abgestimmte Einträge"
+
+#. module: account_accountant
+#. openerp-web
+#: code:addons/account_accountant/static/src/xml/payment_matching.xml:0
+#: code:addons/language_translation/account_accountant/static/src/xml/payment_matching.xml:0
+#, python-format
+msgid "vendor bills"
+msgstr "Lieferantenrechnungen"

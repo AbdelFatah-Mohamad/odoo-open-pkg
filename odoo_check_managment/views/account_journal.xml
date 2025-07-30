@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="account_journal_inherit_check_management" model="ir.ui.view">
+        <field name="name">account.journal.view.form.inherit</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="is_check_box" invisible="type != 'bank'"/>
+                <field name="is_returned_check_box" invisible="type not in ('bank','general')"/>
+                <field name="return_check_account" invisible="is_returned_check_box == False" required="is_returned_check_box == True" />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="checks" string="Check Books" invisible="type != 'bank' or is_check_box == True or is_returned_check_box == True">
+                    <field name="check_books_ids" >
+                        <list create="true" delete="true" edit="true" >
+                            <field name="name" />
+                            <field name="state" />
+                            <field name="check_no_from" />
+                            <field name="num_of_check" />
+                            <field name="bank_id" />
+                            <field name="currency_id" widget="many2one" />
+                            <field name="bank_id" widget="many2one" />
+                        </list>
+                    </field>
+                </page>
+                <page name="checks" string="Checks" invisible="type != 'bank'">
+                    <field name="checks_ids" readonly="1">
+                        <list>
+                            <field name="name" />
+                            <field name="check_no" />
+                            <field name="due_date" required="1"/>
+                            <field name="currency_id" widget="many2one" />
+                            <field name="amount" />
+                            <field name="payment_id" widget="many2one" />
+                            <field name="bank_id" widget="many2one" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

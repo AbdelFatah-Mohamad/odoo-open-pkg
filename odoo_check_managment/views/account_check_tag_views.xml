@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View account.check.tag View List -->
+    <record id="view_account_check_tag_list" model="ir.ui.view">
+        <field name="name">view.account.check.tag.list</field>
+        <field name="model">account.check.tag</field>
+        <field name="arch" type="xml">
+            <list editable="top" >
+                <field name="name"/>
+                <field name="color"/>
+                <field name="sequence"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- View account.check.tag search -->
+    <record id="view_account_check_tag_search" model="ir.ui.view">
+        <field name="name">view.account.check.tag.search</field>
+        <field name="model">account.check.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action account.check.tag -->
+    <record id="action_account_check_tag" model="ir.actions.act_window">
+        <field name="name">Account Check Tag</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.check.tag</field>
+        <field name="view_mode">list</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Account Check Tag.
+            </p>
+        </field>
+    </record>
+</odoo>
