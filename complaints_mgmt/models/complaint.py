@@ -66,9 +66,6 @@ class Complaint(models.Model):
 
     attachment_ids = fields.Many2many(
         'ir.attachment',
-        'complaint_attachment_rel',
-        'complaint_id',
-        'attachment_id',
         string='Attachments',
         help='Supporting documents for this complaint'
     )
