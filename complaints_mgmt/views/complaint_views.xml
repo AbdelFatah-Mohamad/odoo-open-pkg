@@ -150,7 +150,7 @@
                         <group>
                             <group name="complainant_info" string="Complainant Information">
                                 <field name="is_admin" invisible="1"/>
-                                <field name="partner_id" readonly="not is_admin and state in ['new']"/>
+                                <field name="partner_id" readonly="not is_admin"/>
                                 <field name="child_partner_id"
                                        invisible="state not in ['new', 'in_progress']"
                                        options="{'no_create': True}"/>
