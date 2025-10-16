@@ -90,14 +90,13 @@
                         <!-- Status Bar -->
                         <field name="state" widget="statusbar"
                                statusbar_visible="new,in_progress,approved,in_payment,paid"/>
-
-                        <!-- Admin Buttons -->
                         <button name="return_state"
                                 type="object"
                                 string="Return to Step"
                                 class="oe_highlight"
                                 invisible="state == 'new'"
                                 groups="complaints_mgmt.group_complaint_admin"/>
+                        <!-- Admin Buttons -->
                         <button name="action_set_in_progress"
                                 type="object"
                                 string="Set In Progress"
@@ -150,12 +149,11 @@
 
                         <group>
                             <group name="complainant_info" string="Complainant Information">
-                                <field name="partner_id" readonly="1"/>
+                                <field name="is_admin" invisible="1"/>
+                                <field name="partner_id" readonly="not is_admin and state in ['new']"/>
                                 <field name="child_partner_id"
                                        invisible="state not in ['new', 'in_progress']"
-                                       options="{'no_create': True}"
-                                       readonly="not is_admin and state in ['new']"
-                                       />
+                                       options="{'no_create': True}"/>
                             </group>
 
                             <group name="target_info" string="Target Company">

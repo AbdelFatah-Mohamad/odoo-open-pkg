@@ -34,10 +34,14 @@ class Complaint(models.Model):
 
     is_admin = fields.Boolean(
         string='Is Admin',
-        compute=lambda self: self.env.user.has_group('complaints_mgmt.group_complaint_admin'),
+        compute='_compute_is_admin',
         store=False,
         help='Whether the current user is an administrator'
     )
+
+    def _compute_is_admin(self):
+        for rec in self:
+            rec.is_admin = self.env.user.has_group('complaints_mgmt.group_complaint_admin')
 
     child_partner_id = fields.Many2one(
         'res.partner',
