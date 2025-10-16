@@ -27,10 +27,16 @@ class Complaint(models.Model):
         'res.partner',
         string='Complainant',
         required=True,
-        readonly=True,
         default=lambda self: self.env.user.partner_id.id,
         tracking=True,
         help='The person submitting the complaint (defaults to current user)'
+    )
+
+    is_admin = fields.Boolean(
+        string='Is Admin',
+        compute=lambda self: self.env.user.has_group('complaints_mgmt.group_complaint_admin'),
+        store=False,
+        help='Whether the current user is an administrator'
     )
 
     child_partner_id = fields.Many2one(
@@ -126,6 +132,24 @@ class Complaint(models.Model):
         help='Current status of the complaint'
     )
 
+    def return_state(self):
+        """Return the current state of the complaint."""
+        self.ensure_one()
+        if self.state == 'in_progress':
+            self.state = 'new'
+        elif self.state == 'approved':
+            self.state = 'in_progress'
+        elif self.state == 'in_payment':
+            self.state = 'approved'
+        elif self.state == 'paid':
+            self.state = 'in_payment'
+        elif self.state == 'rejected':
+            self.state = 'in_progress'
+        else:
+            self.state = 'new'
+
+
+
     # Computed Fields for UI Control
     can_company_act = fields.Boolean(
         string='Company Can Act',
@@ -218,6 +242,7 @@ class Complaint(models.Model):
             if vals.get('name', _('New')) == _('New'):
                 vals['name'] = self.env['ir.sequence'].next_by_code('complaints.complaint') or _('New')
         return super().create(vals_list)
+
 
     # Helper Methods
     def _ensure_admin(self):
