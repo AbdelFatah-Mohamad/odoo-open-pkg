@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Configuration Menu -->
+        <menuitem
+            id="menu_complaints_configuration"
+            name="Configuration"
+            parent="menu_complaints_root"
+            sequence="100"
+            groups="complaints_mgmt.group_complaint_admin"/>
+
+        <!-- Target Company Action -->
+        <record id="action_target_company" model="ir.actions.act_window">
+            <field name="name">Target Companies</field>
+            <field name="res_model">complaints.target_company</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Add a Target Company
+                </p>
+                <p>
+                    Configure companies that users can file complaints against.
+                    Assign reviewers who can handle complaints and complainant users who can submit them.
+                </p>
+            </field>
+        </record>
+
+        <!-- Configuration Menu Item -->
+        <menuitem
+            id="menu_target_companies"
+            name="Target Companies"
+            parent="menu_complaints_configuration"
+            action="action_target_company"
+            sequence="10"/>
+
+        <!-- List View -->
+        <record id="view_target_company_list" model="ir.ui.view">
+            <field name="name">complaints.target_company.list</field>
+            <field name="model">complaints.target_company</field>
+            <field name="arch" type="xml">
+                <list string="Target Companies">
+                    <field name="name"/>
+                    <field name="reviewer_user_ids" widget="many2many_tags"/>
+                    <field name="complainant_user_ids" widget="many2many_tags"/>
+                    <field name="complaint_count" string="Complaints"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_target_company_form" model="ir.ui.view">
+            <field name="name">complaints.target_company.form</field>
+            <field name="model">complaints.target_company</field>
+            <field name="arch" type="xml">
+                <form string="Target Company">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_complaints"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-list">
+                                <field name="complaint_count" widget="statinfo" string="Complaints"/>
+                            </button>
+                        </div>
+
+                        <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+
+                        <group>
+                            <group>
+                                <field name="name" placeholder="e.g., Acme Corporation"/>
+                                <field name="active" widget="boolean_toggle"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="reviewers" string="Reviewers">
+                                <field name="reviewer_user_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="email"/>
+                                        <field name="company_id"/>
+                                    </list>
+                                </field>
+                                <div class="text-muted mt-2">
+                                    <i class="fa fa-info-circle"/> Users who can review and act on complaints for this company.
+                                    They must have the "Complaint Company User" group assigned.
+                                </div>
+                            </page>
+
+                            <page name="complainants" string="Complainants">
+                                <field name="complainant_user_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="email"/>
+                                        <field name="company_id"/>
+                                    </list>
+                                </field>
+                                <div class="text-muted mt-2">
+                                    <i class="fa fa-info-circle"/> Users who are allowed to submit complaints against this company.
+                                    They must have at least the "Complaint User" group assigned.
+                                </div>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_target_company_search" model="ir.ui.view">
+            <field name="name">complaints.target_company.search</field>
+            <field name="model">complaints.target_company</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <filter name="filter_active" string="Active" domain="[('active', '=', True)]"/>
+                    <filter name="filter_inactive" string="Archived" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

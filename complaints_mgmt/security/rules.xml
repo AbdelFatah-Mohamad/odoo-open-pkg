@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Rule: User sees own complaints + complaints for their children AND company permission -->
+        <record id="complaint_rule_user_own" model="ir.rule">
+            <field name="name">User Own Complaints</field>
+            <field name="model_id" ref="model_complaints_complaint"/>
+            <field name="domain_force">['&amp;',
+                '|',
+                    ('partner_id', '=', user.partner_id.id),
+                    ('child_partner_id.parent_id', '=', user.partner_id.id),
+                ('target_company_id.complainant_user_ids', 'in', [user.id])
+            ]</field>
+            <field name="groups" eval="[(4, ref('group_complaint_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- Rule: Company user sees complaints where they are a reviewer -->
+        <record id="complaint_rule_company_by_company" model="ir.rule">
+            <field name="name">Company User See Target Company Complaints</field>
+            <field name="model_id" ref="model_complaints_complaint"/>
+            <field name="domain_force">[('target_company_id.reviewer_user_ids', 'in', [user.id])]</field>
+            <field name="groups" eval="[(4, ref('group_complaint_company'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- Rule: Admin sees all complaints -->
+        <record id="complaint_rule_admin_all" model="ir.rule">
+            <field name="name">Admin See All Complaints</field>
+            <field name="model_id" ref="model_complaints_complaint"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_complaint_admin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>

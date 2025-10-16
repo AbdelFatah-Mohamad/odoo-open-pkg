@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Demo Target Company -->
+        <record id="target_company_demo_1" model="complaints.target_company">
+            <field name="name">Demo Company A</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- Assign Admin as both Reviewer and Complainant for demo -->
+        <record id="target_company_demo_1" model="complaints.target_company">
+            <field name="name">Demo Company A</field>
+            <field name="reviewer_user_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="complainant_user_ids" eval="[(4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

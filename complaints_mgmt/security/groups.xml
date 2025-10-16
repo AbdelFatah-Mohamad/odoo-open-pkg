@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Complaint User Group (Base) -->
+        <record id="group_complaint_user" model="res.groups">
+            <field name="name">Complaint User</field>
+            <field name="category_id" ref="base.module_category_services"/>
+            <field name="comment">User can submit and view their own complaints</field>
+        </record>
+
+        <!-- Complaint Company User Group -->
+        <record id="group_complaint_company" model="res.groups">
+            <field name="name">Complaint Company User</field>
+            <field name="category_id" ref="base.module_category_services"/>
+            <field name="implied_ids" eval="[(4, ref('group_complaint_user'))]"/>
+            <field name="comment">Company user can review complaints targeting their company</field>
+        </record>
+
+        <!-- Complaint Admin Group -->
+        <record id="group_complaint_admin" model="res.groups">
+            <field name="name">Complaint Administrator</field>
+            <field name="category_id" ref="base.module_category_services"/>
+            <field name="implied_ids" eval="[(4, ref('group_complaint_user'))]"/>
+            <field name="comment">Administrator can manage all complaints and handle payments</field>
+        </record>
+    </data>
+</odoo>

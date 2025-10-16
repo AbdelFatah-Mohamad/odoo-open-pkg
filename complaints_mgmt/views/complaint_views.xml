@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- List View with Decorations -->
+        <record id="view_complaint_list" model="ir.ui.view">
+            <field name="name">complaints.complaint.list</field>
+            <field name="model">complaints.complaint</field>
+            <field name="arch" type="xml">
+                <list string="Complaints"
+                      default_order="create_date desc"
+                      decoration-danger="state == 'rejected'"
+                      decoration-success="state == 'paid'"
+                      decoration-warning="state == 'in_progress'"
+                      decoration-info="state == 'approved'">
+                    <field name="name" string="Reference"/>
+                    <field name="partner_id" string="Complainant"/>
+                    <field name="child_partner_id" string="Child" optional="hide"/>
+                    <field name="target_company_id" string="Target Company"/>
+                    <field name="amount_requested" widget="monetary"/>
+                    <field name="currency_id" column_invisible="1"/>
+                    <field name="state" widget="badge"
+                           decoration-danger="state == 'rejected'"
+                           decoration-success="state == 'paid'"
+                           decoration-warning="state == 'in_progress'"
+                           decoration-info="state == 'approved'"/>
+                    <field name="create_date" string="Submitted On"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Kanban View Grouped by State -->
+        <record id="view_complaint_kanban" model="ir.ui.view">
+            <field name="name">complaints.complaint.kanban</field>
+            <field name="model">complaints.complaint</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" class="o_kanban_small_column">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="target_company_id"/>
+                    <field name="amount_requested"/>
+                    <field name="currency_id"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <span class="float-end badge rounded-pill"
+                                          t-att-class="{
+                                              'rejected': 'text-bg-danger',
+                                              'paid': 'text-bg-success',
+                                              'approved': 'text-bg-info',
+                                              'in_progress': 'text-bg-warning',
+                                              'in_payment': 'text-bg-primary',
+                                              'new': 'text-bg-secondary'
+                                          }[record.state.raw_value]">
+                                        <field name="state"/>
+                                    </span>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <div>
+                                        <i class="fa fa-user"/> <field name="partner_id"/>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-building"/> <field name="target_company_id"/>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-money"/>
+                                        <field name="amount_requested" widget="monetary"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Form View with Statusbar and Role-Based Buttons -->
+        <record id="view_complaint_form" model="ir.ui.view">
+            <field name="name">complaints.complaint.form</field>
+            <field name="model">complaints.complaint</field>
+            <field name="arch" type="xml">
+                <form string="Complaint">
+                    <header>
+                        <!-- Status Bar -->
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="new,in_progress,approved,in_payment,paid"/>
+
+                        <!-- Admin Buttons -->
+                        <button name="action_set_in_progress"
+                                type="object"
+                                string="Set In Progress"
+                                class="oe_highlight"
+                                invisible="state != 'new'"
+                                groups="complaints_mgmt.group_complaint_admin"/>
+
+                        <button name="action_set_in_payment"
+                                type="object"
+                                string="In Payment"
+                                class="oe_highlight"
+                                invisible="state != 'approved'"
+                                groups="complaints_mgmt.group_complaint_admin"/>
+
+                        <button name="action_set_paid"
+                                type="object"
+                                string="Mark Paid"
+                                class="oe_highlight"
+                                invisible="state != 'in_payment'"
+                                groups="complaints_mgmt.group_complaint_admin"/>
+
+                        <!-- Company Buttons -->
+                        <button name="action_request_docs"
+                                type="object"
+                                string="Request Documents"
+                                invisible="not can_company_act"
+                                groups="complaints_mgmt.group_complaint_company"/>
+
+                        <button name="action_approve"
+                                type="object"
+                                string="APPROVE"
+                                class="oe_highlight"
+                                invisible="not can_company_act"
+                                groups="complaints_mgmt.group_complaint_company"/>
+
+                        <button name="action_reject"
+                                type="object"
+                                string="REJECT"
+                                class="btn-danger"
+                                invisible="not can_company_act"
+                                groups="complaints_mgmt.group_complaint_company"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group name="complainant_info" string="Complainant Information">
+                                <field name="partner_id" readonly="1"/>
+                                <field name="child_partner_id"
+                                       invisible="state not in ['new', 'in_progress']"
+                                       options="{'no_create': True}"/>
+                            </group>
+
+                            <group name="target_info" string="Target Company">
+                                <field name="target_company_id"
+                                       readonly="state != 'new'"
+                                       options="{'no_create': True}"
+                                       required="1"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group name="amounts" string="Financial Details">
+                                <field name="currency_id"
+                                       readonly="state != 'new'"
+                                       options="{'no_create': True}"/>
+                                <field name="amount_requested"
+                                       readonly="state != 'new'"/>
+                                <field name="amount_covered_company"
+                                       readonly="state not in ['in_progress']"
+                                       groups="complaints_mgmt.group_complaint_company,complaints_mgmt.group_complaint_admin"/>
+                                <field name="amount_approved_admin"
+                                       readonly="state not in ['approved', 'in_payment']"
+                                       groups="complaints_mgmt.group_complaint_admin"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="description" string="Description">
+                                <field name="description"
+                                       readonly="state not in ['new', 'in_progress']"
+                                       placeholder="Provide a detailed description of your complaint..."/>
+                            </page>
+
+                            <page name="company_notes"
+                                  string="Company Notes"
+                                  groups="complaints_mgmt.group_complaint_company,complaints_mgmt.group_complaint_admin">
+                                <field name="company_notes"
+                                       readonly="state not in ['in_progress']"
+                                       placeholder="Internal notes from company reviewer..."/>
+                            </page>
+
+                            <page name="attachments" string="Attachments">
+                                <field name="attachment_ids" widget="many2many_binary"
+                                       readonly="not can_user_upload"/>
+                            </page>
+                        </notebook>
+
+                        <!-- Computed Fields (Hidden) -->
+                        <field name="can_company_act" invisible="1"/>
+                        <field name="can_user_upload" invisible="1"/>
+                    </sheet>
+
+                    <!-- Chatter -->
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_complaint_search" model="ir.ui.view">
+            <field name="name">complaints.complaint.search</field>
+            <field name="model">complaints.complaint</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Reference"/>
+                    <field name="partner_id" string="Complainant"/>
+                    <field name="target_company_id" string="Target Company"/>
+
+                    <filter name="filter_my_complaints"
+                            string="My Complaints"
+                            domain="[('partner_id', '=', uid)]"/>
+
+                    <filter name="filter_new"
+                            string="New"
+                            domain="[('state', '=', 'new')]"/>
+
+                    <filter name="filter_in_progress"
+                            string="In Progress"
+                            domain="[('state', '=', 'in_progress')]"/>
+
+                    <filter name="filter_approved"
+                            string="Approved"
+                            domain="[('state', '=', 'approved')]"/>
+
+                    <filter name="filter_paid"
+                            string="Paid"
+                            domain="[('state', '=', 'paid')]"/>
+
+                    <filter name="filter_rejected"
+                            string="Rejected"
+                            domain="[('state', '=', 'rejected')]"/>
+
+                    <separator/>
+
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_state"
+                                string="Status"
+                                context="{'group_by': 'state'}"/>
+                        <filter name="group_by_company"
+                                string="Target Company"
+                                context="{'group_by': 'target_company_id'}"/>
+                        <filter name="group_by_complainant"
+                                string="Complainant"
+                                context="{'group_by': 'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
