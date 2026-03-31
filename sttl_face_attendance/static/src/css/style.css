@@ -1,0 +1,93 @@
+.o_capture_image_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.o_modal_content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    text-align: center;
+}
+
+.o_modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.o_modal_body video {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#camera_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black overlay with transparency */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cam-div {
+    background-color: white; /* White background for the camera capture interface */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#camera-stream {
+    width: 100%; /* Full-width video element */
+    height: auto;
+    max-width: 600px; /* Maximum width to avoid stretching */
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#capture-button, #close-button {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#capture-button:hover {
+    background-color: #0056b3; 
+}
+
+#capture-button, #close-button {
+    width: 100%; 
+    max-width: 300px; 
+}
+
+/* .alert {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+} */
+
+

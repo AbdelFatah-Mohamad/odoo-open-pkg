@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-name="CaptureEmployeeImage">
+        <div class="o_capture_image_modal">
+            <div class="o_modal_content">
+                <div class="o_modal_header">
+                    <h3>Capture Employee Image</h3>
+                    <button type="button" class="btn-close" id="btn-close"></button>
+                </div>
+                <div class="o_modal_body">
+                    <video id="video" autoplay="1"></video>
+                    <button type="button" class="btn btn-primary mt-3" id="btn-click">Capture</button>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                </div>
+                <div class="o_modal_footer">
+                    <button type="button" class="btn btn-secondary" id="btn-close-sub">Close</button>
+                </div>
+            </div>
+        </div>
+    </t>
+</template>

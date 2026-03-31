@@ -1,0 +1,12 @@
+<odoo>
+    <record id="hr_employee_face_capture" model="ir.ui.view">
+        <field name="name">hr.employee.face.capture</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_1920']" position="after">
+                <button name="new_employee_image" type="object" id="image-capture-button" class="oe_highlight" string="CLICK IMAGE"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
