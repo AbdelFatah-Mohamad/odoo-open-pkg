@@ -21,7 +21,7 @@
 #############################################################################
 {
     'name': 'Document Management',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Document Management',
     'summary': 'The Document Management module to access document tools',
     'description': 'The Document Management module provides a quick access to '
@@ -33,6 +33,7 @@
     'depends': ['mail', 'website', 'hr'],
     'data': [
         'security/enhanced_document_management_groups.xml',
+        'security/enhanced_document_management_security.xml',
         'security/ir.model.access.csv',
         'data/document_data.xml',
         'data/ir_cron_data.xml',

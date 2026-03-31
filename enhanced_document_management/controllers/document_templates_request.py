@@ -120,7 +120,7 @@ class DocumentRequest(http.Controller):
         return request.render(
             'enhanced_document_management.document_request_submit_template')
 
-    @http.route('/document_request/templates', type='json', auth="public")
+    @http.route('/document_request/templates', type='jsonrpc', auth="public")
     def get_document_request_template(self, **kw):
         """This route is called whenever a template is selected to render
         that template in UI"""

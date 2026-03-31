@@ -28,6 +28,4 @@ class DocumentTag(models.Model):
 
     name = fields.Char(string="name",required=True)
 
-    _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Tag name already exists!"),
-    ]
+    _name_uniq = models.UniqueIndex('(name)', 'Tag name already exists!')

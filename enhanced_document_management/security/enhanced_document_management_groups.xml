@@ -1,19 +1,18 @@
 <odoo>
-    <!-- Define a module category for Document Management -->
-    <record id="module_document_module" model="ir.module.category">
+    <!-- Define privilege for Document Management -->
+    <record id="res_groups_privilege_document" model="res.groups.privilege">
         <field name="name">Document Management</field>
-        <field name="description">Access for Document module</field>
         <field name="sequence">50</field>
     </record>
     <!-- Define a group 'User' -->
     <record id="view_own_document" model="res.groups">
         <field name="name">User</field>
-        <field name="category_id" ref="module_document_module"/>
+        <field name="privilege_id" ref="res_groups_privilege_document"/>
     </record>
     <!-- Define a group 'Manager' with implied 'User' group and associated users -->
     <record id="view_all_document" model="res.groups">
         <field name="name">Manager</field>
-        <field name="category_id" ref="module_document_module"/>
+        <field name="privilege_id" ref="res_groups_privilege_document"/>
         <field name="implied_ids" eval="[(4, ref('view_own_document'))]"/>
         <field name="users" eval="[(4, ref('base.user_admin'))]"/>
     </record>
