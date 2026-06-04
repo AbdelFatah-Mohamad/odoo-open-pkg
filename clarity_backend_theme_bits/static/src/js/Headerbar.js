@@ -5,7 +5,7 @@ import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { debounce } from "@web/core/utils/timing";
 import { ErrorHandler } from "@web/core/utils/components";
-import { NavBarDropdownItem,MenuDropdown } from '@web/static/src/webclient/navbar/navbar';
+import { NavBarDropdownItem, MenuDropdown } from '@web/static/src/webclient/navbar/navbar';
 import {
     Component,
     onWillDestroy,
@@ -16,7 +16,7 @@ import {
 } from "@odoo/owl";
 const systrayRegistry = registry.category("systray");
 
-const getBoundingClientRect = Element.prototype.getBoundingClientRect;  
+const getBoundingClientRect = Element.prototype.getBoundingClientRect;
 
 export class HeaderBar extends NavBar {
     setup() {
@@ -74,7 +74,7 @@ export class HeaderBar extends NavBar {
 
     // This dummy setter is only here to prevent conflicts between the
     // Enterprise NavBar extension and the Website NavBar patch.
-    set currentAppSections(_) {}
+    set currentAppSections(_) { }
 
     get systrayItems() {
         return systrayRegistry
@@ -86,7 +86,7 @@ export class HeaderBar extends NavBar {
 
     // This dummy setter is only here to prevent conflicts between the
     // Enterprise NavBar extension and the Website NavBar patch.
-    set systrayItems(_) {}
+    set systrayItems(_) { }
 
     /**
      * Adapt will check the available width for the app sections to get displayed.

@@ -45,8 +45,16 @@ patch(NavBar.prototype, {
         toggleEl.classList.toggle("visible");
         toggleEl.classList.toggle("sidebar-open");
         const navWrapper = document.querySelector(".nav-wrapper-bits");
+        const contentWrapper = document.querySelector('.content-wrapper-bits');
+        if (!this.state.isSidebarOpen) {
+            contentWrapper.classList.add('responsive-content');
+        } else {
+            contentWrapper.classList.remove('responsive-content');
+
+        }
         if (navWrapper) {
             navWrapper.classList.toggle("toggle-show");
+
         }
     },
 

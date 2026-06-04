@@ -20,7 +20,7 @@
                         </div>
                     </header>
                 </div>
-                <div class="content-wrapper-bits">
+                <div class="content-wrapper-bits responsive-content">
                     <t t-if="!state.fullscreen">
                         <NavBar/>
                     </t>

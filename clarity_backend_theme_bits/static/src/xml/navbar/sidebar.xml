@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
     <!-- Extend web.NavBar -->
     <t t-inherit="web.NavBar" t-inherit-mode="extension" owl="1">
-        <xpath expr="//DropdownItem[@t-if='!env.isSmall and currentApp']" position="before">
+        <xpath expr="//DropdownItem[@t-if='!this.ui.isSmall and currentApp']" position="before">
             <div class="sidebar-toggler d-flex align-items-center p-2 ms-2">
                 <a href="javascript:;" class="sidebar-toggle-bits" t-on-click="toggleSidebar">
                     <i class="toggle fa fa-bars fa-2x"/>
@@ -13,7 +13,7 @@
                 </t>
             </div>
         </xpath>
-        <xpath expr="//DropdownItem[@t-if='!env.isSmall and currentApp']" position="replace"/>
+        <xpath expr="//DropdownItem[@t-if='!this.ui.isSmall and currentApp']" position="replace"/>
         <xpath expr="//t[t[@t-call='web.NavBar.SectionsMenu']]" position="replace"/>
         <xpath expr="//t[@t-call='web.NavBar.AppsMenu']" position="replace"/>
     </t>

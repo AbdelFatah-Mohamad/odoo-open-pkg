@@ -1,4 +1,16 @@
 body.o_web_client{
+  --o-statusbar-border-active : #282828 !important;
+  .btn-primary{
+    background-color: #282828 !important;
+    color: #fff !important;
+    border-color: #fff;
+    border: 1px solid #282828;
+    &:focus,&:active,&:hover{
+      background-color: #fff !important;  
+      color: #282828 !important;
+      border-color: #282828 !important;
+    }
+  }
   flex-flow: row !important; 
   .wrapper-container-bits{
     display: flex;
@@ -6,6 +18,9 @@ body.o_web_client{
     .content-wrapper-bits{
       width: 100%;
       overflow-x: clip;
+      &.responsive-content{
+        width: calc(100% - 250px) !important;
+      }
       @media (max-width: 1540px) {
         height: 100%;
         // overflow: auto; 
@@ -174,13 +189,11 @@ body.o_web_client{
                 }
               }
               .o_cp_searchview .o_searchview{
-                border-radius: 8px 1px 1px 8px;
+                border-radius: 8px 0px 0 8px !important;
                 border-color: #282828;
               }
-              .o-dropdown{
-                button.o_searchview_dropdown_toggler{
-                  border-radius: 0px 8px 8px 0px;
-                }
+              .o_searchview_dropdown_toggler{
+                border-radius: 0px 8px 8px 0px !important;
               }
               .o_search_bar_menu{
                 i{
@@ -241,22 +254,24 @@ body.o_web_client{
               // overflow: hidden;
               .o_statusbar_buttons{
                 .btn-primary{
-                  background-color: #71639e !important;
-                  border-color: #71639e !important; 
+                  background-color: #282828 !important;
+                  border-color: #282828 !important; 
                   &:hover{
                     background-color: #fff !important;
+                    color: #282828 !important;
                   }
                 }
                 .btn-secondary{
                   background-color: #fff !important;
-                  border-color: #71639e !important;
+                  border-color: #282828 !important;
                   &:hover{
-                    background-color: #71639e !important;
+                    color: #fff !important;
+                    background-color: #282828 !important;
                   }
                 }
               }
               .o_arrow_button{
-                border-color: #71639e !important; 
+                border-color: #282828 !important; 
                 background-color: #fff;
                 &:after{ 
                   border-color: #fff;
@@ -273,8 +288,6 @@ body.o_web_client{
                   font-size: 14px;
                   text-align: center;
                   cursor: default;
-                  margin: 0 3px;
-                  padding: 5px 25px;
                   float: left;
                   position: relative;
                   background-color: #d9e3f7 !important;
@@ -287,9 +300,7 @@ body.o_web_client{
                     right: -17px;
                     width: 0;
                     height: 0;
-                    border-top: 15px solid transparent;
-                    border-bottom: 15px solid transparent;
-                    border-left: 17px solid #d9e3f7;	
+                    
                     z-index: 2;
                     transition: border-color 0.2s ease; 
                   }
@@ -314,9 +325,9 @@ body.o_web_client{
                     span{
                       color: #fff !important;
                     } 
-                    background-color: #71639e !important;
+                    background-color: #282828 !important;
                     &:after{
-                      border-left: 17px solid #71639e;
+                      border-left: 17px solid #282828;
                     }
                   }
                 }
@@ -375,11 +386,17 @@ body.o_web_client{
             }
           }
         }
-        // kanban view
+      
         .o_kanban_view{
           .o_kanban_record{
-            margin: 14px 5px 0px !important;
+            margin: 0px 0px !important;
             border-radius: 15px;
+            &::after{
+              border-radius: 15px !important;
+              width: 100%;
+              border-right: 0 !important;
+              border-left-width: 4px !important;
+            }
             .oe_kanban_card,.oe_kanban_global_click{
               border-radius: 8px;
               border-color: #2828286e;
@@ -388,6 +405,23 @@ body.o_web_client{
               padding: 14px;
             }
           }
+          // kanban view
+        .o_kanban_renderer{
+          .o_dropdown_kanban{
+            .dropdown-toggle{
+              &:active,&:focus,&:hover{
+                border-radius: 0px 15px 0 15px !important;
+                border-color: #2828286e;
+              }
+            }
+          }
+          gap: 8px !important;  
+          .o_kanban_group{
+            .o_kanban_record{
+              margin: 8px 0px !important;
+            }
+          }                                   
+        }
         }
         // list view
         .o_list_view.o_action{
