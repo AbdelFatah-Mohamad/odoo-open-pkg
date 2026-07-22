@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import TransactionCase
+from odoo.tests import TransactionCase, tagged
 from odoo.exceptions import UserError
 
 
+@tagged('post_install', '-at_install')
 class TestComplaints(TransactionCase):
     """Test complaint workflow from submission to payment."""
 
@@ -15,33 +16,35 @@ class TestComplaints(TransactionCase):
         self.group_user = self.env.ref('complaints_mgmt.group_complaint_user')
         self.group_company = self.env.ref('complaints_mgmt.group_complaint_company')
         self.group_admin = self.env.ref('complaints_mgmt.group_complaint_admin')
-
-        # Create test company
-        self.target_company = self.env['res.company'].create({
-            'name': 'Test Target Company',
-        })
+        self.group_internal = self.env.ref('base.group_user')
 
         # Create test users
         self.user_complainant = self.env['res.users'].create({
             'name': 'Test Complainant',
             'login': 'complainant@test.com',
             'email': 'complainant@test.com',
-            'groups_id': [(6, 0, [self.group_user.id])],
+            'groups_id': [(6, 0, [self.group_user.id, self.group_internal.id])],
         })
 
         self.user_company = self.env['res.users'].create({
             'name': 'Company Reviewer',
             'login': 'company@test.com',
             'email': 'company@test.com',
-            'company_id': self.target_company.id,
-            'groups_id': [(6, 0, [self.group_company.id])],
+            'groups_id': [(6, 0, [self.group_company.id, self.group_internal.id])],
+        })
+
+        # Create target company; enroll complainant + reviewer
+        self.target_company = self.env['complaints.target_company'].create({
+            'name': 'Test Target Company',
+            'complainant_user_ids': [(6, 0, [self.user_complainant.id])],
+            'reviewer_user_ids': [(6, 0, [self.user_company.id])],
         })
 
         self.user_admin = self.env['res.users'].create({
             'name': 'Admin User',
             'login': 'admin@test.com',
             'email': 'admin@test.com',
-            'groups_id': [(6, 0, [self.group_admin.id])],
+            'groups_id': [(6, 0, [self.group_admin.id, self.group_internal.id])],
         })
 
         # Create test currency
@@ -55,7 +58,7 @@ class TestComplaints(TransactionCase):
         # Step 1: User creates complaint
         complaint = self.env['complaints.complaint'].with_user(self.user_complainant).create({
             'partner_id': self.user_complainant.partner_id.id,
-            'company_target_id': self.target_company.id,
+            'target_company_id': self.target_company.id,
             'description': 'Test complaint description',
             'amount_requested': 1000.0,
             'currency_id': self.currency.id,
@@ -93,7 +96,7 @@ class TestComplaints(TransactionCase):
         # Step 1: User creates complaint
         complaint = self.env['complaints.complaint'].with_user(self.user_complainant).create({
             'partner_id': self.user_complainant.partner_id.id,
-            'company_target_id': self.target_company.id,
+            'target_company_id': self.target_company.id,
             'description': 'Test complaint for rejection',
             'amount_requested': 500.0,
             'currency_id': self.currency.id,
@@ -117,7 +120,7 @@ class TestComplaints(TransactionCase):
 
         complaint = self.env['complaints.complaint'].with_user(self.user_complainant).create({
             'partner_id': self.user_complainant.partner_id.id,
-            'company_target_id': self.target_company.id,
+            'target_company_id': self.target_company.id,
             'description': 'Test complaint for doc request',
             'amount_requested': 300.0,
             'currency_id': self.currency.id,
@@ -151,7 +154,7 @@ class TestComplaints(TransactionCase):
             self.env['complaints.complaint'].with_user(self.user_complainant).create({
                 'partner_id': parent.id,
                 'child_partner_id': unrelated.id,
-                'company_target_id': self.target_company.id,
+                'target_company_id': self.target_company.id,
                 'description': 'Invalid child test',
                 'amount_requested': 100.0,
                 'currency_id': self.currency.id,
@@ -163,7 +166,7 @@ class TestComplaints(TransactionCase):
         # Create complaint as complainant
         complaint = self.env['complaints.complaint'].with_user(self.user_complainant).create({
             'partner_id': self.user_complainant.partner_id.id,
-            'company_target_id': self.target_company.id,
+            'target_company_id': self.target_company.id,
             'description': 'Security test complaint',
             'amount_requested': 200.0,
             'currency_id': self.currency.id,
@@ -174,7 +177,7 @@ class TestComplaints(TransactionCase):
             'name': 'Other User',
             'login': 'other@test.com',
             'email': 'other@test.com',
-            'groups_id': [(6, 0, [self.group_user.id])],
+            'groups_id': [(6, 0, [self.group_user.id, self.group_internal.id])],
         })
 
         # Other user should not see the complaint
@@ -194,7 +197,7 @@ class TestComplaints(TransactionCase):
 
         complaint = self.env['complaints.complaint'].with_user(self.user_complainant).create({
             'partner_id': self.user_complainant.partner_id.id,
-            'company_target_id': self.target_company.id,
+            'target_company_id': self.target_company.id,
             'description': 'Admin permission test',
             'amount_requested': 150.0,
             'currency_id': self.currency.id,
