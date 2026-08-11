@@ -8,6 +8,8 @@
             <list string="Document request template">
                 <field name="name"/>
                 <field name="manager_id"/>
+                <field name="template" column_invisible="True"/>
+                <button name="action_preview_document" string="Preview" type="object" icon="fa-eye" invisible="not template"/>
             </list>
         </field>
     </record>
@@ -17,18 +19,23 @@
         <field name="model">document.request.template</field>
         <field name="arch" type="xml">
             <form string="Document request template">
+                <header>
+                    <button type="object"
+                            invisible="not template"
+                            string="Preview Document"
+                            name="action_preview_document"/>
+                </header>
                 <sheet>
                     <field name="stamp" widget="image" class="oe_avatar" options="{'preview_image': 'stamp'}"/>
                     <div class="oe_title">
                         <h1>
                             <div class="d-flex">
-                                <field class="text-break" name="name" options="{'line_breaks': False}" widget="text" placeholder="e.g. Leave Letter" readonly="1"/>
+                                <field class="text-break" name="name" options="{'line_breaks': False}" widget="text" placeholder="e.g. Leave Letter"/>
                             </div>
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field  name="name"/>
                             <field name="manager_id"
                                    domain="[('id', 'in', user_ids)]"/>
                              <field name="company_id"/>
@@ -42,7 +49,6 @@
                         </page>
                     </notebook>
                 </sheet>
-                <chatter open_attachments="True"/>
             </form>
         </field>
     </record>
@@ -55,7 +61,7 @@
                 <field name="name" string="Name"/>
                 <field name="company_id" string="Company"/>
                 <filter string="My Document Templates" name="manager_id"
-                        domain="[('manager_id.id', '=', uid)]"/>
+                        domain="[('manager_id', '=', uid)]"/>
             </search>
         </field>
     </record>

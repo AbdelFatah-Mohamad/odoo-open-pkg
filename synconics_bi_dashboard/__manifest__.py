@@ -152,6 +152,7 @@ Overview Dashboard | Search Keywords: Odoo BI Dashboard, Synconics Dashboard, Bu
         "views/res_users_view.xml",
     ],
     "images": ["static/description/main_screen.gif"],
+    "live_test_url": "https://www.synconics.com/demo-odoo-apps?utm_source=odoo&utm_medium=apps-store&utm_campaign=synconics_bi_dashboard",
     "license": "OPL-1",
     "uninstall_hook": "uninstall_hook",
     "installable": True,

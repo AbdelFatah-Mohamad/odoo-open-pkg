@@ -3,8 +3,8 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Mruthul Raj(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
@@ -30,7 +30,7 @@ class DocumentFile(http.Controller):
 
     @http.route('/web/content/share/', type='http', auth='public',
                 website='True')
-    def document_share(self, **kwargs):
+    def action_document_share(self, **kwargs):
         """Share a document and prepare the context for rendering.
         :param kwargs: A dictionary containing the 'unique' key for
          identifying the document to share.
@@ -64,11 +64,20 @@ class DocumentFile(http.Controller):
         :rtype: Http.Response
         """
         param_value = request.params.get('param')
-        param_list = eval(param_value)
+        if not param_value:
+            param_list = []
+        else:
+            try:
+                import ast
+                param_list = ast.literal_eval(param_value)
+                if not isinstance(param_list, list):
+                    param_list = [param_list]
+            except (ValueError, SyntaxError):
+                param_list = []
         zip_data = io.BytesIO()
         with zipfile.ZipFile(zip_data, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for doc in request.env['document.file'].sudo().browse(param_list):
-                if doc.content_type != "url":
+                if doc.content_type != "url" and not doc.is_locked:
                     zipf.write(doc.attachment_id._full_path(
                         doc.attachment_id.store_fname), doc.attachment_id.name)
         headers = [

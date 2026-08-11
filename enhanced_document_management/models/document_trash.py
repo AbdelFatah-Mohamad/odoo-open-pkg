@@ -3,7 +3,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
 #    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
@@ -19,8 +19,8 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-from odoo import api, fields, models, _
-
+from odoo import api, fields, models
+from odoo.tools import _
 
 class DocumentTrash(models.Model):
     """Module to store deleted documents for a specific time,
@@ -32,33 +32,33 @@ class DocumentTrash(models.Model):
     attachment = fields.Binary(string="File", readonly=True,
                                help="Document data")
     document_create_date = fields.Datetime(string="Date",
-                                           help="Document create date")
+                                           help="Document creation date")
     workspace_id = fields.Many2one(
         "document.workspace", string="Workspace", required=True,
-        help="workspace name"
+        help="Workspace associated with this document."
     )
     user_id = fields.Many2one(
         "res.users",
         string="Owner",
         default=lambda self: self.env.user,
-        help="""owner name, if the document belongs to a specific user""",
+        help="User who owned the document",
     )
     brochure_url = fields.Char(string="URL", store=True,
                                help="Document sharable URL")
     extension = fields.Char(string="Extension",
-                            help="helps to determine the file type")
+                            help="Helps to determine the file type.")
     priority = fields.Selection(
         selection=[("0", "None"), ("1", "Favorite")],
         string="Priority",
-        help="Favorite button",
+        help="Priority/Favorite status.",
     )
     attachment_id = fields.Many2one(
         "ir.attachment",
         string="Attachment",
-        help="Used to access datas without search function",
+        help="Attachment linked to this trashed document.",
     )
     content_url = fields.Char(
-        string="Content Url", help="It store the URL for url type documents"
+        string="Content Url", help="It stores the URL for URL type documents"
     )
     content_type = fields.Selection(
         [("file", "File"), ("url", "Url")],
@@ -66,12 +66,12 @@ class DocumentTrash(models.Model):
         string="Content type",
     )
     preview = fields.Char(
-        string="Preview", help="Used to show a preview for URL file type"
+        string="Preview", help="Preview URL for link-based documents."
     )
     active = fields.Boolean(
-        string="Active", default=True, help="It specify archived file"
+        string="Active", default=True, help="It specifies the archived file"
     )
-    days = fields.Integer(string="Days", help="auto delete in days")
+    days = fields.Integer(string="Days", help="Automatic deletion after specified number of days.")
     deleted_date = fields.Date(string="Deleted Date", help="File deleted date")
     mimetype = fields.Char(string="Mime Type", help="Document mimetype")
     description = fields.Text(string="Description", help="Short description")
@@ -83,45 +83,55 @@ class DocumentTrash(models.Model):
             ("specific_users", "Specific Users"),
         ],
         default="managers_and_owner",
-        help="""Privet : only the uploaded user can view
-                    Managers & Owner : Document shared with Managers """,
+        help=(
+            "Private: only the uploaded user can view. "
+            "Managers & Owner: Document shared with managers and the owner."
+        )
     )
     user_ids = fields.Many2many(
-        "res.users", help="Can access the documents", string="User Access"
+        "res.users", help="Users allowed to access this document.", string="User Access"
     )
     partner_id = fields.Many2one(
-        "res.partner", help="Document related partner name",
+        "res.partner", help="Partner related to this document.",
         string="Related Partner"
     )
-    auto_delete = fields.Boolean(
-        string="Auto Delete", default=False, help="Document delete status"
+    is_auto_delete = fields.Boolean(
+        string="Auto Delete", default=False, help="Enable automatic document deletion."
     )
     delete_date = fields.Date(
         string="Date Delete",
         readonly=True,
-        help="Used to calculate file remove date from trash",
+        help="Date when the document will be removed from the trash.",
     )
     file_url = fields.Char(
-        string="File URL", help="""it store url while adding an url document"""
+        string="File URL", help="It stores the URL while adding an URL document"
     )
-    size = fields.Char(string="Size", help="it store size of the document")
+    size = fields.Char(string="Size", help="Size of the document.")
     company_id = fields.Many2one(
         related='workspace_id.company_id', string='Company',
         help="Company Name")
 
-    def delete_doc(self):
-        """Function to delete all the documents after the trash date"""
+    def cron_delete_doc(self):
+        """Delete all documents whose trash retention period has elapsed."""
         trash_limit = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("document_management.trash")
+            .get_param("enhanced_document_management.trash")
         )
-        if trash_limit:
-            for rec in self.search([]):
-                if fields.Date.today() == fields.Date.add(
-                        rec.deleted_date, days=int(trash_limit)
-                ):
-                    rec.unlink()
+        if not trash_limit:
+            return
+
+        try:
+            trash_limit = int(trash_limit)
+        except ValueError:
+            return
+
+        cutoff_date = fields.Date.subtract(
+            fields.Date.today(), days=trash_limit
+        )
+        self.search([
+            ('deleted_date', '<=', cutoff_date)
+        ]).unlink()
 
     def action_restore_document(self):
         """
@@ -137,7 +147,7 @@ class DocumentTrash(models.Model):
             'name': self.name,
             'extension': self.extension,
             'attachment': self.attachment,
-            'date': fields.Date.today(),
+            'date': self.document_create_date or fields.Datetime.now(),
             'workspace_id': self.workspace_id.id,
             'user_id': self.user_id.id,
             'content_type': self.content_type,
@@ -146,15 +156,18 @@ class DocumentTrash(models.Model):
             'mimetype': self.mimetype,
             'description': self.description,
             'content_url': self.content_url,
-            'user_ids': self.user_ids.ids,
-            'partner_id': self.partner_id,
+            'security': self.security,
+            'priority': self.priority,
+            'user_ids': [(6, 0, self.user_ids.ids)],
+            'partner_id': self.partner_id.id,
             'days': self.days,
+            'file_url': self.file_url,
         })
         attachment_id = self.env['ir.attachment'].sudo().create(
             {'name': self.name,
              'datas': self.attachment,
              'res_model': 'document.file',
-             'res_id': self.id,
+             'res_id': doc_id.id,
              }
         )
         doc_id.attachment_id = attachment_id.id
@@ -176,16 +189,18 @@ class DocumentTrash(models.Model):
         The record will be automatically deleted on the calculated delete date.
         :return: None
         """
-        self.write({'delete_date': fields.Date.add(fields.Date.today(),
-                                                   days=self.days)})
+        self.delete_date = fields.Date.add(fields.Date.today(), days=self.days)
 
     def auto_delete_doc(self):
         """
         Automatically delete documents based on a schedule action.
         This function searches for documents marked for automatic deletion
-        (auto_delete=True) and with a delete date less than or equal to the
+        (is_auto_delete=True) and with a delete date less than or equal to the
         current date. It then deletes these documents from the system.
         :return: None
         """
-        self.search([('auto_delete', '=', True),
-                     ('delete_date', '<=', fields.Date.today())]).unlink()
+        self.search([
+            ('is_auto_delete', '=', True),
+            ('delete_date', '!=', False),
+            ('delete_date', '<=', fields.Date.today())
+        ]).unlink()

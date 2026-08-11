@@ -2,7 +2,7 @@
 <odoo>
     <!-- Define a form view for the res.config.settings model -->
     <record id="res_config_settings_view_form" model="ir.ui.view">
-        <field name="name">res.config.settings.view.form.inherit.cyllo.documents
+        <field name="name">res.config.settings.view.form.inherit.documents
         </field>
         <field name="model">res.config.settings</field>
         <field name="priority" eval="15"/>
@@ -30,7 +30,6 @@
         <field name="res_model">res.config.settings</field>
         <field name="view_id" ref="res_config_settings_view_form"/>
         <field name="view_mode">form</field>
-        <field name="target">inline</field>
         <field name="context">{'module' : 'document_management'}</field>
     </record>
 </odoo>

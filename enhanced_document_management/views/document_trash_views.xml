@@ -56,9 +56,9 @@
                         </group>
                         <group>
                             <field name="partner_id" string="Related Partner"/>
-                            <field name="auto_delete"/>
-                            <field name="days" invisible="auto_delete == False"/>
-                            <field name="delete_date" invisible="auto_delete == False"/>
+                            <field name="is_auto_delete"/>
+                            <field name="days" invisible="is_auto_delete == False"/>
+                            <field name="delete_date" invisible="is_auto_delete == False"/>
                         </group>
                     </group>
                     <group string="Description">

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="theme_crest.HeaderTemplateOption" t-inherit="website.HeaderTemplateOption" t-inherit-mode="extension">
+        <BuilderSelect action="'reloadComposite'" position="inside">
+            <BuilderSelectItem
+                id="'header_theme_crest_1_bits'"
+                title.translate="Header Style 1"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_1'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header1' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_1.svg'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem
+                id="'header_theme_crest_2_bits'"
+                title.translate="Header Style 2"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_2'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header2' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_2.svg'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem
+                id="'header_theme_crest_3_bits'"
+                title.translate="Header Style 3"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_3'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header3' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_3.svg'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem
+                id="'header_theme_crest_4_bits'"
+                title.translate="Header Style 4"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_4'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header4' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_4.svg'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem
+                id="'header_theme_crest_5_bits'"
+                title.translate="Header Style 5"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_5'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header5' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_5.svg'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem
+                id="'header_theme_crest_6_bits'"
+                title.translate="Header Style 6"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_6'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header6' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_6.svg'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem
+                id="'header_theme_crest_7_bits'"
+                title.translate="Header Style 7"
+                actionParam="[
+                    {
+                        action: 'websiteConfig',
+                        actionParam: {
+                            views: ['theme_crest.header_theme_crest_7'],
+                            vars: { 'header-links-style': 'default', 'header-template': 'Header7' },
+                            checkVars: false,
+                        }
+                    }
+                ]">
+                <Img attrs="{ style:' width: calc(100% - 0.5rem);' }" src="'/theme_crest/static/images/header_view_theme/header_1_6.svg'"/>
+            </BuilderSelectItem>
+        </BuilderSelect>
+
+    </t>
+    
+    <t t-name="theme_crest.FooterTemplateOption" t-inherit="website.FooterTemplateOption" t-inherit-mode="extension">
+        <BuilderSelect action="'websiteConfigFooter'" position="inside">
+              <BuilderSelectItem title.translate="Footer 1"
+                actionParam="{ view: 'theme_crest.footer_1_bits', vars: { 'footer-template': 'footer_1_bits' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_1.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 2"
+                actionParam="{ view: 'theme_crest.footer_2_bits', vars: { 'footer-template': 'footer2' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_2.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 3"
+                actionParam="{ view: 'theme_crest.footer_3_bits', vars: { 'footer-template': 'footer3' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_3.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 4"
+                actionParam="{ view: 'theme_crest.footer_4_bits', vars: { 'footer-template': 'footer4' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_4.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 5"
+                actionParam="{ view: 'theme_crest.footer_5_bits', vars: { 'footer-template': 'footer5' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_5.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 6"
+                actionParam="{ view: 'theme_crest.footer_6_bits', vars: { 'footer-template': 'footer6' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_6.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 7"
+                actionParam="{ view: 'theme_crest.footer_7_bits', vars: { 'footer-template': 'footer7' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_7.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 8"
+                actionParam="{ view: 'theme_crest.footer_8_bits', vars: { 'footer-template': 'footer8' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_8.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 9"
+                actionParam="{ view: 'theme_crest.footer_9_bits', vars: { 'footer-template': 'footer9' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_9.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title.translate="Footer 10"
+                actionParam="{ view: 'theme_crest.footer_10_bits', vars: { 'footer-template': 'footer10' } }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_crest/static/images/footer_view_theme/footer_10.svg'"/>
+            </BuilderSelectItem>
+        </BuilderSelect>
+    </t>
+
+
+     <t t-name="theme_crest.ImageToolOptionBits" t-inherit="html_builder.ImageToolOption" t-inherit-mode="extension">
+       <xpath expr="//BuilderRow[@label.translate='Description']" position="after">
+            <BuilderRow label.translate="Hotspot Enable">
+                <BuilderSelect action="'o_hotspot_enabled'" >
+                    <BuilderSelectItem actionValue="'off'">Off</BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'on'">On</BuilderSelectItem>
+                </BuilderSelect> 
+            </BuilderRow>
+        </xpath>
+    </t>
+
+    <t t-name="theme_crest.hotspotClassPlugin">
+         <BuilderRow label.translate="Hotspot Action">
+            <BuilderSelect>
+                <BuilderSelectItem classAction="'redirect_url'" id="'action_redirect_url'">Redirect URL</BuilderSelectItem>
+                <BuilderSelectItem classAction="'redirect_product'" id="'action_product_redirect_url'">Redirect on product</BuilderSelectItem>
+                <BuilderSelectItem classAction="'show_card_product'" id="'action_display_product_url'">Display basic product card</BuilderSelectItem>
+                <BuilderSelectItem classAction="'show_card_hotspot_bits quickviewbits'" id="'action_display_advanced_product_url'">Display advanced product card</BuilderSelectItem>
+            </BuilderSelect>
+        </BuilderRow>
+        <BuilderRow label.translate="Your URL" t-if="isActiveItem('action_redirect_url')" level="1">
+            <!-- <BuilderTextInput action="'setHotspotUrl'"  default.translate="Write your text" /> -->
+            <BuilderUrlPicker title.translate="Your URL"
+                action="'setHotspotUrl'"
+                inputClasses="'o_we_large'"
+                placeholder.translate="www.example.com"/>
+        </BuilderRow>
+         <BuilderRow label.translate="Product" t-if="isActiveItem('action_product_redirect_url') || isActiveItem('action_display_product_url') || isActiveItem('action_display_advanced_product_url')" level="1">
+            <BuilderMany2One
+                action="'setHotspotProduct'"
+                model="'product.template'"
+                fields="['type', 'product_variant_ids']"
+                domain="[['is_published', '=', true], ['sale_ok', '=', true]]"
+            />
+        </BuilderRow>
+        
+          <BuilderRow label.translate="Your URL" t-if="isActiveItem('action_product_redirect_url')" level="1">
+                <BuilderUrlPicker title.translate="Your URL"
+                action="'setHotspotUrl'"
+                inputClasses="'o_we_large'"
+                placeholder.translate="www.example.com"/>
+        </BuilderRow>
+        <BuilderRow  label.translate="'Open in new'" t-if="isActiveItem('action_product_redirect_url') || isActiveItem('action_redirect_url')" level="1">
+              <BuilderCheckbox 
+                    attributeAction="'target'"
+                    attributeActionValue="'_blank'"
+                    applyTo="'a.hotspot-link'"
+                    preview="false"
+                />
+        </BuilderRow>
+        <BuilderRow label.translate="Hotspot Move Top">
+            <BuilderRange
+                styleAction="'top'" 
+                unit="'%'"
+                min="0"
+                max="97"
+                step="0" />
+        </BuilderRow>
+
+        <BuilderRow label.translate="Hotspot Move Left">
+             <BuilderRange
+                styleAction="'left'" 
+                unit="'%'"
+                min="0"
+                max="97"
+                step="0" />
+        </BuilderRow>
+         <BuilderRow label.translate="Icon Show/hide Hotspot">
+            <BuilderSelect>
+                <BuilderSelectItem classAction="'show_icon'" >Show Icon</BuilderSelectItem>
+                <BuilderSelectItem classAction="'icons_none'" id="'icons_none_Shape'">None</BuilderSelectItem>
+            </BuilderSelect>
+        </BuilderRow>
+        
+        <BuilderRow label.translate="Hotspot Shape" t-if="isActiveItem('icons_none_Shape')">
+            <BuilderSelect>
+                <BuilderSelectItem classAction="'shape-none'" >None</BuilderSelectItem>
+                <BuilderSelectItem classAction="'circle'">Circle</BuilderSelectItem>
+                <BuilderSelectItem classAction="'square'">Square</BuilderSelectItem>
+            </BuilderSelect>
+        </BuilderRow>
+           <BuilderRow label.translate="Animation Hind/Show Hotspot">
+            <BuilderSelect>
+                <BuilderSelectItem classAction="'fade_hotspot'" id="'fade_hotspot_animate'" >Fade</BuilderSelectItem>
+                <BuilderSelectItem classAction="'blink'">Blink</BuilderSelectItem>
+            </BuilderSelect>
+        </BuilderRow>
+         <BuilderRow label.translate="Animation Theme Hotspot" t-if="isActiveItem('fade_hotspot_animate') || isActiveItem('icons_none_Shape')">
+            <BuilderSelect>
+                <BuilderSelectItem classAction="'animate-hotspot-none'">None</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-2'">Animation 1</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-burst'" >Burst</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-ping'">Ping</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-twist'" >Twist</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-breathe'">Breathe</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-glitch'">Glitch</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-radar'">Radar</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-bounce'">Bounce</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-wave'">Wave</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-twinkle'">Twinkle</BuilderSelectItem>
+                <BuilderSelectItem classAction="'animate-hotspot-spinpulse'">Spin Pulse</BuilderSelectItem>
+            </BuilderSelect>
+        </BuilderRow>
+        <BuilderRow label.translate="Animation Color Hotspot">
+            <BuilderColorPicker title.translate="'Hotspot Animation color'" styleAction="'--hotspot-border-color'"/>
+        </BuilderRow>
+    </t>
+    <t t-name="theme_crest.ColorHotspotOption">
+        <BuilderRow label.translate="Hotspot Icons">
+            <BuilderSelect>
+                <BuilderSelectItem classAction="'fa-plus'">Plus</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-star'">Star</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-heart'" >Heart</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-circle'">Circle</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-shopping-basket'" >Shopping Basket</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-shopping-bag'" >Shopping Bag</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-dot-circle-o'" >Dot Circle</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-map-marker'" >Map</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-eye'" >Eye</BuilderSelectItem>
+                <BuilderSelectItem classAction="'fa-shopping-cart'" >Shopping Cart</BuilderSelectItem>
+            </BuilderSelect>
+        </BuilderRow>
+        <BuilderRow label.translate="Color Hotspot">
+            <BuilderColorPicker title.translate="'Color Hotspot'" styleAction="'color'"/>
+        </BuilderRow>
+    </t>
+</templates>
+

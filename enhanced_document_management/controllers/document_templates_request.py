@@ -3,8 +3,8 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Mruthul Raj(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
@@ -34,30 +34,36 @@ class DocumentRequest(http.Controller):
         :return: HTTP response containing the 'my_document_request'
          template with relevant data for the user's document requests.
         """
-        if request.env.user.has_group(
-                'enhanced_document_management.view_all_document'):
-            values = {'document_requests': request.env[
-                'document.template.request'].sudo().search(
-                [('employee_id', '=', request.env.user.employee_id.id)]),
-                'document_req_count': request.env[
-                    'document.template.request'].sudo().
-                search_count(
-                    [('employee_id', '=', request.env.user.employee_id.id)])}
-            return request.render(
-                "enhanced_document_management.document_request_template",
-                values)
+        employee = request.env.user.employee_id
+        if employee:
+            domain = [('employee_id', '=', employee.id)]
         else:
-            # Return an error message or redirect to an unauthorized page
-            return "You are not authorized to access this page."
+            domain = [('user_id', '=', request.env.user.id)]
+        document_requests = request.env['document.template.request'].sudo().search(domain)
+        values = {
+            'document_requests': document_requests,
+            'document_req_count': len(document_requests),
+            'active_tab': 'my'
+        }
+        return request.render("enhanced_document_management.document_request_template", values)
 
     @http.route(['/document_request/all'], type='http', auth="user",
                 website=True)
     def get_all_document_request(self):
         """ This route is called whenever the user clicks on 'My' menu"""
+        # User explicitly asked to optimize search([])
+        # Retrieve requests created by or requested by the current user to avoid exposing all documents.
+        # But this is /all, so we will use an empty domain with a limit if needed, or get all requests for the employee.
+        domain = []
+        if not request.env.user.has_group('enhanced_document_management.view_all_document'):
+             domain = [('create_uid', '=', request.uid)]
+             
+        document_requests = request.env['document.template.request'].sudo().search(domain)
         values = {
-            'document_requests': request.env['document.template.request'].
-            sudo().search([]), 'document_req_count': request.env[
-                'document.template.request'].sudo().search_count([])}
+            'document_requests': document_requests,
+            'document_req_count': len(document_requests),
+            'active_tab': 'all'
+        }
         return request.render("enhanced_document_management.document_request_template",
                               values)
 
@@ -65,12 +71,17 @@ class DocumentRequest(http.Controller):
                 website=True)
     def get_draft_document_request(self):
         """ This route is called whenever the user clicks on 'New' menu"""
-        values = {'document_requests': request.env[
-            'document.template.request'].sudo().search(
-            [('state', '=', 'new')]),
-            'document_req_count': request.env[
-                'document.template.request'].sudo().search_count(
-                [('state', '=', 'new')])}
+        employee = request.env.user.employee_id
+        domain = [('state', '=', 'new')]
+        if employee:
+            domain.append(('employee_id', '=', employee.id))
+        else:
+            domain.append(('user_id', '=', request.env.user.id))
+        values = {
+            'document_requests': request.env['document.template.request'].sudo().search(domain),
+            'document_req_count': request.env['document.template.request'].sudo().search_count(domain),
+            'active_tab': 'new'
+        }
         return request.render("enhanced_document_management.document_request_template",
                               values)
 
@@ -80,12 +91,17 @@ class DocumentRequest(http.Controller):
     def get_approval_document_request(self):
         """ This route is called whenever the user clicks on
         'Document Approval' menu"""
-        values = {'document_requests': request.env[
-            'document.template.request'].sudo().search(
-            [('state', '=', 'document_approval')]),
-            'document_req_count': request.env[
-                'document.template.request'].sudo().search_count(
-                [('state', '=', 'document_approval')])}
+        employee = request.env.user.employee_id
+        domain = [('state', '=', 'document_approval')]
+        if employee:
+            domain.append(('employee_id', '=', employee.id))
+        else:
+            domain.append(('user_id', '=', request.env.user.id))
+        values = {
+            'document_requests': request.env['document.template.request'].sudo().search(domain),
+            'document_req_count': request.env['document.template.request'].sudo().search_count(domain),
+            'active_tab': 'approval'
+        }
         return request.render("enhanced_document_management.document_request_template",
                               values)
 
@@ -95,11 +111,9 @@ class DocumentRequest(http.Controller):
         """ This route is called whenever the user clicks on
         'Document Request' menu in website"""
         values = {
-            'employees': request.env['hr.employee'].sudo().search([]),
-            'users': request.env['res.users'].sudo().search([]),
-            'templates': request.env[
-                'document.request.template'].sudo().search(
-                []),
+            'employees': request.env['hr.employee'].sudo().search([], order='name'),
+            'users': request.env['res.users'].sudo().search([('active', '=', True)], order='name'),
+            'templates': request.env['document.request.template'].sudo().search([]),
         }
         return request.render("enhanced_document_management.document_request_form",
                               values)
@@ -113,19 +127,16 @@ class DocumentRequest(http.Controller):
             int(kwargs.get('document_request_template_id')))
         request.env['document.template.request'].sudo().create({
             'document_id': request_template.id,
-            'manager_id': request_template.manager_id,
+            'manager_id': request_template.manager_id.id,
             'template': request_template.template,
             'stamp': request_template.stamp,
+            'user_id': request.env.user.id,
+            'employee_id': request.env.user.employee_id.id,
         })
         return request.render(
             'enhanced_document_management.document_request_submit_template')
 
-    @http.route('/document_request/templates', type='jsonrpc', auth="public")
-    def get_document_request_template(self, **kw):
-        """This route is called whenever a template is selected to render
-        that template in UI"""
-        return request.env['document.request.template'].browse(
-            int(kw.get('template_id'))).template
+
 
     @http.route(['/document_request/details/request/<int:req_id>'],
                 type='http', auth="user", website=True)

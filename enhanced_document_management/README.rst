@@ -1,26 +1,30 @@
-.. image:: https://img.shields.io/badge/licence-LGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/license-LGPL--3-green.svg
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 
 Document Management
 ===================
 The Document Management module provide a quick access to create, share and delete.
-The module requires beautiful Soup python library
+
+Configuration
+-------------
+The module requires BeautifulSoup and linkpreview python libraries.
+
+Company
+-------
+* `Cybrosys Techno Solutions <https://cybrosys.com/>`__
 
 License
 -------
 General Public License, Version 3 (LGPL v3).
 (https://www.odoo.com/documentation/user/17.0/legal/licenses/licenses.html)
 
-Company
--------
-* `Cybrosys Techno Solutions <https://cybrosys.com/>`__
-
 Credits
 -------
 * Developers: (V16) Mohamed Savad, Gokul PI, Megha AP, Javid, Nisiya, Farhana Jahan PT
               (V17) Gayathri V,
               (V18) Mruthul Raj,
+              (V19) Anjali VP,
 * Contact: odoo@cybrosys.com
 
 Contacts

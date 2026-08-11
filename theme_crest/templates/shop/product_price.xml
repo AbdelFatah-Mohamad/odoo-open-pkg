@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="product_price" name="Product Price">
+        <t t-set="is_b2b_enabled" t-value="request.website.sudo().get_b2b_config()"/>
+        <t t-if="not is_b2b_enabled">
+              <div
+            name="product_price"
+            t-attf-class="product_price {{'' if is_view_active('website_sale.cta_wrapper_boxed') else 'mt-2'}} {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-block'}}"
+        >
+            <div
+                name="product_price_container"
+                class="css_editable_mode_hidden d-flex align-items-center justify-content-end gap-2 flex-wrap h4 mb-0 text-wrap"
+            >
+                <span class="oe_price"
+                      style="white-space: nowrap;"
+                      t-out="combination_info['price']"
+                      t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                <span t-attf-class="text-muted oe_default_price ms-1 h5 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                      style="text-decoration: line-through; white-space: nowrap;"
+                      t-out="combination_info['list_price']"
+                      t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                      name="product_list_price"
+                />
+                <t t-if="is_view_active('website_sale.tax_indication')" t-call="website_sale.tax_indication"/>
+                <del
+                    name="product_price_strikethrough"
+                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                    class="text-muted ms-1 h5 oe_compare_list_price"
+                >
+                    <bdi dir="inherit">
+                    <span t-out="combination_info['compare_list_price']"
+                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    </bdi>
+                </del>
+            </div>
+            <div
+                t-if="editable"
+                name="product_list_price_container"
+                class="css_non_editable_mode_hidden decimal_precision h4"
+                t-att-data-precision="str(website.currency_id.decimal_places)"
+            >
+                <span t-field="product.list_price"
+                      t-options="{'widget': 'monetary', 'display_currency': product.currency_id}"/>
+                <t t-if="is_view_active('website_sale.tax_indication')" t-call="website_sale.tax_indication"/>
+                <del t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])">
+                    <bdi dir="inherit">
+                    <span t-field="product.compare_list_price"
+                          t-options="{'widget': 'monetary', 'display_currency': product.currency_id}"/>
+                    </bdi>
+                </del>
+            </div>
+            <small t-if="combination_info.get('tax_disclaimer')" class="text-muted">
+                <t t-out="combination_info['tax_disclaimer']"/>
+            </small>
+        </div>
+        <div id="product_unavailable" t-attf-class="{{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}}">
+            <br/>
+        </div>
+        </t>
+        <t t-else="">
+            <t t-call="theme_crest.b2b_pricing_content_bits"/>
+        </t>
+    </template>
+
+</odoo>

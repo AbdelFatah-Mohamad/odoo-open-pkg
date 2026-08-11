@@ -44,9 +44,9 @@
                 <field name="is_locked"/>
                 <field name="is_crm_install"/>
                 <field name="is_project_install"/>
-                <field name="document_tag_id"/>
+                <field name="document_tag_ids"/>
                 <templates>
-                    <t t-name="kanban-box">
+                    <t t-name="card">
                         <div class="kanban_document"
                              t-att-data-id="record.id.value">
                             <div class="o_kanban_record d-flex flex-grow-1 flex-md-shrink-1 flex-shrink-0 oe_file_request"
@@ -97,11 +97,18 @@
                                                          alt="pdf"/>
                                                 </t>
                                                 <t t-elif="Extension == 'txt'">
-                                                    <a t-att-href="record.content_url.value">
+                                                    <t t-if="record.is_locked.raw_value">
                                                         <img src="/enhanced_document_management/static/images/text.png"
                                                              t-att-data-id="record.id.value"
                                                              alt="txt"/>
-                                                    </a>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <a t-att-href="record.content_url.value">
+                                                            <img src="/enhanced_document_management/static/images/text.png"
+                                                                 t-att-data-id="record.id.value"
+                                                                 alt="txt"/>
+                                                        </a>
+                                                    </t>
                                                 </t>
                                                 <t t-elif="Extension == 'pptx'">
                                                     <img src="/enhanced_document_management/static/images/ppt.gif"
@@ -109,11 +116,18 @@
                                                          alt="pptx"/>
                                                 </t>
                                                 <t t-elif="Extension == 'url'">
-                                                    <a t-att-href="record.content_url.value">
+                                                    <t t-if="record.is_locked.raw_value">
                                                         <img src="/enhanced_document_management/static/images/url.gif"
                                                              t-att-data-id="record.id.value"
                                                              alt="url"/>
-                                                    </a>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <a t-att-href="record.content_url.value">
+                                                            <img src="/enhanced_document_management/static/images/url.gif"
+                                                                 t-att-data-id="record.id.value"
+                                                                 alt="url"/>
+                                                        </a>
+                                                    </t>
                                                 </t>
                                                 <t t-elif="Extension == 'docx'">
                                                     <img src="/enhanced_document_management/static/images/doc.png"
@@ -135,14 +149,22 @@
                                                     />
                                                 </t>
                                                 <t t-elif="Extension == 'png'">
-                                                    <a t-att-href="record.content_url.value"
-                                                       data-fancybox=""
-                                                       data-caption="">
+                                                    <t t-if="record.is_locked.raw_value">
                                                         <img t-att-src="record.content_url.value"
                                                              t-att-data-id="record.id.value"
                                                              class="on_preview_button"
                                                              alt="png"/>
-                                                    </a>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <a t-att-href="record.content_url.value"
+                                                           data-fancybox=""
+                                                           data-caption="">
+                                                            <img t-att-src="record.content_url.value"
+                                                                 t-att-data-id="record.id.value"
+                                                                 class="on_preview_button"
+                                                                 alt="png"/>
+                                                        </a>
+                                                    </t>
                                                 </t>
                                                 <t t-elif="Extension == 'csv'">
                                                     <img src="/enhanced_document_management/static/images/csv.png"
@@ -167,10 +189,10 @@
                                          t-att-data-id="record.id.value">
                                         <div class="o_kanban_details_wrapper"
                                              t-att-data-id="record.id.value">
-                                            <div t-if="record.document_tag_id.raw_value"
-                                                 class="badge rounded-pill o_tag"
+                                            <div class="o_field_many2many_tags"
                                                  t-att-data-id="record.id.value">
-                                                <field name="document_tag_id"
+                                                <field name="document_tag_ids"
+                                                       widget="many2many_tags"
                                                        t-att-data-id="record.id.value"/>
                                             </div>
                                             <div class="o_kanban_record_title"
@@ -190,12 +212,10 @@
                                     </div>
                                     <div class="o_kanban_record_bottom">
                                         <div class="oe_kanban_bottom_left">
-                                            <field name="attachment" invisible="is_locked"
+                                            <field name="attachment"
                                                    widget="binary_widget"/>
                                         </div>
                                         <div class="oe_kanban_bottom_right">
-                                            <field name="activity_ids"
-                                                   widget="kanban_activity"/>
                                             <field name="user_id"
                                                    widget="many2one_avatar_user"/>
                                         </div>
@@ -205,49 +225,49 @@
                             </div>
                         </div>
                     </t>
-                    <t t-name="kanban-menu">
+                    <t t-name="menu">
                         <t t-set="content_url"
                            t-value="record.content_url.value"/>
                         <t t-set="id" t-value="record.id.value"/>
                         <a class="dropdown-item dropdown_share document_dropdown"
-                           type="object" name="click_share"
+                           type="object" name="action_click_share"
                            context="{'document_id': id}">Share
                         </a>
                         <a class="dropdown-item dropdown_create_lead document_dropdown"
-                           type="object" name="click_create_lead"
+                           type="object" name="action_click_create_lead"
                            context="{'document_id': id}"
                            invisible="not is_crm_install">Create Lead
                         </a>
                         <a class="dropdown-item dropdown_create_task document_dropdown"
-                           type="object" name="click_create_task"
+                           type="object" name="action_click_create_task"
                            context="{'document_id': id}"
                            invisible="not is_project_install">Create Task
                         </a>
                         <a class="dropdown-item dropdown_create_mail document_dropdown"
-                           type="object" name="click_create_mail"
+                           type="object" name="action_click_create_mail"
                            context="{'document_id': id}">Create Mail
                         </a>
                         <a class="dropdown-item dropdown_copy_move document_dropdown"
-                           type="object" name="click_copy_move"
+                           type="object" name="action_click_copy_move"
                            context="{'document_id': id}">Copy/Move
                         </a>
                         <a class="dropdown-item dropdown_archive document_dropdown"
-                           type="object" name="click_document_archive"
+                           type="object" name="action_click_document_archive"
                            context="{'document_id': id}"
                         >Archive/Unarchive
                         </a>
                         <a class="dropdown-item dropdown_delete document_dropdown"
-                           type="object" name="click_document_delete"
+                           type="object" name="action_click_document_delete"
                            context="{'document_id': id}">Delete
                         </a>
                         <a class="dropdown-item document_lock document_dropdown"
-                           type="object" name="click_document_lock"
+                           type="object" name="action_click_document_lock"
                            context="{'document_id': id}"
                            invisible="is_locked">
                             Lock Document
                         </a>
                         <a class="dropdown-item document_lock document_dropdown"
-                           type="object" name="click_document_unlock"
+                           type="object" name="action_click_document_unlock"
                            context="{'document_id': id}"
                            invisible="not is_locked">
                             Unlock Document
@@ -265,6 +285,7 @@
             <list export_xlsx="0">
                 <field name="name" string="Document"/>
                 <field name="workspace_id" string="Workspace"/>
+                <field name="document_tag_ids" string="Tags" widget="many2many_tags"/>
                 <field name="user_id" string="Owner"
                        widget="many2one_avatar_user"/>
                 <field name="partner_id" string="Contact"/>
@@ -291,6 +312,7 @@
                         <group>
                             <field name="workspace_id"
                                    help="User can choose where to save the file"/>
+                            <field name="document_tag_ids" string="Tags" widget="many2many_tags"/>
                         </group>
                     </group>
                     <group string="History" invisible="1">
@@ -313,11 +335,11 @@
                         </group>
                         <group>
                             <field name="partner_id" string="Related Partner"/>
-                            <field name="auto_delete"/>
+                            <field name="is_auto_delete"/>
                             <field name="days"
-                                   invisible="auto_delete == False"/>
+                                   invisible="is_auto_delete == False"/>
                             <field name="delete_date"
-                                   invisible="auto_delete == False"/>
+                                   invisible="is_auto_delete == False"/>
                         </group>
                     </group>
                     <group string="Description">
@@ -345,29 +367,32 @@
                 <field name="name" string="Document"/>
                 <field name="date"/>
                 <field name="workspace_id"/>
+                <field name="document_tag_ids" string="Tags"/>
                 <filter string="Archive" name="archive"
-                        domain="[('active', '=', False), ('trash', '=', False)]"/>
+                        domain="[('active', '=', False), ('is_trash', '=', False)]"/>
                 <filter string="Favourite" name="favourite"
                         domain="[('priority', '=', '1')]"/>
                 <filter string="PDF" name="filter_pdf"
                         domain="[('extension', '=', 'pdf')]"/>
                 <filter string="XLSX" name="filter_xlsx"
                         domain="[('extension', 'in', ['xlsx','xls'])]"/>
-                <filter string="Image" name="filter_xlsx"
+                <filter string="Image" name="filter_image"
                         domain="[('extension', 'in', ['jpg','jpeg','png'])]"/>
-                <filter string="URL" name="filter_xlsx"
+                <filter string="URL" name="filter_url"
                         domain="[('extension', '=', 'url')]"/>
-                <filter string="CSV" name="filter_xlsx"
+                <filter string="CSV" name="filter_csv"
                         domain="[('extension', '=', 'csv')]"/>
-                <filter string="DOC" name="filter_xlsx"
+                <filter string="DOC" name="filter_doc"
                         domain="[('extension', 'in', ['doc','docx'])]"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter name="group_workspace" string="Workspace"
                             context="{'group_by':'workspace_id'}"/>
                     <filter name="group_extension" string="Extension"
                             context="{'group_by':'extension'}"/>
                     <filter name="group_user" string="Owner"
                             context="{'group_by':'user_id'}"/>
+                    <filter name="group_tag" string="Tag"
+                            context="{'group_by':'document_tag_ids'}"/>
                 </group>
                 <searchpanel>
                     <field name="workspace_id" icon="fa-folder"

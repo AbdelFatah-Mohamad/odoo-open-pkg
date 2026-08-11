@@ -3,8 +3,8 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Mruthul Raj(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
@@ -40,9 +40,14 @@ class WebsiteCustomerPortal(CustomerPortal):
         if 'document_count' in counters:
             values['document_count'] = request.env[
                 'document.file'].sudo().search_count([
-                ('user_id.id', '=', request.uid)])
+                ('user_id', '=', request.uid)])
+        if 'request_count' in counters:
             values['request_count'] = request.env[
                 'request.document'].sudo().search_count([
-                ('user_id.id', '=', request.uid),
+                ('user_id', '=', request.uid),
                 ('state', '=', 'requested')])
+        if 'doc_req_count' in counters:
+            values['doc_req_count'] = request.env[
+                'document.template.request'].sudo().search_count(
+                [('user_id', '=', request.uid)])
         return values

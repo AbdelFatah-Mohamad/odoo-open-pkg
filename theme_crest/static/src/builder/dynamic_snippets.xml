@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+   <!-- <t t-name="theme_crest.DynamicSnippetEditor" owl="1">
+        <div class="p-3">
+            <label class="form-label">Snippet Text</label>
+            <input type="text" t-model="state.text" class="form-control"/>
+
+            <div class="mt-3 text-end">
+                <button type="button" class="btn btn-primary" t-on-click="save">
+                    Save
+                </button>
+            </div>
+        </div>
+    </t> -->
+
+<t t-name="theme_crest.DynamicSnippetsBits">
+    <BuilderContext action="'websiteConfig'">
+        <BuilderRow label.translate="'Manage Snippet'" >
+             <BuilderButton title.translate="'Manage Snippet'"  action="'dynamic_snippet_manage'"  classAction="'btn-danger-color-hover rounded-start-0 m-0 py-0 flex-grow-0'" >Manage Snippet</BuilderButton>
+        </BuilderRow>
+    </BuilderContext>
+</t>
+
+</templates>

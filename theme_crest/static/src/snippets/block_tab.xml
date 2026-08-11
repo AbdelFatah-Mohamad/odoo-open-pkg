@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="BlockTabBits" t-inherit="html_builder.BlockTab"  t-inherit-mode="extension" >
+        <xpath expr="//div[@id='snippet_groups']" position="before">
+            <div class="o_snippets_container" id="snippet_bits">
+                <div class="o_snippets_container_header"><span>Crest Snippet Builder</span></div>
+                <div class="o_snippets_container_body">
+                    <t t-foreach="this.snippetModel.snippetBits" t-as="snippet" t-key="snippet.id">
+                        <Snippet snippet="snippet"
+                                snippetModel="this.snippetModel"
+                                onClickHandler.bind="showSnippetTooltip"
+                                disabledTooltip="disabledBlockTooltip"/>
+                    </t>
+                </div>
+            </div>
+         </xpath>
+    </t>
+</templates>

@@ -3,8 +3,8 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Mruthul Raj(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
@@ -19,13 +19,26 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-from odoo import fields, models
-
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 class DocumentTag(models.Model):
+    """ Model used to store tags """
     _name = "document.tag"
-    _description ="Document tag"
+    _description = "Document Tag"
 
-    name = fields.Char(string="name",required=True)
+    name = fields.Char(string="Name", required=True)
 
-    _name_uniq = models.UniqueIndex('(name)', 'Tag name already exists!')
+    @api.constrains('name')
+    def _check_unique_name(self):
+        """ Python constraint to ensure tag name uniqueness as a fallback
+        for the SQL constraint and to provide descriptive errors. """
+        for record in self:
+            if record.name:
+                normalized_name = record.name.strip()
+                duplicate = self.search([
+                    ('name', '=ilike', normalized_name),
+                    ('id', '!=', record.id)
+                ])
+                if duplicate:
+                    raise ValidationError(_("Tag name '%s' already exists!") % record.name)

@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Products item -->
+    <template id="products_item_bits_1" name="Product Card Style 1">
+        <t t-if="is_enable_pricelist_offer_timer" t-set="product_prl_offer_data" t-value="product.sudo().product_variant_id._get_offer_timing(website.get_pricelist_available())"/>
+  
+    <t t-set="show_variations" t-value="True if show_variations is None else show_variations"/>
+    <t t-set="show_ribbons" t-value="True if show_ribbons is None else show_ribbons"/>
+
+    <!-- URLs -->
+   
+    <!-- Variations/Attributes -->
+    <t t-if="show_variations">
+        <t
+            t-set="product_ptavs_data"
+            t-value="previewed_attribute_values[product.id]"
+        />
+        <t t-if="product_ptavs_data">
+            <t
+                t-set="product_ptavs"
+                t-value="product_ptavs_data.get('ptavs_data')"
+            />
+            <t
+                t-if="product_ptavs[0]['ptav'].attribute_id.preview_variants == 'hover'"
+                t-set="ptavs_classes"
+                t-value="'o_has_variations o_has_variations_onhover'"
+            />
+            <t
+                t-else=""
+                t-set="ptavs_classes"
+                t-value="'o_has_variations o_has_variations_static'"
+            />
+        </t>
+    </t>
+
+    <form
+        t-attf-class="oe_product_cart d-flex {{ptavs_classes}}"
+        t-att-data-publish="product.website_published and 'on' or 'off'"
+        role="article"
+        t-att-aria-label="product.name"
+    >
+        <div t-attf-class="oe_product_image position-relative flex-grow-0 overflow-hidden">
+            <input
+                type="hidden"
+                name="csrf_token"
+                t-att-value="request.csrf_token()"
+
+            />
+
+            <!-- Fetch Images Data -->
+            <!-- Use `variant` instead of reassigning `product_variant` beacause it's used to infer
+                 if variant information should be shown later. -->
+            <t
+                t-set="variant"
+                t-value="product_variant or request.env['product.product'].browse(product._get_first_possible_variant_id())"
+            />
+            <t
+                t-if="variant and variant.image_128"
+                t-set="all_images_list"
+                t-value="variant._get_images()"
+            />
+            <t
+                t-else=""
+                t-set="all_images_list"
+                t-value="product._get_images()"
+            />
+            <!--
+                Image holders are records of different types (`product.template`, `product.product`
+                or `product.image`) and are returned as a list.
+             -->
+            <t
+                t-set="primary_image_holder"
+                t-value="(all_images_list[:1]+[product])[0]"
+            />
+            <t
+                t-set="secondary_image_holder"
+                t-value="(all_images_list[1:2]+[False])[0]"
+            />
+               <div class="lbl_container container_bits" t-if="is_active_product_lable and len(product.product_label_ids)">
+                    <t t-foreach="product.product_label_ids" t-as="p_label">
+                        <span t-attf-class="p_label #{p_label.lable_style}" t-attf-style="border-color:#{p_label.bg_color};background-color:#{p_label.bg_color};color:#{p_label.text_color};">
+                            <t t-esc="p_label.name"/>
+                        </span>
+                    </t>
+                </div>
+            <a
+                t-att-href="product_href"
+                t-attf-class="oe_product_image_link position-relative {{secondary_image_holder and 'oe_product_image_link_has_secondary'}}"
+                contenteditable="false"
+                t-att-title="product.name"
+            >
+                <!-- Primary image -->
+                <span
+                    t-field="primary_image_holder.image_1920"
+                    t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img h-100 w-100'}"
+                    class="oe_product_image_img_wrapper oe_product_image_img_wrapper_primary d-flex h-100 justify-content-center align-items-center"
+                />
+
+                <!-- Secondary image -->
+                <span
+                    t-if="secondary_image_holder"
+                    t-field="secondary_image_holder.image_1920"
+                    t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img_secondary h-100 w-100'}"
+                    class="oe_product_image_img_wrapper oe_product_image_img_wrapper_secondary h-100 justify-content-center align-items-center"
+                />
+
+                <!-- Ribbon -->
+                <!-- <t t-if="show_ribbons">
+                    <t t-set="bg_color" t-value="ribbon.bg_color"/>
+                    <t t-set="text_color" t-value="ribbon.text_color"/>
+                    <span
+                        t-att-data-ribbon-id="ribbon.id"
+                        t-attf-class="o_ribbons o_not_editable #{ribbon._get_css_classes()}"
+                        t-attf-style="#{text_color and ('color: %s;' % text_color)} #{bg_color and 'background-color:' + bg_color}"
+                        t-out="ribbon.name or ''"
+                    />
+                </t> -->
+
+                <!-- Out of Stock -->
+                <t t-if="is_active_stock_lable">
+                    <t t-call="theme_crest.stock_lbl_bits"/>
+                </t>
+                
+                <!-- Timer Offer -->
+                <div t-if="product_prl_offer_data" class=" py-2 card_item_timer_bits" style="display : none">
+                    <div t-attf-class="pl_offer_timer d-flex align-items-center justify-content-center #{card_border_style}" t-att-data-offerends="product_prl_offer_data">
+                        <div class="counter-box me-2">
+                            <span class="counter days "></span>
+                            <p>D</p>
+                        </div>
+                        <div class="counter-box me-2">
+                            <span class="counter hours "></span>
+                            <p>H</p>
+                        </div>
+                        <div class="counter-box me-2">
+                            <span class="counter minutes "></span>
+                            <p>M</p>
+                        </div>
+                        <div class="counter-box me-2">
+                            <span class="counter seconds "></span>
+                            <p>S</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="o_wsale_product_information flex-grow-1 flex-shrink-1">
+            <div class="o_wsale_product_info_attributes_wrapper">
+                 <div class="content-container-lgp-2 d-flex px-2 justify-content-between align-items-center">
+                    <t t-if="is_active_rattings">
+                        <t t-call="theme_crest.product_rattings_bits"></t>
+                    </t>
+                    <t t-if="product_ptavs_data" t-call="theme_crest.product_attrs_selector_bits"/>
+                    <div class="quick_view_container d-none d-lg-block" t-if="is_active_quickview">
+                        <button type="button" role="button" t-attf-class="btn bg-white o_quick_view_btn w-100 #{card_border_style}" title="Quick View" t-att-data-product-template-id="product.id" data-action="o_quick_view">
+                            <i class="fa fa-eye"/>
+                        </button>
+                    </div>
+                </div>
+                <!-- Information -->
+                <div class="o_wsale_product_information_text mt-2 mx-auto text-center">
+                    <!-- Product Name -->
+                    <h2 class="o_wsale_products_item_title text-break ">
+                        <a
+                            class="text-decoration-none"
+                            t-att-href="product_href"
+                        >
+                            <span t-field="product.name"/>
+                            <t
+                                t-if="product_variant"
+                                t-set="combination_name"
+                                t-value="product_variant.product_template_attribute_value_ids._get_combination_name()"
+                            />
+                            <span
+                                t-if="combination_name"
+                                t-out="'('+combination_name+')'"
+                            />
+                        </a>
+                        <a
+                            t-if="not product.website_published"
+                            role="button"
+                            t-att-href="product_href"
+                            class="btn btn-sm btn-danger"
+                            title="This product is unpublished."
+                        >
+                            Unpublished
+                        </a>
+                    </h2>
+                    <!-- Description -->
+                    <t t-call="website_sale.product_tile_element_visibility">
+                        <t t-set="visible_element_class" t-value="'o_wsale_products_opt_has_description'"/>
+
+                        <div class="oe_subdescription_wrapper mt-2">
+                            <div
+                                class="oe_subdescription text-muted small"
+                                contenteditable="false"
+                            >
+                                <div t-field="product.description_sale"/>
+                            </div>
+                        </div>
+                    </t>                   
+                </div>
+            </div>
+            <div class="o_wsale_product_sub justify-content-between gap-2 text-center">
+                <!-- Price(s) -->
+                <t t-if="product_price" t-out="product_price"/>
+                <t t-else="">
+                    <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
+                    <div class="product_price order-0 text-center" aria-label="Price information">
+                        <span
+                            class="mb-0 fw-bold"
+                            aria-label="Sale price"
+                            t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale"
+                            t-out="template_price_vals['price_reduce']"
+                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                        />
+                        <t
+                            t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] &gt; template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)"
+                            name="product_base_price"
+                        >
+                            <del
+                                aria-label="Original price"
+                                t-attf-class="text-muted me-1 mb-0"
+                                style="white-space: nowrap;"
+                            >
+                                <small
+                                    t-esc="template_price_vals['base_price']"
+                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                />
+                            </del>
+                        </t>
+                    </div>
+                </t>
+                  <div class="container">
+                    <div class="o_wsale_product_btn_bits row text-center align-items-center px-2">
+                        <div t-if="is_active_wishlist" class="col-3 col-lg-2 px-0">
+                            <t t-call="theme_crest.te_wishlist_bits"/>
+                        </div>
+                        <t t-if="not is_b2b_enabled">
+                            <div t-if="is_active_cart" class="col-3 col-lg-8 px-0">
+                                <div class="co_action btn-cart">
+                                    <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                                    <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                                    <input name="product_template_id" t-att-value="product.id" type="hidden"/>
+                                    <t t-if="prod00uct_variant_id and template_price_vals['price_reduce'] or not website.prevent_zero_price_sale">
+                                        <a
+                                            t-if="product._website_show_quick_add()"
+                                            href="#"
+                                            role="button"
+                                            t-attf-class=" btn-light a-submit #{card_border_style}"
+                                            aria-label="Shopping cart"
+                                            title="Shopping cart"
+                                        >
+                                             <i class="px-1 fa fa-shopping-basket"/>
+                                            <span class="cart-label">Add to Cart</span>
+                                        </a>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                        <div t-if="is_active_quickview" class="quick-view-container-sm col-3 col-lg-2 px-0">
+                            <div class="quick_view_container co_action btn-cart">
+                                <a type="button" t-attf-class=" o_quick_view_btn w-100 #{card_border_style}" title="Quick View" t-att-data-product-template-id="product.id" data-action="o_quick_view">
+                                    <i class="fa fa-eye btn-qv-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div t-if="is_active_compare" class="col-3 col-lg-2 px-0">
+                            <t t-call="theme_crest.te_compare_bits"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </template>
+
+    <template id="products_item_bits_2" name="Product Card Style 2">
+        <t t-if="is_enable_pricelist_offer_timer" t-set="product_prl_offer_data" t-value="product.sudo().product_variant_id._get_offer_timing(website.get_pricelist_available())"/>
+       
+         <t t-set="show_variations" t-value="True if show_variations is None else show_variations"/>
+        <!-- <t t-set="show_ribbons" t-value="True if show_ribbons is None else show_ribbons"/> -->
+
+        <!-- URLs -->
+        
+        <!-- Variations/Attributes -->
+        <t t-if="show_variations">
+            <t
+                t-set="product_ptavs_data"
+                t-value="previewed_attribute_values[product.id]"
+            />
+            <t t-if="product_ptavs_data">
+                <t
+                    t-set="product_ptavs"
+                    t-value="product_ptavs_data.get('ptavs_data')"
+                />
+                <t
+                    t-if="product_ptavs[0]['ptav'].attribute_id.preview_variants == 'hover'"
+                    t-set="ptavs_classes"
+                    t-value="'o_has_variations o_has_variations_onhover'"
+                />
+                <t
+                    t-else=""
+                    t-set="ptavs_classes"
+                    t-value="'o_has_variations o_has_variations_static'"
+                />
+            </t>
+        </t>
+
+        <form
+            t-attf-class="oe_product_cart d-flex {{ptavs_classes}}"
+            t-att-data-publish="product.website_published and 'on' or 'off'"
+            role="article"
+            t-att-aria-label="product.name"
+        >
+            <div t-attf-class="oe_product_image position-relative flex-grow-0 overflow-hidden">
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    t-att-value="request.csrf_token()"
+                />
+
+                <!-- Fetch Images Data -->
+                <!-- Use `variant` instead of reassigning `product_variant` beacause it's used to infer
+                    if variant information should be shown later. -->
+                <t
+                    t-set="variant"
+                    t-value="product_variant or request.env['product.product'].browse(product._get_first_possible_variant_id())"
+                />
+                <t
+                    t-if="variant and variant.image_128"
+                    t-set="all_images_list"
+                    t-value="variant._get_images()"
+                />
+                <t
+                    t-else=""
+                    t-set="all_images_list"
+                    t-value="product._get_images()"
+                />
+                <!--
+                    Image holders are records of different types (`product.template`, `product.product`
+                    or `product.image`) and are returned as a list.
+                -->
+                <t
+                    t-set="primary_image_holder"
+                    t-value="(all_images_list[:1]+[product])[0]"
+                />
+                <t
+                    t-set="secondary_image_holder"
+                    t-value="(all_images_list[1:2]+[False])[0]"
+                />
+                <div class="lbl_container container_bits" t-if="is_active_product_lable and len(product.product_label_ids)">
+                        <t t-foreach="product.product_label_ids" t-as="p_label">
+                            <span t-attf-class="p_label #{p_label.lable_style}" t-attf-style="border-color:#{p_label.bg_color};background-color:#{p_label.bg_color};color:#{p_label.text_color};">
+                                <t t-esc="p_label.name"/>
+                            </span>
+                        </t>
+                </div>
+                <a
+                    t-att-href="product_href"
+                    t-attf-class="oe_product_image_link position-relative {{secondary_image_holder and 'oe_product_image_link_has_secondary'}}"
+                    contenteditable="false"
+                    t-att-title="product.name"
+                >
+                    <!-- Primary image -->
+                    <span
+                        t-field="primary_image_holder.image_1920"
+                        t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img h-100 w-100'}"
+                        class="oe_product_image_img_wrapper oe_product_image_img_wrapper_primary d-flex h-100 justify-content-center align-items-center"
+                    />
+
+                    <!-- Secondary image -->
+                    <span
+                        t-if="secondary_image_holder"
+                        t-field="secondary_image_holder.image_1920"
+                        t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img_secondary h-100 w-100'}"
+                        class="oe_product_image_img_wrapper oe_product_image_img_wrapper_secondary h-100 justify-content-center align-items-center"
+                    />
+
+                    <!-- Ribbon -->
+                    <!-- <t t-if="show_ribbons">
+                        <t t-set="bg_color" t-value="ribbon.bg_color"/>
+                        <t t-set="text_color" t-value="ribbon.text_color"/>
+                        <span
+                            t-att-data-ribbon-id="ribbon.id"
+                            t-attf-class="o_ribbons o_not_editable #{ribbon._get_css_classes()}"
+                            t-attf-style="#{text_color and ('color: %s;' % text_color)} #{bg_color and 'background-color:' + bg_color}"
+                            t-out="ribbon.name or ''"
+                        />
+                    </t> -->
+                </a>
+                    <!-- Timer Offer -->
+                    <div t-if="product_prl_offer_data" class=" py-2 card_item_timer_bits" style="display : none">
+                        <div t-attf-class="pl_offer_timer d-flex align-items-center justify-content-center #{card_border_style}" t-att-data-offerends="product_prl_offer_data">
+                            <div class="counter-box me-2">
+                                <span class="counter days "></span>
+                                <p>D</p>
+                            </div>
+                            <div class="counter-box me-2">
+                                <span class="counter hours "></span>
+                                <p>H</p>
+                            </div>
+                            <div class="counter-box me-2">
+                                <span class="counter minutes "></span>
+                                <p>M</p>
+                            </div>
+                            <div class="counter-box me-2">
+                                <span class="counter seconds "></span>
+                                <p>S</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- Out of Stock -->
+                    <t t-if="is_active_stock_lable">
+                        <t t-call="theme_crest.stock_lbl_bits"/>
+                    </t>
+                    
+                     <t t-if="product_ptavs_data" t-call="theme_crest.product_attrs_selector_bits"/>
+                    <t t-if="is_active_wishlist" class="">
+                        <t t-call="theme_crest.te_wishlist_bits"/>
+                    </t>
+            </div>
+            <div class="o_wsale_product_information flex-grow-1 flex-shrink-1">
+                <div class="o_wsale_product_info_attributes_wrapper">
+                    <div class="content-container-lgp-2 d-flex justify-content-between align-items-center">
+                        <!-- Product Name -->
+                        <h2 class="o_wsale_products_item_title text-break ">
+                            <a
+                                class="text-decoration-none"
+                                t-att-href="product_href"
+                            >
+                                <span t-field="product.name"/>
+                                <t
+                                    t-if="product_variant"
+                                    t-set="combination_name"
+                                    t-value="product_variant.product_template_attribute_value_ids._get_combination_name()"
+                                />
+                                <span
+                                    t-if="combination_name"
+                                    t-out="'('+combination_name+')'"
+                                />
+                            </a>
+                            <a
+                                t-if="not product.website_published"
+                                role="button"
+                                t-att-href="product_href"
+                                class="btn btn-sm btn-danger"
+                                title="This product is unpublished."
+                            >
+                                Unpublished
+                            </a>
+                        </h2>
+                        <t t-if="is_active_rattings">
+                            <t t-call="theme_crest.product_rattings_bits"></t>
+                        </t>
+                        <!-- <t t-if="product_ptavs_data" t-call="theme_crest.product_attrs_selector_bits"/>
+                        <div class="quick_view_container d-none d-lg-block" t-if="is_active_quickview">
+                            <button type="button" role="button" t-attf-class="btn bg-white o_quick_view_btn w-100 #{card_border_style}" title="Quick View" t-att-data-product-template-id="product.id" data-action="o_quick_view">
+                                <i class="fa fa-eye"/>
+                            </button>
+                        </div> -->
+                    </div>
+                    <!-- Information -->
+                        
+                        <!-- Description -->
+                        <t t-call="website_sale.product_tile_element_visibility">
+                            <t t-set="visible_element_class" t-value="'o_wsale_products_opt_has_description'"/>
+
+                            <div class="oe_subdescription_wrapper mt-2">
+                                <div
+                                    class="oe_subdescription text-muted small"
+                                    contenteditable="false"
+                                >
+                                    <div t-field="product.description_sale"/>
+                                </div>
+                            </div>
+                        </t>                   
+                </div>
+                <div class="o_wsale_product_sub gap-2 justify-content-end">
+                    <!-- Price(s) -->
+                    <t t-if="product_price" t-out="product_price"/>
+                    <t t-else="">
+                        <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
+                        <div class="product_price order-0 " aria-label="Price information">
+                            <span
+                                class="mb-0 fw-bold"
+                                aria-label="Sale price"
+                                t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale"
+                                t-out="template_price_vals['price_reduce']"
+                                t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                            />
+                            <t
+                                t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] &gt; template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)"
+                                name="product_base_price"
+                            >
+                                <del
+                                    aria-label="Original price"
+                                    t-attf-class="text-muted me-1 mb-0"
+                                    style="white-space: nowrap;"
+                                >
+                                    <small
+                                        t-esc="template_price_vals['base_price']"
+                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                    />
+                                </del>
+                            </t>
+                        </div>
+                    </t>
+                   <div class="o_wsale_product_btn_bits w-100">
+                    <t t-if="not is_b2b_enabled">
+                        <t t-if="is_active_cart">
+                            <div class="co_action btn-cart add-to-card">
+                                <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                                <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                                <input name="product_template_id" t-att-value="product.id" type="hidden"/>
+                                <t t-if="prod00uct_variant_id and template_price_vals['price_reduce'] or not website.prevent_zero_price_sale">
+                                    <a
+                                        t-if="product._website_show_quick_add()"
+                                        href="#"
+                                        role="button"
+                                        t-attf-class="text-nowrap a-submit "
+                                        aria-label="Shopping cart"
+                                        title="Shopping cart"
+                                    >
+                                        <i class="px-1 fa fa-shopping-basket"/>
+                                        <span class="cart-label"></span>
+                                    </a>
+                                </t>
+                            </div>
+                        </t>
+                    </t>
+                    <div t-attf-class="product-action mb-2 mb-xl-0 #{'' if  is_active_cart else 'position-static '}">
+                        <div t-if="is_active_compare" class="">
+                            <t t-call="theme_crest.te_compare_bits"/>
+                        </div>
+                        <div t-if="is_active_quickview" class="quick-view-container ">
+                            <div class="quick_view_container co_action btn-cart ">
+                                <a type="button" t-attf-class=" o_quick_view_btn #{card_border_style}" title="Quick View" t-att-data-product-template-id="product.id" data-action="o_quick_view">
+                                    <i class="fa fa-eye btn-qv-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </form>
+    </template>
+
+    <template id="products_item_bits_3" name="Product Card Style 3">
+        <t t-if="is_enable_pricelist_offer_timer" t-set="product_prl_offer_data" t-value="product.sudo().product_variant_id._get_offer_timing(website.get_pricelist_available())"/>
+        
+         <t t-set="show_variations" t-value="True if show_variations is None else show_variations"/>
+        <t t-set="show_ribbons" t-value="True if show_ribbons is None else show_ribbons"/>
+
+        
+        <!-- Variations/Attributes -->
+        <t t-if="show_variations">
+            <t
+                t-set="product_ptavs_data"
+                t-value="previewed_attribute_values[product.id]"
+            />
+            <t t-if="product_ptavs_data">
+                <t
+                    t-set="product_ptavs"
+                    t-value="product_ptavs_data.get('ptavs_data')"
+                />
+                <t
+                    t-if="product_ptavs[0]['ptav'].attribute_id.preview_variants == 'hover'"
+                    t-set="ptavs_classes"
+                    t-value="'o_has_variations o_has_variations_onhover'"
+                />
+                <t
+                    t-else=""
+                    t-set="ptavs_classes"
+                    t-value="'o_has_variations o_has_variations_static'"
+                />
+            </t>
+        </t>
+
+        <form
+            t-attf-class="oe_product_cart d-flex {{ptavs_classes}}"
+            t-att-data-publish="product.website_published and 'on' or 'off'"
+            role="article"
+            t-att-aria-label="product.name"
+        >
+            <div t-attf-class="oe_product_image position-relative flex-grow-0 overflow-hidden">
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    t-att-value="request.csrf_token()"
+                />
+
+                <!-- Fetch Images Data -->
+                <!-- Use `variant` instead of reassigning `product_variant` beacause it's used to infer
+                    if variant information should be shown later. -->
+                <t
+                    t-set="variant"
+                    t-value="product_variant or request.env['product.product'].browse(product._get_first_possible_variant_id())"
+                />
+                <t
+                    t-if="variant and variant.image_128"
+                    t-set="all_images_list"
+                    t-value="variant._get_images()"
+                />
+                <t
+                    t-else=""
+                    t-set="all_images_list"
+                    t-value="product._get_images()"
+                />
+                <!--
+                    Image holders are records of different types (`product.template`, `product.product`
+                    or `product.image`) and are returned as a list.
+                -->
+                <t
+                    t-set="primary_image_holder"
+                    t-value="(all_images_list[:1]+[product])[0]"
+                />
+                <t
+                    t-set="secondary_image_holder"
+                    t-value="(all_images_list[1:2]+[False])[0]"
+                />
+                <div class="lbl_container container_bits" t-if="is_active_product_lable and len(product.product_label_ids)">
+                        <t t-foreach="product.product_label_ids" t-as="p_label">
+                            <span t-attf-class="p_label #{p_label.lable_style}" t-attf-style="border-color:#{p_label.bg_color};background-color:#{p_label.bg_color};color:#{p_label.text_color};">
+                                <t t-esc="p_label.name"/>
+                            </span>
+                        </t>
+                </div>
+                <a
+                    t-att-href="product_href"
+                    t-attf-class="oe_product_image_link position-relative {{secondary_image_holder and 'oe_product_image_link_has_secondary'}}"
+                    contenteditable="false"
+                    t-att-title="product.name"
+                >
+                    <!-- Primary image -->
+                    <span
+                        t-field="primary_image_holder.image_1920"
+                        t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img h-100 w-100'}"
+                        class="oe_product_image_img_wrapper oe_product_image_img_wrapper_primary d-flex h-100 justify-content-center align-items-center"
+                    />
+
+                    <!-- Secondary image -->
+                    <span
+                        t-if="secondary_image_holder"
+                        t-field="secondary_image_holder.image_1920"
+                        t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img_secondary h-100 w-100'}"
+                        class="oe_product_image_img_wrapper oe_product_image_img_wrapper_secondary h-100 justify-content-center align-items-center"
+                    />
+
+                    <!-- Ribbon -->
+                    <!-- <t t-if="show_ribbons">
+                        <t t-set="bg_color" t-value="ribbon.bg_color"/>
+                        <t t-set="text_color" t-value="ribbon.text_color"/>
+                        <span
+                            t-att-data-ribbon-id="ribbon.id"
+                            t-attf-class="o_ribbons o_not_editable #{ribbon._get_css_classes()}"
+                            t-attf-style="#{text_color and ('color: %s;' % text_color)} #{bg_color and 'background-color:' + bg_color}"
+                            t-out="ribbon.name or ''"
+                        />
+                    </t> -->
+                </a>
+                 <div class="product-action">
+                    <div class="d-flex align-items-center">
+                        <div t-if="is_active_compare" class="">
+                            <t t-call="theme_crest.te_compare_bits"/>
+                        </div>
+                        <div t-if="is_active_quickview" class="quick-view-container ">
+                            <div class="quick_view_container co_action btn-cart ">
+                                <a type="button" t-attf-class="o_quick_view_btn #{card_border_style}" title="Quick View" t-att-data-product-template-id="product.id" data-action="o_quick_view">
+                                    <i class="fa fa-eye btn-qv-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div t-if="is_active_wishlist" class="">
+                            <t t-call="theme_crest.te_wishlist_bits"/>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Timer Offer -->
+                    <div t-if="product_prl_offer_data" class=" py-2 card_item_timer_bits" style="display : none">
+                        <div t-attf-class="pl_offer_timer d-flex align-items-center justify-content-center #{card_border_style}" t-att-data-offerends="product_prl_offer_data">
+                            <div class="counter-box me-2">
+                                <span class="counter days "></span>
+                                <p>D</p>
+                            </div>
+                            <div class="counter-box me-2">
+                                <span class="counter hours "></span>
+                                <p>H</p>
+                            </div>
+                            <div class="counter-box me-2">
+                                <span class="counter minutes "></span>
+                                <p>M</p>
+                            </div>
+                            <div class="counter-box me-2">
+                                <span class="counter seconds "></span>
+                                <p>S</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Out of Stock -->
+                    <t t-if="is_active_stock_lable">
+                        <t t-call="theme_crest.stock_lbl_bits"/>
+                    </t>
+                  
+            </div>
+            <div class="o_wsale_product_information flex-grow-1 flex-shrink-1 justify-content-between">
+             <t t-if="not is_b2b_enabled">
+                    <div t-if="is_active_cart" class="o_wsale_product_btn_bits">
+                        <div class="co_action btn-cart add-to-card">
+                            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                            <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                            <input name="product_template_id" t-att-value="product.id" type="hidden"/>
+                            <t t-if="prod00uct_variant_id and template_price_vals['price_reduce'] or not website.prevent_zero_price_sale">
+                                <a
+                                    t-if="product._website_show_quick_add()"
+                                    href="#"
+                                    role="button"
+                                    t-attf-class="a-submit text-nowrap"
+                                    aria-label="Shopping cart"
+                                    title="Shopping cart"
+                                >
+                                    <i class="px-1 fa fa-shopping-basket"/>
+                                    <span class="cart-label">Add to Cart</span>
+                                </a>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+                <div class="o_wsale_product_info_attributes_wrapper">
+                    <div class="content-container-lgp-2 ">
+                        <!-- Product Name -->
+                        <h2 class="o_wsale_products_item_title text-break  mt-2">
+                            <a
+                                class="text-decoration-none"
+                                t-att-href="product_href"
+                            >
+                                <span t-field="product.name"/>
+                                <t
+                                    t-if="product_variant"
+                                    t-set="combination_name"
+                                    t-value="product_variant.product_template_attribute_value_ids._get_combination_name()"
+                                />
+                                <span
+                                    t-if="combination_name"
+                                    t-out="'('+combination_name+')'"
+                                />
+                            </a>
+                            <a
+                                t-if="not product.website_published"
+                                role="button"
+                                t-att-href="product_href"
+                                class="btn btn-sm btn-danger"
+                                title="This product is unpublished."
+                            >
+                                Unpublished
+                            </a>
+                        </h2>               
+                        <!-- Description -->
+                        <t t-call="website_sale.product_tile_element_visibility">
+                            <t t-set="visible_element_class" t-value="'o_wsale_products_opt_has_description'"/>
+
+                            <div class="oe_subdescription_wrapper mt-2 px-2">
+                                <div
+                                    class="oe_subdescription text-muted small"
+                                    contenteditable="false"
+                                >
+                                    <div t-field="product.description_sale"/>
+                                </div>
+                            </div>
+                        </t>                   
+                    </div>
+                    <!-- Price(s) -->
+                    <t t-if="product_price" t-out="product_price"/>
+                    <t t-else="">
+                        <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
+                        <div class="product_price order-0 px-2" aria-label="Price information">
+                            <span
+                                class="mb-0 fw-bold"
+                                aria-label="Sale price"
+                                t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale"
+                                t-out="template_price_vals['price_reduce']"
+                                t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                            />
+                            <t
+                                t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] &gt; template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)"
+                                name="product_base_price"
+                            >
+                                <del
+                                    aria-label="Original price"
+                                    t-attf-class="text-muted me-1 mb-0"
+                                    style="white-space: nowrap;"
+                                >
+                                    <small
+                                        t-esc="template_price_vals['base_price']"
+                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                    />
+                                </del>
+                            </t>
+                        </div>
+                    </t>
+                    <div class="d-flex justify-content-between align-items-center mt-1" t-if='is_active_rattings or product_ptavs_data'>
+                         <t t-if="product_ptavs_data" t-call="theme_crest.product_attrs_selector_bits"/>
+                        <t t-call="portal_rating.rating_widget_stars_static" t-if="is_active_rattings">
+                            <t t-set="rating_avg" t-value="product.rating_avg"/>
+                            <t t-set="rating_count" t-value="product.rating_count"/>
+                        </t>
+                    </div>
+                </div>
+             
+            </div>
+        </form>
+    </template>
+
+     <template id="products_item_bits_4" name="Product Card Style 4">
+        <t t-if="is_enable_pricelist_offer_timer" t-set="product_prl_offer_data" t-value="product.sudo().product_variant_id._get_offer_timing(website.get_pricelist_available())"/>
+            <t t-set="show_variations" t-value="True if show_variations is None else show_variations"/>
+        <t t-set="show_ribbons" t-value="True if show_ribbons is None else show_ribbons"/>
+
+        <!-- URLs -->
+        
+        <!-- Variations/Attributes -->
+        <t t-if="show_variations">
+            <t
+                t-set="product_ptavs_data"
+                t-value="previewed_attribute_values[product.id]"
+            />
+            <t t-if="product_ptavs_data">
+                <t
+                    t-set="product_ptavs"
+                    t-value="product_ptavs_data.get('ptavs_data')"
+                />
+                <t
+                    t-if="product_ptavs[0]['ptav'].attribute_id.preview_variants == 'hover'"
+                    t-set="ptavs_classes"
+                    t-value="'o_has_variations o_has_variations_onhover'"
+                />
+                <t
+                    t-else=""
+                    t-set="ptavs_classes"
+                    t-value="'o_has_variations o_has_variations_static'"
+                />
+            </t>
+        </t>
+
+        <form
+            t-attf-class="oe_product_cart d-flex {{ptavs_classes}}"
+            t-att-data-publish="product.website_published and 'on' or 'off'"
+            role="article"
+            t-att-aria-label="product.name"
+        >   
+            <div class="row">
+                    <div class="col-md-6 col-12"><div t-attf-class="oe_product_image position-relative flex-grow-0 overflow-hidden">
+                            <input
+                                type="hidden"
+                                name="csrf_token"
+                                t-att-value="request.csrf_token()"
+                            />
+
+                            <!-- Fetch Images Data -->
+                            <!-- Use `variant` instead of reassigning `product_variant` beacause it's used to infer
+                                if variant information should be shown later. -->
+                            <t
+                                t-set="variant"
+                                t-value="product_variant or request.env['product.product'].browse(product._get_first_possible_variant_id())"
+                            />
+                            <t
+                                t-if="variant and variant.image_128"
+                                t-set="all_images_list"
+                                t-value="variant._get_images()"
+                            />
+                            <t
+                                t-else=""
+                                t-set="all_images_list"
+                                t-value="product._get_images()"
+                            />
+                            <!--
+                                Image holders are records of different types (`product.template`, `product.product`
+                                or `product.image`) and are returned as a list.
+                            -->
+                            <t
+                                t-set="primary_image_holder"
+                                t-value="(all_images_list[:1]+[product])[0]"
+                            />
+                            <t
+                                t-set="secondary_image_holder"
+                                t-value="(all_images_list[1:2]+[False])[0]"
+                            />
+                            <div class="lbl_container container_bits" t-if="is_active_product_lable and len(product.product_label_ids)">
+                                    <t t-foreach="product.product_label_ids" t-as="p_label">
+                                        <span t-attf-class="p_label #{p_label.lable_style}" t-attf-style="border-color:#{p_label.bg_color};background-color:#{p_label.bg_color};color:#{p_label.text_color};">
+                                            <t t-esc="p_label.name"/>
+                                        </span>
+                                    </t>
+                            </div>
+                            <a
+                                t-att-href="product_href"
+                                t-attf-class="oe_product_image_link position-relative {{secondary_image_holder and 'oe_product_image_link_has_secondary'}}"
+                                contenteditable="false"
+                                t-att-title="product.name"
+                            >
+                                <!-- Primary image -->
+                                <span
+                                    t-field="primary_image_holder.image_1920"
+                                    t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img h-100 w-100'}"
+                                    class="oe_product_image_img_wrapper oe_product_image_img_wrapper_primary d-flex h-100 justify-content-center align-items-center"
+                                />
+
+                                <!-- Secondary image -->
+                                <span
+                                    t-if="secondary_image_holder"
+                                    t-field="secondary_image_holder.image_1920"
+                                    t-options="{'widget': 'image', 'preview_image': 'image_1024', 'class': 'oe_product_image_img_secondary h-100 w-100'}"
+                                    class="oe_product_image_img_wrapper oe_product_image_img_wrapper_secondary h-100 justify-content-center align-items-center"
+                                />
+
+                                <!-- Ribbon -->
+                                <!-- <t t-if="show_ribbons">
+                                    <t t-set="bg_color" t-value="ribbon.bg_color"/>
+                                    <t t-set="text_color" t-value="ribbon.text_color"/>
+                                    <span
+                                        t-att-data-ribbon-id="ribbon.id"
+                                        t-attf-class="o_ribbons o_not_editable #{ribbon._get_css_classes()}"
+                                        t-attf-style="#{text_color and ('color: %s;' % text_color)} #{bg_color and 'background-color:' + bg_color}"
+                                        t-out="ribbon.name or ''"
+                                    />
+                                </t> -->
+                            </a>
+                        </div>
+                        <div class="content-container-lgp-2 px-3">
+                                    <!-- Product Name -->
+                                    <h2 class="o_wsale_products_item_title text-break  mt-2">
+                                        <a
+                                            class="text-decoration-none"
+                                            t-att-href="product_href"
+                                        >
+                                            <span t-field="product.name"/>
+                                            <t
+                                                t-if="product_variant"
+                                                t-set="combination_name"
+                                                t-value="product_variant.product_template_attribute_value_ids._get_combination_name()"
+                                            />
+                                            <span
+                                                t-if="combination_name"
+                                                t-out="'('+combination_name+')'"
+                                            />
+                                        </a>
+                                    
+                                    </h2>       
+                                    <t t-call="portal_rating.rating_widget_stars_static" t-if="is_active_rattings">
+                                        <t t-set="rating_avg" t-value="product.rating_avg"/>
+                                        <t t-set="rating_count" t-value="product.rating_count"/>
+                                    </t>    
+                                    <!-- Price(s) -->
+                                <t t-if="product_price" t-out="product_price"/>
+                                <t t-else="">
+                                    <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
+                                    <div class="product_price order-0 mb-2" aria-label="Price information">
+                                        <span
+                                            class="mb-0 fw-bold"
+                                            aria-label="Sale price"
+                                            t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale"
+                                            t-out="template_price_vals['price_reduce']"
+                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                        />
+                                        <t
+                                            t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] &gt; template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)"
+                                            name="product_base_price"
+                                        >
+                                            <del
+                                                aria-label="Original price"
+                                                t-attf-class="text-muted me-1 mb-0"
+                                                style="white-space: nowrap;"
+                                            >
+                                                <small
+                                                    t-esc="template_price_vals['base_price']"
+                                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                                />
+                                            </del>
+                                        </t>
+                                    </div>
+                                </t>   
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12"> 
+                        <div class="o_wsale_product_information d-block flex-grow-1 flex-shrink-1 justify-content-between">
+                                <!-- Out of Stock -->
+                                <t t-if="is_active_stock_lable">
+                                    <t t-call="theme_crest.stock_lbl_bits"/>
+                                </t>
+                            <div class="o_wsale_product_info_attributes_wrapper">
+                              
+                                <!-- Description -->
+                                <t t-call="website_sale.product_tile_element_visibility">
+                                    <t t-set="visible_element_class" t-value="'o_wsale_products_opt_has_description'"/>
+                                    <div class="oe_subdescription_wrapper mt-2 px-2">
+                                        <div
+                                            class="oe_subdescription text-muted small"
+                                            contenteditable="false"
+                                        >
+                                            <div t-field="product.description_sale"/>
+                                        </div>
+                                    </div>
+                                </t>                   
+                                
+                                <t t-if="product_ptavs_data" t-call="theme_crest.product_attrs_selector_bits"/>
+                                <div class='product-tags' t-if="product.product_tag_ids and is_active_product_lable">
+                                    <ul class='d-flex align-items-center p-0 m-0 flex-wrap'>
+                                        <t t-foreach="product.product_tag_ids" t-as="tag">
+                                            <li class="tag-items"><t t-esc="tag.name"/></li>
+                                        </t>
+                                    </ul>
+                                </div>
+                                <div class="d-flex flex-column o_term_and_conditions_inner mt-2 m-0" t-if="product.terms_conditions_id.product_terms_lines and is_active_product_terms_and_condition">
+                                    <t t-foreach="product.terms_conditions_id.product_terms_lines" t-as="term">
+                                        <div class="p-0 m-0">
+                                            <div class=" d-flex align-items-center o_term_and_conditions ">
+                                                <t t-if="term.indication_type == 'icon'">
+                                                    <div class="img" t-if="term.indication_icon">
+                                                        <i t-attf-class="#{term.indication_icon}  terms-icon"/>
+                                                    </div>
+                                                </t>
+                                                <t t-if="term.indication_type == 'image'">
+                                                    <div class="img"  t-if="term.indication_img">
+                                                        <img class="img img-fluid terms-img" t-attf-src="/web/image/product.terms.lines/#{term.id}/indication_img"/>
+                                                    </div> 
+                                                </t>
+                                                <div >
+                                                    <span t-field="term.name" t-attf-class=" #{t_name} terms-title " />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                                <a
+                                            t-if="not product.website_published"
+                                            role="button"
+                                            t-att-href="product_href"
+                                            class="btn btn-sm btn-danger"
+                                            title="This product is unpublished."
+                                        >
+                                            Unpublished
+                                </a>
+                                <div t-if="product_prl_offer_data" class=" card_item_timer_bits " style="display : none">
+                                    <div class="pl_offer_timer d-flex align-items-center justify-content-start flex-wrap" t-att-data-offerends="product_prl_offer_data">
+                                        <div class="d-flex justify-content-start align-items-center my-1">
+                                                <div t-attf-class="counter-box me-2  #{card_border_style}">
+                                                    <span class="counter days "></span>
+                                                    <p>Days</p>
+                                                </div>
+                                                <div t-attf-class="counter-box me-2  #{card_border_style}">
+                                                    <span class="counter hours "></span>
+                                                    <p>Hours</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start align-items-center my-1">
+                                                <div t-attf-class="counter-box me-2  #{card_border_style}">
+                                                    <span class="counter minutes "></span>
+                                                    <p>Mins</p>
+                                                </div>
+                                                <div t-attf-class="counter-box me-2  #{card_border_style}">
+                                                    <span class="counter seconds "></span>
+                                                    <p>Secs</p>
+                                                </div>
+                                            </div>  
+                                    </div>
+                                </div>
+                                <t t-if="not is_b2b_enabled">
+                                    <div t-if="is_active_cart" class="o_wsale_product_btn_bits">
+                                            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                                            <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                                            <input name="product_template_id" t-att-value="product.id" type="hidden"/>
+                                            <t t-if="prod00uct_variant_id and template_price_vals['price_reduce'] or not website.prevent_zero_price_sale">
+                                                <div class="co_action btn-cart add-to-card btn-cart-bits">
+                                                        <a
+                                                            t-if="product._website_show_quick_add()"
+                                                            href="#"
+                                                            role="button"
+                                                            t-attf-class="a-submit text-nowrap #{card_border_style}"
+                                                            aria-label="Shopping cart"
+                                                            title="Shopping cart"
+                                                        >
+                                                            <i class="px-1 fa fa-shopping-basket"/>
+                                                            <span class="cart-label">Add to Cart</span>
+                                                        </a>
+                                                </div>
+                                            </t>
+                                    </div>
+                                </t>
+                                <div class="product-action d-flex" t-if="is_active_wishlist or is_active_compare or is_active_quickview">
+                                    <div t-attf-class="quick_view_container co_action btn-cart #{card_border_style}" t-if="is_active_quickview">
+                                        <a type="button" t-attf-class="o_quick_view_btn " title="Quick View" t-att-data-product-template-id="product.id" data-action="o_quick_view">
+                                            <i class="fa fa-eye btn-qv-sm"></i>
+                                        </a>
+                                    </div>
+                                    <t t-if="is_active_compare" class="">
+                                        <t t-call="theme_crest.te_compare_bits"/>
+                                    </t>
+                                    <t t-if="is_active_wishlist" class="">
+                                        <t t-call="theme_crest.te_wishlist_bits"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </template>
+</odoo>

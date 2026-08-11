@@ -3,8 +3,8 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Mruthul Raj(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
@@ -22,22 +22,21 @@
 import hashlib
 from odoo import fields, models
 
-
 class DocumentLock(models.Model):
     """Model used to lock documents and do other functions
      for locked documents"""
     _name = 'document.lock'
-    _description = 'Document Lock'
+    _description = "Document Lock"
     _rec_name = 'document_file_id'
 
     document_file_id = fields.Many2one('document.file', string='document file',
-                                       help="id of document file")
+                                       help="ID of the document file.")
     password = fields.Char(string='password', required=True,
                            help="Password to lock document")
     is_lock = fields.Boolean(string="Lock",
-                             help='field for document is lock or not')
+                             help="Indicates whether the document is locked.")
 
-    def lock_doc(self):
+    def action_lock_doc(self):
         """
         Lock a document.
         This method allows authorized users to lock a document by setting a
@@ -66,7 +65,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def unlock_doc(self):
+    def action_unlock_doc(self):
         """
         Unlock a document.
         This method allows users to unlock a locked document by verifying the
@@ -82,15 +81,13 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             self.document_file_id.is_locked = False
-            self.env['document.lock'].search(
-                [('document_file_id', '=', self.document_file_id.id),
-                 ('is_lock', '=', True)],
-                order="id desc").unlink()
+            lock_rec.unlink()
         else:
             return {
                 'type': 'ir.actions.client',
@@ -102,7 +99,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_share(self):
+    def action_document_share(self):
         """
         Share a locked document.
         This method allows users to share a locked document by verifying the
@@ -118,10 +115,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             return self.env['document.share'].create_url(
                 [self.document_file_id.id])
         else:
@@ -135,7 +133,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_download(self):
+    def action_document_download(self):
         """
         Download a locked document.
         This method allows users to download a locked document by verifying
@@ -151,15 +149,27 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             document_url = self.env.context.get('document_url', False)
-            return {
-                'type': 'ir.actions.act_url',
-                'url': document_url + '?download=true',
-            }
+            if document_url:
+                return {
+                    'type': 'ir.actions.act_url',
+                    'url': document_url + '?download=true',
+                }
+            else:
+                return {
+                    'type': 'ir.actions.client',
+                    'tag': 'display_notification',
+                    'params': {
+                        'message': "Download URL not found",
+                        'type': 'danger',
+                        'sticky': False,
+                    }
+                }
         else:
             return {
                 'type': 'ir.actions.client',
@@ -171,7 +181,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_create_lead(self):
+    def action_document_create_lead(self):
         """
         Create a lead for a locked document.
         This method allows users to create a lead for a locked document by
@@ -188,10 +198,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             result = self.document_file_id.action_btn_create_lead(
                 self.document_file_id.id)
             if not result:
@@ -215,7 +226,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_create_task(self):
+    def action_document_create_task(self):
         """
         Create a task for a locked document.
         This method allows users to create a task for a locked document by
@@ -231,10 +242,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             result = self.document_file_id.action_btn_create_task(
                 self.document_file_id.id)
             if not result:
@@ -259,7 +271,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_lock_mail(self):
+    def action_document_lock_mail(self):
         """
         Create mail for locked documents.This method allows users to create a
         mail for a locked document by verifying the provided password.It
@@ -275,10 +287,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             return self.document_file_id.on_mail_document(
                 [self.document_file_id.id])
         else:
@@ -292,7 +305,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_copy_mail(self):
+    def action_document_copy_mail(self):
         """
         Copy or move locked documents.
         This method allows users to copy or move locked documents from one
@@ -308,10 +321,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             return {
                 'type': 'ir.actions.act_window',
                 'name': 'copy',
@@ -334,7 +348,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_lock_archive(self):
+    def action_document_lock_archive(self):
         """
         Archive locked documents after verifying the password.
         This method archives locked documents by checking the provided password
@@ -347,10 +361,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             self.document_file_id.document_file_archive(
                 self.document_file_id.id)
         else:
@@ -364,7 +379,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_move_to_trash(self):
+    def action_document_move_to_trash(self):
         """
         Move locked documents to the trash folder after password verification.
         This method moves locked documents to the trash folder by verifying the
@@ -378,10 +393,11 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.env['document.lock'].search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
                  ('is_lock', '=', True)],
-                order="id desc").password:
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             self.document_file_id.document_file_delete(
                 self.document_file_id.id)
         else:
@@ -395,7 +411,7 @@ class DocumentLock(models.Model):
                 }
             }
 
-    def document_delete_permanent(self):
+    def action_document_delete_permanent(self):
         """
         Permanently delete locked documents after password verification.
         This method permanently deletes locked documents by verifying the
@@ -408,10 +424,40 @@ class DocumentLock(models.Model):
         self.write({
             'password': hashlib.sha256(self.password.encode()).hexdigest()
         })
-        if password == self.search(
+        lock_rec = self.env['document.lock'].search(
                 [('document_file_id', '=', self.document_file_id.id),
-                 ('is_lock', '=', True)], order="id desc").password:
+                 ('is_lock', '=', True)],
+                order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
             self.document_file_id.unlink()
+        else:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'message': "Incorrect Password",
+                    'type': 'danger',
+                    'sticky': False,
+                }
+            }
+    def action_document_open(self):
+        """Verify password and return document data for the viewer."""
+        password = hashlib.sha256(self.password.encode()).hexdigest()
+        lock_rec = self.env['document.lock'].search(
+            [('document_file_id', '=', self.document_file_id.id),
+             ('is_lock', '=', True)],
+            order="id desc", limit=1)
+        if lock_rec and password == lock_rec.password:
+            attachment, attachment_list = self.document_file_id.get_documents_list(
+                self.document_file_id.id)
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'open_document_viewer',
+                'params': {
+                    'attachment': attachment,
+                    'attachment_list': attachment_list,
+                }
+            }
         else:
             return {
                 'type': 'ir.actions.client',

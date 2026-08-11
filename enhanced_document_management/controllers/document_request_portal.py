@@ -3,8 +3,8 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2025-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Mruthul Raj(<https://www.cybrosys.com>)
+#    Copyright (C) 2026-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
 #
 #    You can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
@@ -19,23 +19,13 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-from odoo.http import request
 from odoo import http
+from odoo.http import request
 from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
 class DocumentRequestCount(CustomerPortal):
     """Controller handling document request counts and downloads."""
-    def _prepare_home_portal_values(self, counters):
-        """Prepare home portal values including document request count.
-            Args:counters (dict): Dictionary of counters.
-            Returns:Dictionary of values for the home portal."""
-        vals = super()._prepare_home_portal_values(counters)
-        if 'doc_req_count' in counters:
-            vals['doc_req_count'] = request.env[
-                'document.template.request'].sudo().search_count(
-                [])
-        return vals
 
     @http.route(['/document_request/download/<int:order_id>'], type='http',
                 auth="public", website=True)

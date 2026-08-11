@@ -1,9 +1,12 @@
 /** @odoo-module */
 import { registry } from "@web/core/registry";
-import { onMounted, useRef } from "@odoo/owl";
+import { Component, onMounted, useRef } from "@odoo/owl";
 const actionRegistry = registry.category("actions");
 
-class DocumentPreview extends owl.Component {
+class DocumentPreview extends Component {
+    /**
+     * Setup method
+     */
     setup() {
         super.setup(...arguments);
         this.template_div = useRef("document_preview_template_content");
@@ -14,20 +17,32 @@ class DocumentPreview extends owl.Component {
             this.prevent_reload();
         });
     }
+    /**
+     * Method to render the template
+     */
     render_template() {
-        /* Method to render the template*/
-        this.__owl__.bdom.el.parentElement.classList.add('document_preview_action')
-        if (localStorage.getItem("myContent")) {
-            this.template_div.el.innerHTML = localStorage.getItem("myContent");
+        if (this.el && this.el.parentElement) {
+            this.el.parentElement.classList.add('document_preview_action')
         }
-        if (this.template) {
-            this.template_div.el.innerHTML = this.template;
+        if (this.template_div.el) {
+            if (localStorage.getItem("myContent")) {
+                this.template_div.el.innerHTML = localStorage.getItem("myContent");
+            }
+            if (this.template) {
+                this.template_div.el.innerHTML = this.template;
+            }
         }
     }
+    /**
+     * Method to prevent reload and set the template contents into local storage
+     */
     prevent_reload() {
-        /* Method to prevent reload and set the template contents into local storage */
         var self = this
         window.addEventListener('beforeunload', function (event) {
+            /**
+             * If method
+             * @param {any} self.template_div.el
+             */
             if (self.template_div.el) {
                 localStorage.setItem("myContent", self.template_div.el.innerHTML);
             }

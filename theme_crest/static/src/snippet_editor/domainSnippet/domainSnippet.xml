@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="theme_crest.DomainSnippet">
+        <div class="mb-2 row  align-items-center p-0">
+            <div class="col-12">
+                <label class="group-domain-label pb-1">Templates:</label>
+            </div>
+            <div class="col-lg-4 col-12">
+                <select class="group-domain-input  me-0" style="background:white; color:#404040;" t-on-change="ev => this.state.selectedTemplate = ev.target.value" t-att-value="state.selectedTemplate">
+                    <t t-foreach="state.defaulTemplate" t-as="template" t-key="template.id" >
+                        <option t-att-value="template.id" style="background:white; color:#404040;">
+                            <t t-esc="template.title"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </div>
+        <div t-if="state.selectedTemplate == 'default'" class="row mx-auto mb-2">
+            <!-- todo -->
+            <!-- <Domain/> -->
+        </div>
+        <div t-if="state.selectedTemplate == 'default'" class="mb-2 row align-items-center">
+            <div class="col-12">
+                <label class="group-domain-label pb-1">Order by:</label>
+            </div>
+            <div class="col-lg-4 col-12">
+                <select class="group-domain-input" style="background:white; color:#404040;" t-on-change="ev => this.state.selectedOrder = ev.target.value" t-att-value="state.selectedOrder">
+                    <t t-foreach="state.orderBy" t-as="order" t-key="order.id" >
+                        <option t-att-value="order.orderBy" style="background:white; color:#404040;">
+                            <t t-esc="order.title"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </div>
+        <div class="mb-2 row align-items-center p-0">
+            <div class="col-12">
+                <label class="group-domain-label">Products: 
+                    <span t-if="state.allProducts" style="color: green; font-weight: bold;">ALL</span>
+                    <span t-else=""><t t-esc="state.limit"/></span>
+                </label>
+            </div>
+            <div class="col-lg-4 col-12">
+                <input t-att-value="state.limit"  t-on-change="ev => this.state.limit = ev.target.value" type="range" min="4" max="20" class="mt-1 w-100 progress" t-att-disabled="state.allProducts"/>
+            </div>
+        </div>
+        <div class="mb-2 row align-items-center p-0">
+            <div class="col-12">
+                <label class="group-domain-label d-flex align-items-center gap-2">
+                    <input type="checkbox" class="form-check-input m-0" id="allProductsCheckbox" t-att-checked="state.allProducts" t-on-change="ev => this.state.allProducts = ev.target.checked"/>
+                    <span>Show All Products</span>
+                </label>
+            </div>
+        </div>
+    </t>
+</templates>
