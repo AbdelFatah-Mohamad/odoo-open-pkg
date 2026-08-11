@@ -1,0 +1,3198 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ac_ads_connector
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-10 12:52+0000\n"
+"PO-Revision-Date: 2026-08-10 12:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/wizard/ads_audience_upload_wizard.py:0
+msgid "%(count)s contacts queued for %(name)s (%(state)s)."
+msgstr "تمت جدولة %(count)s جهة اتصال للجمهور %(name)s (%(state)s)."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid "%s conversion action(s) listed in the chatter."
+msgstr "تم إدراج %s إجراء (إجراءات) تحويل في سجل المراسلات."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_sync_mixin.py:0
+msgid "%s was never pushed to the platform."
+msgstr "%s لم يُرسل إلى المنصة من قبل."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__insight_sync_level__adset
+msgid "+ Ad Sets"
+msgstr "+ المجموعات الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__insight_sync_level__ad
+msgid "+ Ads"
+msgstr "+ الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ab_testing_winner_mailing_id
+msgid "A/B Campaign Winner Mailing"
+msgstr "المراسلة الفائزة في حملة اختبار A/B"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ab_testing_mailings_count
+msgid "A/B Test Mailings #"
+msgstr "عدد مراسلات اختبار A/B"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ab_testing_completed
+msgid "A/B Testing Campaign Finished"
+msgstr "انتهت حملة اختبار A/B"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__account_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__account_id
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_insight__level__account
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Account"
+msgstr "الحساب"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid ""
+"Account %(name)s: the last successful lead sync is older than 24 hours. "
+"Platform lead retention is limited — investigate before submissions expire."
+msgstr "الحساب %(name)s: آخر مزامنة ناجحة للعملاء المحتملين أقدم من 24 ساعة. مدة احتفاظ المنصة ببيانات العملاء المحتملين محدودة — تحقق من المشكلة قبل انتهاء صلاحية الطلبات."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__currency_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__currency_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__currency_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__currency_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__currency_id
+msgid "Account Currency"
+msgstr "عملة الحساب"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__tz_name
+msgid "Account Timezone"
+msgstr "المنطقة الزمنية للحساب"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_needaction
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب إجراءً"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Activate"
+msgstr "تفعيل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__active
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__active
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__active
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__status__enabled
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__status__enabled
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__status__enabled
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_exception_decoration
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_state
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_type_icon
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_ad
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__ad_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ad_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__ad_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__ad_id
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_insight__level__ad
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+msgid "Ad"
+msgstr "الإعلان"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_ad.py:0
+msgid "Ad %s has no landing URL to track."
+msgstr "الإعلان %s لا يحتوي على رابط هبوط لتتبعه."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Ad Account"
+msgstr "الحساب الإعلاني"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_account
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_accounts
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+msgid "Ad Accounts"
+msgstr "الحسابات الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_audience
+msgid "Ad Audience"
+msgstr "الجمهور الإعلاني"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_campaign
+msgid "Ad Campaign"
+msgstr "الحملة الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ad_count
+msgid "Ad Count"
+msgstr "عدد الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_creative
+msgid "Ad Creative"
+msgstr "التصميم الإعلاني"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__adgroup_type
+msgid "Ad Group Type"
+msgstr "نوع المجموعة الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_insight
+msgid "Ad Insight"
+msgstr "إحصاءات الإعلان"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_lead_form
+msgid "Ad Lead Form"
+msgstr "نموذج العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_graph
+msgid "Ad Performance"
+msgstr "أداء الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_account
+msgid "Ad Platform Account"
+msgstr "حساب منصة الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_insight__level__adset
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+msgid "Ad Set"
+msgstr "المجموعة الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_adset
+msgid "Ad Set / Ad Group"
+msgstr "المجموعة الإعلانية"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Ad Set level"
+msgstr "على مستوى المجموعة الإعلانية"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_adset
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_adsets
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Ad Sets"
+msgstr "المجموعات الإعلانية"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/crm_lead.py:0
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.crm_lead_view_form_inherit_ads
+msgid "Ad Submissions"
+msgstr "طلبات الإعلانات"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid "Ad account %(name)s can no longer authenticate: %(error)s"
+msgstr "الحساب الإعلاني %(name)s لم يعد قادراً على المصادقة: %(error)s"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid "Ad account credentials need attention"
+msgstr "بيانات اعتماد الحساب الإعلاني تحتاج إلى مراجعة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Ad level"
+msgstr "على مستوى الإعلان"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_google_auth_wizard_view_form
+msgid ""
+"Add the redirect URI above to your OAuth client's authorized redirect URIs in\n"
+"                    Google Cloud Console, then continue — you will be sent to Google's consent\n"
+"                    screen and back."
+msgstr ""
+"أضف رابط إعادة التوجيه أعلاه إلى روابط إعادة التوجيه المصرّح بها في عميل "
+"OAuth ضمن Google Cloud Console، ثم تابع — ستنتقل إلى شاشة موافقة Google ثم "
+"تعود."
+
+#. module: ac_ads_connector
+#: model:res.groups,name:ac_ads_connector.group_ads_admin
+msgid "Administrator"
+msgstr "المدير"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_ad
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_ads
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_root
+#: model:res.groups.privilege,name:ac_ads_connector.res_groups_privilege_ads
+#: model:spreadsheet.dashboard.group,name:ac_ads_connector.spreadsheet_dashboard_group_ads
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Ads"
+msgstr "الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.module.category,name:ac_ads_connector.module_category_ads
+msgid "Ads Connector"
+msgstr "موصل الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_dashboard
+msgid "Ads Dashboard"
+msgstr "لوحة معلومات الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_crm_lead__ads_lead_ids
+msgid "Ads Lead"
+msgstr "عميل محتمل من الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_crm_lead__ads_lead_count
+msgid "Ads Lead Count"
+msgstr "عدد العملاء المحتملين من الإعلانات"
+
+#. module: ac_ads_connector
+#: model:spreadsheet.dashboard,name:ac_ads_connector.spreadsheet_dashboard_ads
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_performance_report_view_list
+msgid "Ads Performance"
+msgstr "أداء الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_performance_report
+msgid "Ads Performance (Spend vs CRM)"
+msgstr "أداء الإعلانات (الإنفاق مقابل إدارة العملاء)"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_push_job
+msgid "Ads Push Job"
+msgstr "مهمة دفع الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_sync_engine
+msgid "Ads Sync Engine"
+msgstr "محرك مزامنة الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_sync_log
+msgid "Ads Sync Run Log"
+msgstr "سجل تشغيل مزامنة الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_sync_mixin
+msgid "Ads Sync State"
+msgstr "حالة مزامنة الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_insight_compact_ir_actions_server
+msgid "Ads: Compact Old Insight Rows"
+msgstr "الإعلانات: ضغط صفوف الإحصاءات القديمة"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_push_queue_ir_actions_server
+msgid "Ads: Push Queued Changes"
+msgstr "الإعلانات: دفع التغييرات في قائمة الانتظار"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_sync_insights_today_ir_actions_server
+msgid "Ads: Refresh Today's Insights"
+msgstr "الإعلانات: تحديث إحصاءات اليوم"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_sync_structure_ir_actions_server
+msgid "Ads: Sync Campaign Structure"
+msgstr "الإعلانات: مزامنة هيكل الحملات"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_sync_insights_ir_actions_server
+msgid "Ads: Sync Insights (Daily)"
+msgstr "الإعلانات: مزامنة الإحصاءات (يومياً)"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_sync_leads_ir_actions_server
+msgid "Ads: Sync Leads"
+msgstr "الإعلانات: مزامنة العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_log_gc_ir_actions_server
+msgid "Ads: Sync Log Cleanup"
+msgstr "الإعلانات: تنظيف سجلات المزامنة"
+
+#. module: ac_ads_connector
+#: model:ir.actions.server,name:ac_ads_connector.ir_cron_ads_token_health_ir_actions_server
+msgid "Ads: Token Health Check"
+msgstr "الإعلانات: فحص صلاحية رموز الوصول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__adset_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__adset_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__adset_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__adset_id
+msgid "Adset"
+msgstr "المجموعة الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__adset_count
+msgid "Adset Count"
+msgstr "عدد المجموعات الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__social_post_ids
+msgid "All related social media posts"
+msgstr "جميع منشورات التواصل الاجتماعي ذات الصلة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__is_auto_campaign
+msgid "Allows us to filter relevant Campaigns"
+msgstr "يتيح لنا تصفية الحملات ذات الصلة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead_field_map__fallback_to_description
+msgid "Also include this answer in the description dump."
+msgstr "أدرج هذه الإجابة أيضاً في نص الوصف."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead_process_wizard__force_reprocess
+msgid "Also re-run rows in Error or Skipped state."
+msgstr "أعد أيضاً معالجة الصفوف في حالة خطأ أو متجاوَزة."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_form
+msgid "Answers"
+msgstr "الإجابات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__app
+msgid "App Promotion"
+msgstr "الترويج للتطبيق"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__meta_app_secret
+msgid "App Secret"
+msgstr "السر الخاص بالتطبيق"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__approximate_count
+msgid "Approximate Count"
+msgstr "العدد التقريبي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__status__archived
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__status__archived
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__status__archived
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_form_view_form
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__asset_data
+msgid "Asset Data"
+msgstr "بيانات الأصول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__async_report_ref
+msgid "Async Report Ref"
+msgstr "مرجع التقرير غير المتزامن"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__budget_type__none
+msgid "At Ad Set level"
+msgstr "على مستوى المجموعة الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__budget_type__none
+msgid "At Campaign level"
+msgstr "على مستوى الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_attachment_count
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__attempt
+msgid "Attempt"
+msgstr "المحاولة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Attribution"
+msgstr "الإسناد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__audience_id
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_view_form
+msgid "Audience"
+msgstr "الجمهور"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__audience_type
+msgid "Audience Type"
+msgstr "نوع الجمهور"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_audience
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_audiences
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_view_list
+msgid "Audiences"
+msgstr "الجماهير"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__is_auto_campaign
+msgid "Automatically Generated Campaign"
+msgstr "حملة أُنشئت تلقائياً"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__lead_auto_convert
+msgid "Automatically turn staged platform leads into CRM leads."
+msgstr ""
+"حوّل العملاء المحتملين الواردين من المنصة تلقائياً إلى عملاء محتملين في نظام"
+" إدارة العملاء."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid ""
+"Available conversion actions:\n"
+"%s"
+msgstr "إجراءات التحويل المتاحة:\n%s"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__awareness
+msgid "Awareness"
+msgstr "الوعي بالعلامة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__bid_strategy
+msgid "Bid Strategy"
+msgstr "استراتيجية المزايدة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__billing_event
+msgid "Billing Event"
+msgstr "حدث الفوترة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__body
+msgid "Body"
+msgstr "النص"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_sync_mixin.py:0
+msgid ""
+"Both Odoo and the ad platform changed this record. Review the remote values "
+"and resolve with Keep Local or Keep Remote."
+msgstr "تم تعديل هذا السجل في أودو وفي منصة الإعلانات معاً. راجع القيم البعيدة واحسم التعارض عبر «الاحتفاظ بالمحلي» أو «الاحتفاظ بالبعيد»."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__bounced_ratio
+msgid "Bounced Ratio"
+msgstr "نسبة الارتداد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__breakdown_key
+msgid "Breakdown Key"
+msgstr "مفتاح التفصيل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__budget_amount
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__budget_amount
+msgid "Budget Amount"
+msgstr "مبلغ الميزانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__budget_type
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__budget_type
+msgid "Budget Type"
+msgstr "نوع الميزانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__meta_business_id
+msgid "Business ID"
+msgstr "معرّف النشاط التجاري"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__lead_dedup_mode__email
+msgid "By Email"
+msgstr "حسب البريد الإلكتروني"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__lead_dedup_mode__email_phone
+msgid "By Email or Phone"
+msgstr "حسب البريد الإلكتروني أو الهاتف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__cpc
+msgid "CPC"
+msgstr "تكلفة النقرة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__cpc_bid
+msgid "CPC Bid"
+msgstr "عرض تكلفة النقرة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__cpl
+msgid "CPL"
+msgstr "تكلفة العميل المحتمل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__cpm
+msgid "CPM"
+msgstr "التكلفة لكل ألف ظهور"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__ctr
+msgid "CTR (%)"
+msgstr "نسبة النقر إلى الظهور (%)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__call_to_action
+msgid "Call To Action"
+msgstr "دعوة لاتخاذ إجراء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__callback_url
+msgid "Callback Url"
+msgstr "رابط الاستدعاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__campaign_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__campaign_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__campaign_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__campaign_id
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_insight__level__campaign
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "Campaign"
+msgstr "الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__name
+msgid "Campaign Identifier"
+msgstr "معرّف الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__title
+msgid "Campaign Name"
+msgstr "اسم الحملة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Campaign level"
+msgstr "على مستوى الحملة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Campaign name"
+msgstr "اسم الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_campaign
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_campaigns
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+msgid "Campaigns"
+msgstr "الحملات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__insight_sync_level__campaign
+msgid "Campaigns only"
+msgstr "الحملات فقط"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_upload_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_google_auth_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_process_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_wizard_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__state__cancel
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_adset.py:0
+msgid "Cannot create the ad set yet, it still needs: %s"
+msgstr "لا يمكن إنشاء المجموعة الإعلانية بعد؛ ما زالت تحتاج إلى: %s"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "Cannot create the campaign yet, it still needs: %s"
+msgstr "لا يمكن إنشاء الحملة بعد؛ ما زالت تحتاج إلى: %s"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__clicks
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__clicks
+msgid "Clicks"
+msgstr "النقرات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__clicks_30d
+msgid "Clicks (30d)"
+msgstr "النقرات (30 يوماً)"
+
+#. module: ac_ads_connector
+#. odoo-javascript
+#: code:addons/ac_ads_connector/data/files/ads_dashboard.json:0
+msgid "Clicks by Day"
+msgstr "النقرات حسب اليوم"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__color
+msgid "Color Index"
+msgstr "مؤشر اللون"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__company_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: ac_ads_connector
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: ac_ads_connector
+#: model:res.groups,comment:ac_ads_connector.group_ads_admin
+msgid "Configure accounts and credentials, push changes to the platforms."
+msgstr "إعداد الحسابات وبيانات الاعتماد ودفع التغييرات إلى المنصات."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__conflict
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__conflict
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__conflict
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__conflict
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__conflict
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_kanban
+msgid "Conflict"
+msgstr "تعارض"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Connect Google"
+msgstr "ربط Google"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_google_auth_wizard
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_google_auth_wizard_view_form
+msgid "Connect Google Ads"
+msgstr "ربط إعلانات Google"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_google_auth_wizard
+msgid "Connect Google Ads (one-time OAuth consent)"
+msgstr "ربط إعلانات Google (موافقة OAuth لمرة واحدة)"
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_campaign
+msgid ""
+"Connect an ad account and click <b>Sync Structure</b> to mirror your\n"
+"               campaigns here."
+msgstr "اربط حساباً إعلانياً ثم اضغط <b>مزامنة الهيكل</b> لعرض حملاتك هنا."
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_account
+msgid "Connect your first ad account"
+msgstr "اربط حسابك الإعلاني الأول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__state__connected
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+msgid "Connected"
+msgstr "متصل"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid "Connected to %s (%s)."
+msgstr "تم الاتصال بـ %s (%s)."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid "Connection failed: %s"
+msgstr "فشل الاتصال: %s"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__contact_name
+msgid "Contact Name"
+msgstr "اسم جهة الاتصال"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__partner_ids
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_audience_upload_wizard__partner_ids
+msgid ""
+"Contacts whose email/phone will be normalized, SHA-256 hashed at push time "
+"and matched by the platform. Hashes are never stored."
+msgstr ""
+"جهات الاتصال التي سيتم توحيد بريدها/هاتفها وتجزئتها بخوارزمية SHA-256 لحظة "
+"الرفع لتطابقها المنصة. لا تُخزَّن قيم التجزئة أبداً."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_google_auth_wizard_view_form
+msgid "Continue to Google"
+msgstr "المتابعة إلى Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__conversion_action_resource
+msgid "Conversion Action Resource"
+msgstr "مورد إجراء التحويل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__conversion
+msgid "Conversion Upload"
+msgstr "رفع التحويلات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__conversion_upload_enabled
+msgid "Conversion Upload Enabled"
+msgstr "رفع التحويلات مفعّل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__conversion_value
+msgid "Conversion Value"
+msgstr "قيمة التحويل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__conversions
+msgid "Conversions"
+msgstr "التحويلات"
+
+#. module: ac_ads_connector
+#. odoo-javascript
+#: code:addons/ac_ads_connector/data/files/ads_dashboard.json:0
+msgid "Conversions by Campaign"
+msgstr "التحويلات حسب الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__cooldown_reason
+msgid "Cooldown Reason"
+msgstr "سبب فترة التهدئة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__cooldown_until
+msgid "Cooldown Until"
+msgstr "التهدئة حتى"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__cost_per_crm_lead
+msgid "Cost per CRM Lead"
+msgstr "التكلفة لكل عميل محتمل في إدارة العملاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__cpl_30d
+msgid "Cost per Lead (30d)"
+msgstr "التكلفة لكل عميل محتمل (30 يوماً)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__create_crm_lead
+msgid "Create Crm Lead"
+msgstr "إنشاء عميل محتمل"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+msgid "Create Tracked Link"
+msgstr "إنشاء رابط متتبع"
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_account
+msgid ""
+"Create an account per platform (Meta or Google Ads), paste the credentials\n"
+"               and click <b>Test Connection</b>."
+msgstr ""
+"أنشئ حساباً لكل منصة (Meta أو إعلانات Google)، والصق بيانات الاعتماد ثم اضغط"
+" <b>اختبار الاتصال</b>."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__duplicate_policy__create_anyway
+msgid "Create anyway"
+msgstr "الإنشاء على أي حال"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__operation__create
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Create on Platform"
+msgstr "الإنشاء على المنصة"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_audience.py:0
+#: code:addons/ac_ads_connector/wizard/ads_audience_upload_wizard.py:0
+msgid "Create the audience on the platform first."
+msgstr "أنشئ الجمهور على المنصة أولاً."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__create_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__create_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__creative_id
+msgid "Creative"
+msgstr "التصميم الإعلاني"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__crm_field_id
+msgid "Crm Field"
+msgstr "حقل إدارة العملاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__crm_lead_id
+msgid "Crm Lead"
+msgstr "العميل المحتمل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__audience_type__custom
+msgid "Custom / Customer List"
+msgstr "مخصص / قائمة عملاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__budget_type__daily
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__budget_type__daily
+msgid "Daily"
+msgstr "يومي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__insight_retention_days
+msgid "Daily insight rows older than this are compacted to monthly rows."
+msgstr "تُضغط صفوف الإحصاءات اليومية الأقدم من هذه المدة إلى صفوف شهرية."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Daily rows"
+msgstr "الصفوف اليومية"
+
+#. module: ac_ads_connector
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__date
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__ab_testing_schedule_datetime
+msgid ""
+"Date that will be used to know when to determine and send the winner mailing"
+msgstr "التاريخ الذي سيُعتمد لتحديد المراسلة الفائزة وإرسالها"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_insight__granularity__day
+msgid "Day"
+msgstr "يوم"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__debug_logging
+msgid "Debug Logging"
+msgstr "تسجيل التصحيح"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__lead_team_id
+msgid "Default Sales Team"
+msgstr "فريق المبيعات الافتراضي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__lead_user_id
+msgid "Default Salesperson"
+msgstr "مندوب المبيعات الافتراضي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__insight_sync_level
+msgid "Depth of daily insight rows. Heavy accounts can sync campaigns only."
+msgstr "عمق صفوف الإحصاءات اليومية. يمكن للحسابات الضخمة مزامنة الحملات فقط."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__diff_preview
+msgid "Diff Preview"
+msgstr "معاينة الفروقات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_engine__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ir_http__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__state__done
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__state__done
+msgid "Done"
+msgstr "منجز"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__state__partial
+msgid "Done with Errors"
+msgstr "منجز مع أخطاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__draft
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__draft
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__draft
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__draft
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__draft
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_kanban
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__duplicate_lead_id
+msgid "Duplicate Lead"
+msgstr "عميل محتمل مكرر"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__duplicate_policy
+msgid "Duplicate Policy"
+msgstr "سياسة التكرار"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__duplicate_window_days
+msgid "Duplicate Window Days"
+msgstr "نافذة كشف التكرار (أيام)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_upload_wizard_view_form
+msgid ""
+"Emails and phone numbers are normalized and SHA-256 hashed at upload\n"
+"                    time; the hashes are never stored in Odoo."
+msgstr ""
+"يتم توحيد عناوين البريد وأرقام الهواتف وتجزئتها بخوارزمية SHA-256 لحظة "
+"الرفع؛ ولا تُخزَّن قيم التجزئة في أودو أبداً."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead_field_map__crm_field_id
+msgid "Empty: the answer only lands in the lead description."
+msgstr "فارغ: تُدرج الإجابة في وصف العميل المحتمل فقط."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__engagement
+msgid "Engagement"
+msgstr "التفاعل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__state__error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_lead__state__error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__state__error
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_sync_log_view_form
+msgid "Error"
+msgstr "خطأ"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__error_message
+msgid "Error Message"
+msgstr "رسالة الخطأ"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "Errors"
+msgstr "الأخطاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__expected_revenue
+msgid "Expected Revenue"
+msgstr "الإيراد المتوقع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__external_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__external_id
+msgid "External"
+msgstr "المعرّف الخارجي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_crm_lead__fbclid
+msgid "Facebook Click ID"
+msgstr "معرّف نقرة فيسبوك"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__state__error
+msgid "Failed"
+msgstr "فشل"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_job_view_form
+msgid "Failure"
+msgstr "الفشل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__failure_reason
+msgid "Failure Reason"
+msgstr "سبب الفشل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__failure_type
+msgid "Failure Type"
+msgstr "نوع الفشل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__fallback_to_description
+msgid "Fallback To Description"
+msgstr "الإدراج في الوصف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_lead__state__fetch_pending
+msgid "Fetch Pending"
+msgstr "بانتظار الجلب"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__field_data
+msgid "Field Data"
+msgstr "بيانات الحقول"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_form_view_form
+msgid "Field Mapping"
+msgstr "ربط الحقول"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/wizard/google_auth_wizard.py:0
+msgid ""
+"Fill in the OAuth Client ID and Client Secret on the account first (Google "
+"Cloud Console → Credentials)."
+msgstr "أدخل أولاً معرّف عميل OAuth والسر الخاص به في الحساب (Google Cloud Console ← Credentials)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__final_urls
+msgid "Final Urls"
+msgstr "الروابط النهائية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__finished_at
+msgid "Finished At"
+msgstr "انتهى في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_follower_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_partner_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (جهات الاتصال)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__activity_type_icon
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome، مثال: fa-tasks"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__force_reprocess
+msgid "Force Reprocess"
+msgstr "فرض إعادة المعالجة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__form_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__form_id
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "Form"
+msgstr "النموذج"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__forms_synced_at
+msgid "Forms Synced At"
+msgstr "مزامنة النماذج في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__gclid
+msgid "Gclid"
+msgstr "معرّف نقرة Google (gclid)"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Google"
+msgstr "Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__google_ad_type
+msgid "Google Ad Type"
+msgstr "نوع إعلان Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__provider__google
+msgid "Google Ads"
+msgstr "إعلانات Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_api_version
+msgid "Google Api Version"
+msgstr "إصدار واجهة Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_auth_mode
+msgid "Google Auth Mode"
+msgstr "وضع مصادقة Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__google_budget_resource
+msgid "Google Budget Resource"
+msgstr "مورد ميزانية Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_crm_lead__gclid
+msgid "Google Click ID"
+msgstr "معرّف نقرة Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_client_id
+msgid "Google Client"
+msgstr "عميل Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_client_secret
+msgid "Google Client Secret"
+msgstr "سر عميل Google"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Google Credentials"
+msgstr "بيانات اعتماد Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_developer_token
+msgid "Google Developer Token"
+msgstr "رمز مطوّر Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_refresh_token
+msgid "Google Refresh Token"
+msgstr "رمز التحديث من Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__audience_type__user_list
+msgid "Google User List"
+msgstr "قائمة مستخدمي Google"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_webhook_key
+msgid "Google Webhook Key"
+msgstr "مفتاح Webhook الخاص بـ Google"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_ad.py:0
+msgid ""
+"Google ads must be authored in Google Ads itself (their content is immutable"
+" through the API); the hourly sync will mirror them back here."
+msgstr "يجب إنشاء إعلانات Google داخل منصة إعلانات Google نفسها (محتواها غير قابل للتعديل عبر الواجهة البرمجية)؛ وستعكسها المزامنة الساعيّة هنا تلقائياً."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__conversion_action_resource
+msgid ""
+"Google conversion action resource name "
+"(customers/<cid>/conversionActions/<id>) of type UPLOAD_CLICKS."
+msgstr ""
+"اسم مورد إجراء التحويل في Google‏ (customers/<cid>/conversionActions/<id>) "
+"من النوع UPLOAD_CLICKS."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__conversion_upload_enabled
+msgid ""
+"Google only: won CRM leads with a gclid are uploaded back as click "
+"conversions so bidding learns from real revenue."
+msgstr ""
+"خاص بـ Google: العملاء المحتملون الرابحون الذين يحملون gclid يُرفعون "
+"كتحويلات نقر حتى تتعلّم المزايدة من الإيرادات الفعلية."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__granularity
+msgid "Granularity"
+msgstr "الدقة الزمنية"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ir_http
+msgid "HTTP Routing"
+msgstr "مسار HTTP"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__has_message
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead_form__duplicate_window_days
+msgid "How far back duplicate detection looks for a matching lead."
+msgstr "المدى الزمني الذي يبحث فيه كاشف التكرار عن عميل محتمل مطابق."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_engine__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_crm_lead__id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ir_http__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_exception_icon
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__activity_exception_icon
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة تدل على نشاط استثنائي."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_ad__external_id
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_adset__external_id
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_audience__external_id
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__external_id
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_sync_mixin__external_id
+msgid "Identifier of this record on the ad platform."
+msgstr "معرّف هذا السجل على منصة الإعلانات."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__message_needaction
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "عند التحديد، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__message_has_error
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__message_has_sms_error
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__message_has_error
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "عند التحديد، توجد رسائل بها خطأ في التسليم."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__image_url
+msgid "Image Url"
+msgstr "رابط الصورة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__impressions
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__impressions
+msgid "Impressions"
+msgstr "مرات الظهور"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__impressions_30d
+msgid "Impressions (30d)"
+msgstr "مرات الظهور (30 يوماً)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__insight_ids
+msgid "Insight"
+msgstr "الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__insight_backfill_date
+msgid "Insight Backfill Date"
+msgstr "تاريخ استكمال الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__insight_backfill_days
+msgid "Insight Backfill Days"
+msgstr "أيام استكمال الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__compact
+msgid "Insight Compaction"
+msgstr "ضغط الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__insight_retention_days
+msgid "Insight Retention Days"
+msgstr "أيام الاحتفاظ بالإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__insight_sync_level
+msgid "Insight Sync Level"
+msgstr "مستوى مزامنة الإحصاءات"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Insights"
+msgstr "الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_insight_analysis
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_insight_analysis
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_pivot
+msgid "Insights Analysis"
+msgstr "تحليل الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__insights
+msgid "Insights Pull"
+msgstr "سحب الإحصاءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__insights_synced_until
+msgid "Insights Synced Until"
+msgstr "الإحصاءات مزامنة حتى"
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_dashboard
+msgid "Insights arrive with the daily sync once an account is connected."
+msgstr "تصل الإحصاءات مع المزامنة اليومية فور ربط حساب."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_is_follower
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_is_follower
+msgid "Is Follower"
+msgstr "متابِع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__is_mailing_campaign_activated
+msgid "Is Mailing Campaign Activated"
+msgstr "حملة المراسلات مفعّلة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__is_organic
+msgid "Is Organic"
+msgstr "عضوي (غير مدفوع)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__job_type
+msgid "Job Type"
+msgstr "نوع المهمة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Keep Local"
+msgstr "الاحتفاظ بالمحلي"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Keep Remote"
+msgstr "الاحتفاظ بالبعيد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__google_webhook_key
+msgid "Key expected from the Google Ads UI lead-form webhook (google_key)."
+msgstr ""
+"المفتاح المتوقع من Webhook نماذج العملاء المحتملين في واجهة إعلانات Google‏ "
+"(google_key)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__last_pushed_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__last_pushed_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__last_pushed_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__last_pushed_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__last_pushed_snapshot
+msgid "Last Pushed Snapshot"
+msgstr "آخر لقطة مدفوعة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__last_synced_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__last_synced_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__last_synced_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__last_synced_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__last_synced_at
+msgid "Last Synced At"
+msgstr "آخر مزامنة في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__write_uid
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience_upload_wizard__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__write_date
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_crm_lead
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__lead_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_process_wizard__lead_ids
+msgid "Lead"
+msgstr "عميل مهتم"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__lead_auto_convert
+msgid "Lead Auto Convert"
+msgstr "التحويل التلقائي للعملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_lead__state__processed
+msgid "Lead Created"
+msgstr "تم إنشاء العميل المحتمل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__lead_dedup_mode
+msgid "Lead Dedup Mode"
+msgstr "وضع كشف التكرار"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_form_view_form
+msgid "Lead Form"
+msgstr "نموذج العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_lead_field_map
+msgid "Lead Form Field Mapping"
+msgstr "ربط حقول نموذج العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_lead_form
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_lead_forms
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_form_view_list
+msgid "Lead Forms"
+msgstr "نماذج العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__lead_medium_id
+msgid "Lead Medium"
+msgstr "وسيط العميل المحتمل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__lead_sync_enabled
+msgid "Lead Sync Enabled"
+msgstr "مزامنة العملاء المحتملين مفعّلة"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid "Lead sync has not succeeded in 24h"
+msgstr "لم تنجح مزامنة العملاء المحتملين منذ 24 ساعة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_lead
+msgid "Lead-form submissions land here and become CRM leads automatically."
+msgstr ""
+"تصل طلبات نماذج العملاء المحتملين هنا وتتحول تلقائياً إلى عملاء محتملين في "
+"إدارة العملاء."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__leads
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_leads
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Leads"
+msgstr "العملاء المحتملون"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__insight_leads_30d
+msgid "Leads (30d)"
+msgstr "العملاء المحتملون (30 يوماً)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__crm_leads
+msgid "Leads (CRM)"
+msgstr "العملاء المحتملون (إدارة العملاء)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__leads_count
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__platform_leads
+msgid "Leads (platform)"
+msgstr "العملاء المحتملون (المنصة)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__leads_count
+msgid "Leads Count"
+msgstr "عدد العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__leads
+msgid "Leads Pull"
+msgstr "سحب العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__leads_synced_until
+msgid "Leads Synced Until"
+msgstr "العملاء المحتملون مزامنون حتى"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__crm_lead_count
+msgid "Leads/Opportunities count"
+msgstr "عدد العملاء المحتملين/الفرص"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__level
+msgid "Level"
+msgstr "المستوى"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__budget_type__lifetime
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__budget_type__lifetime
+msgid "Lifetime"
+msgstr "إجمالي المدة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__link_tracker_id
+msgid "Link Tracker"
+msgstr "متتبع الروابط"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__link_url
+msgid "Link Url"
+msgstr "رابط الوجهة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "List Conversion Actions"
+msgstr "عرض إجراءات التحويل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__local_changes
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__local_changes
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__local_changes
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__local_changes
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__local_changes
+msgid "Local Changes"
+msgstr "تغييرات محلية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__locale
+msgid "Locale"
+msgstr "اللغة المحلية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__log
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_sync_log_view_form
+msgid "Log"
+msgstr "السجل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__debug_logging
+msgid ""
+"Log every API request/response summary to ir.logging (secrets redacted)."
+msgstr ""
+"سجّل ملخص كل طلب/استجابة للواجهة البرمجية في ir.logging (مع إخفاء الأسرار)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__duplicate_policy__log_on_existing
+msgid "Log on the existing lead"
+msgstr "التسجيل على العميل المحتمل الموجود"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_login_customer_id
+msgid "Login Customer ID (MCC)"
+msgstr "معرّف عميل الدخول (MCC)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__audience_type__lookalike
+msgid "Lookalike / Similar"
+msgstr "جمهور مشابه"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__trigger__manual
+msgid "Manual"
+msgstr "يدوي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__mapping_ids
+msgid "Mapping"
+msgstr "الربط"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__mailing_mail_ids
+msgid "Mass Mailings"
+msgstr "المراسلات الجماعية"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "Merged / Skipped"
+msgstr "مدموج / متجاوَز"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_lead__state__merged
+msgid "Merged into Existing"
+msgstr "دُمج في عميل موجود"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_has_error
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Meta"
+msgstr "Meta"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__provider__meta
+msgid "Meta (Facebook) Ads"
+msgstr "إعلانات Meta (فيسبوك)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__meta_api_version
+msgid "Meta Api Version"
+msgstr "إصدار واجهة Meta"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Meta Credentials"
+msgstr "بيانات اعتماد Meta"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_sync_log__async_report_ref
+msgid "Meta async insights report_run_id being polled by a later cron pass."
+msgstr ""
+"معرّف تقرير الإحصاءات غير المتزامن لدى Meta الذي ستتابعه دورة مجدولة لاحقة."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_insight__reach
+msgid ""
+"Meta only. On monthly rows this is a sum of daily reach — no longer "
+"deduplicated across days."
+msgstr ""
+"خاص بـ Meta. في الصفوف الشهرية هذا مجموع الوصول اليومي — لم يعد خالياً من "
+"التكرار عبر الأيام."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__external_account_id
+msgid ""
+"Meta: the Ad Account number (with or without the act_ prefix). Google: the "
+"Customer ID (digits, dashes allowed)."
+msgstr ""
+"Meta: رقم الحساب الإعلاني (مع البادئة act_ أو بدونها). Google: معرّف العميل "
+"(أرقام، ويسمح بالشرطات)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__month
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_insight__granularity__month
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Month"
+msgstr "الشهر"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__name
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+msgid "Needs Attention"
+msgstr "يحتاج إلى مراجعة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__lead_dedup_mode__none
+msgid "Never match"
+msgstr "بدون مطابقة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_lead__state__new
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "New"
+msgstr "جديد"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_lead.py:0
+msgid ""
+"New ad lead submission matched this lead: form %(form)s, campaign "
+"%(campaign)s, submitted %(when)s."
+msgstr "طلب جديد من الإعلانات طابق هذا العميل المحتمل: النموذج %(form)s، الحملة %(campaign)s، أُرسل في %(when)s."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_calendar_event_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_date_deadline
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_summary
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_type_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_account.py:0
+msgid ""
+"No UPLOAD_CLICKS conversion action found — create one in Google Ads (Goals →"
+" Conversions, source 'Import') first."
+msgstr "لم يُعثر على إجراء تحويل من النوع UPLOAD_CLICKS — أنشئ واحداً أولاً في إعلانات Google (الأهداف ← التحويلات، المصدر «استيراد»)."
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_campaign
+msgid "No campaigns yet"
+msgstr "لا توجد حملات بعد"
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_dashboard
+msgid "No performance data yet"
+msgstr "لا توجد بيانات أداء بعد"
+
+#. module: ac_ads_connector
+#: model_terms:ir.actions.act_window,help:ac_ads_connector.action_ads_lead
+msgid "No platform leads yet"
+msgstr "لا يوجد عملاء محتملون من المنصات بعد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__state__draft
+msgid "Not Connected"
+msgstr "غير متصل"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_sync_mixin.py:0
+msgid "Nothing to push: no draft and no pending local changes."
+msgstr "لا يوجد ما يُدفع: لا مسودات ولا تغييرات محلية معلّقة."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_needaction_counter
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__mailing_mail_count
+msgid "Number of Mass Mailing"
+msgstr "عدد المراسلات الجماعية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__click_count
+msgid "Number of clicks generated by the campaign"
+msgstr "عدد النقرات التي ولّدتها الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_has_error_counter
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__social_engagement
+msgid ""
+"Number of interactions (likes, shares, comments ...) with the social posts"
+msgstr "عدد التفاعلات (إعجابات، مشاركات، تعليقات...) مع المنشورات الاجتماعية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__message_needaction_counter
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__message_has_error_counter
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__google_auth_mode__oauth_refresh
+msgid "OAuth2 Refresh Token"
+msgstr "رمز تحديث OAuth2"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__object_story_spec
+msgid "Object Story Spec"
+msgstr "مواصفة القصة الإعلانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__objective
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+msgid "Objective"
+msgstr "الهدف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__objective_raw
+msgid "Objective Raw"
+msgstr "الهدف كما ورد من المنصة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__use_tracked_urls
+msgid ""
+"Odoo-authored ads land on a click-counting /r/ short link instead of the raw"
+" URL. Note: some platforms review redirect URLs more strictly."
+msgstr ""
+"الإعلانات المنشأة من أودو تستخدم رابطاً مختصراً /r/ يحسب النقرات بدلاً من "
+"الرابط الأصلي. ملاحظة: بعض المنصات تدقق روابط إعادة التوجيه بصرامة أكبر."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_audience.py:0
+msgid ""
+"Only customer-list audiences can be created from Odoo (lookalike/website "
+"audiences are built in the platform UI)."
+msgstr "يمكن إنشاء جماهير قوائم العملاء فقط من أودو (الجماهير المشابهة وجماهير الموقع تُبنى في واجهة المنصة)."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_form
+msgid "Open CRM Lead"
+msgstr "فتح العميل المحتمل"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Open in Ads Manager"
+msgstr "فتح في مدير الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__opened_ratio
+msgid "Opened Ratio"
+msgstr "نسبة الفتح"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__operation
+msgid "Operation"
+msgstr "العملية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__optimization_goal
+msgid "Optimization Goal"
+msgstr "هدف التحسين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__meta_page_access_token
+msgid ""
+"Optional. Lead retrieval is rate-limited per Page; a Page token keeps lead "
+"pulls off the system user's budget."
+msgstr ""
+"اختياري. جلب العملاء المحتملين مقيّد المعدل لكل صفحة؛ رمز وصول الصفحة يبقي "
+"عمليات الجلب خارج حصة مستخدم النظام."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__meta_page_access_token
+msgid "Page Access Token"
+msgstr "رمز وصول الصفحة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__page_external_id
+msgid "Page External"
+msgstr "معرّف الصفحة الخارجي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__meta_page_id
+msgid "Page ID"
+msgstr "معرّف الصفحة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__google_sa_json
+msgid ""
+"Paste the full JSON key. Add the service-account email as a user of the "
+"Google Ads account in the Ads UI (no impersonation needed)."
+msgstr ""
+"الصق مفتاح JSON كاملاً، وأضف البريد الإلكتروني لحساب الخدمة كمستخدم في حساب "
+"إعلانات Google من واجهة المنصة (لا حاجة لانتحال هوية)."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Pause"
+msgstr "إيقاف مؤقت"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__status__paused
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__status__paused
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__status__paused
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+msgid "Paused"
+msgstr "متوقف مؤقتاً"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__payload
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_job_view_form
+msgid "Payload"
+msgstr "الحمولة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__payload_sample
+msgid "Payload Sample"
+msgstr "عينة الحمولة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__pending_changes
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__pending_changes
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__pending_changes
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__pending_changes
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__pending_changes
+msgid "Pending Changes"
+msgstr "التغييرات المعلّقة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Performance (last 30 days)"
+msgstr "الأداء (آخر 30 يوماً)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/wizard/ads_audience_upload_wizard.py:0
+msgid "Pick at least one contact."
+msgstr "اختر جهة اتصال واحدة على الأقل."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__external_account_id
+msgid "Platform Account ID"
+msgstr "معرّف الحساب على المنصة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__platform_account_name
+msgid "Platform Account Name"
+msgstr "اسم الحساب على المنصة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_form
+msgid "Platform Lead"
+msgstr "عميل محتمل من المنصة"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_lead
+msgid "Platform Lead (staging)"
+msgstr "عميل محتمل من المنصة (مرحلة الاستقبال)"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_lead
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "Platform Leads"
+msgstr "العملاء المحتملون من المنصات"
+
+#. module: ac_ads_connector
+#. odoo-javascript
+#: code:addons/ac_ads_connector/data/files/ads_dashboard.json:0
+msgid "Platform Leads by Campaign"
+msgstr "العملاء المحتملون من المنصة حسب الحملة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__platform_refs
+msgid "Platform Refs"
+msgstr "مراجع المنصة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__platform_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__platform_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__platform_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__platform_status
+msgid "Platform Status"
+msgstr "الحالة على المنصة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead_field_map__question_key
+msgid "Platform field name (e.g. email, full_name)."
+msgstr "اسم الحقل على المنصة (مثال: email أو full_name)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead__platform_refs
+msgid ""
+"Platform ids (campaign/adset/ad) for re-resolution when the structure mirror"
+" lagged behind the lead."
+msgstr ""
+"معرّفات المنصة (الحملة/المجموعة/الإعلان) لإعادة الربط عندما تتأخر مرآة "
+"الهيكل عن العميل المحتمل."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__preview_url
+msgid "Preview Url"
+msgstr "رابط المعاينة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_process_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_form
+msgid "Process"
+msgstr "معالجة"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_lead_process_wizard
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_process_wizard_view_form
+msgid "Process Leads"
+msgstr "معالجة العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_lead_process_wizard
+msgid "Process Staged Ad Leads"
+msgstr "معالجة العملاء المحتملين المستقبَلين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__promoted_object
+msgid "Promoted Object"
+msgstr "العنصر المروَّج"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__provider
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__provider
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_search
+msgid "Provider"
+msgstr "المزوّد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__provider_data
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__provider_data
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__provider_data
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__provider_data
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__provider_data
+msgid "Provider Data"
+msgstr "بيانات المزوّد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__push
+msgid "Push"
+msgstr "دفع"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_push_wizard
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_wizard_view_form
+msgid "Push Changes"
+msgstr "دفع التغييرات"
+
+#. module: ac_ads_connector
+#: model:ir.model,name:ac_ads_connector.model_ads_push_wizard
+msgid "Push Changes to Ad Platform"
+msgstr "دفع التغييرات إلى منصة الإعلانات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__push_error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__push_error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__push_error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__push_error
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__push_error
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_kanban
+msgid "Push Error"
+msgstr "خطأ في الدفع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__push_error_message
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__push_error_message
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__push_error_message
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__push_error_message
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__push_error_message
+msgid "Push Error Message"
+msgstr "رسالة خطأ الدفع"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_job_view_form
+msgid "Push Job"
+msgstr "مهمة الدفع"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_push_job
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_push_jobs
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_job_view_list
+msgid "Push Jobs"
+msgstr "مهام الدفع"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_ad.py:0
+msgid "Push the ad set %s to the platform first."
+msgstr "ادفع المجموعة الإعلانية %s إلى المنصة أولاً."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_adset.py:0
+msgid "Push the campaign %s to the platform first."
+msgstr "ادفع الحملة %s إلى المنصة أولاً."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_wizard_view_form
+msgid "Push to Platform"
+msgstr "الدفع إلى المنصة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_ad__pending_changes
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_adset__pending_changes
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_audience__pending_changes
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__pending_changes
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_sync_mixin__pending_changes
+msgid "Pushable field names edited locally since the last push."
+msgstr "أسماء الحقول القابلة للدفع التي عُدّلت محلياً منذ آخر دفع."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__pushing
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__pushing
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__pushing
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__pushing
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__pushing
+msgid "Pushing"
+msgstr "جارٍ الدفع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__question_key
+msgid "Question Key"
+msgstr "مفتاح السؤال"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__question_label
+msgid "Question Label"
+msgstr "عنوان السؤال"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__questions
+msgid "Questions"
+msgstr "الأسئلة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__queued
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__queued
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__queued
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__queued
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__state__queued
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__queued
+msgid "Queued"
+msgstr "في قائمة الانتظار"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_performance_report_view_graph
+msgid "ROAS"
+msgstr "العائد على الإنفاق الإعلاني"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_performance_report
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_performance_report
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_performance_report_view_pivot
+msgid "ROAS / Cost per Lead"
+msgstr "العائد على الإنفاق / التكلفة لكل عميل محتمل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__rate_limit_state
+msgid "Rate Limit State"
+msgstr "حالة حد المعدل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__raw_payload
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__raw_payload
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__raw_payload
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__raw_payload
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__raw_payload
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__raw_payload
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__raw_payload
+msgid "Raw Payload"
+msgstr "الحمولة الخام"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__reach
+msgid "Reach"
+msgstr "الوصول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__received_ratio
+msgid "Received Ratio"
+msgstr "نسبة الاستلام"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__records_created
+msgid "Records Created"
+msgstr "سجلات منشأة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__records_failed
+msgid "Records Failed"
+msgstr "سجلات فاشلة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__records_skipped
+msgid "Records Skipped"
+msgstr "سجلات متجاوَزة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__records_updated
+msgid "Records Updated"
+msgstr "سجلات محدثة"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_sync_mixin.py:0
+msgid "Records of this type cannot be created from Odoo."
+msgstr "لا يمكن إنشاء سجلات من هذا النوع من داخل أودو."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_google_auth_wizard__redirect_uri
+msgid "Redirect Uri"
+msgstr "رابط إعادة التوجيه"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__remote_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__remote_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__remote_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__remote_snapshot
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__remote_snapshot
+msgid "Remote Snapshot"
+msgstr "اللقطة البعيدة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__remote_updated_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__remote_updated_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__remote_updated_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__remote_updated_at
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__remote_updated_at
+msgid "Remote Updated At"
+msgstr "آخر تحديث بعيد في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_ad__remote_snapshot
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_adset__remote_snapshot
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_audience__remote_snapshot
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__remote_snapshot
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_sync_mixin__remote_snapshot
+msgid ""
+"Remote values staged during a conflict — applied only via 'Keep Remote'."
+msgstr ""
+"القيم البعيدة المحفوظة أثناء التعارض — لا تُطبَّق إلا عبر «الاحتفاظ "
+"بالبعيد»."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__status__removed
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__status__removed
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__status__removed
+msgid "Removed"
+msgstr "محذوف"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__replied_ratio
+msgid "Replied Ratio"
+msgstr "نسبة الرد"
+
+#. module: ac_ads_connector
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_reporting
+msgid "Reporting"
+msgstr "التقارير"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__res_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__res_id
+msgid "Res"
+msgstr "السجل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__res_model
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_wizard__res_model
+msgid "Res Model"
+msgstr "النموذج"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__user_id
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__activity_user_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__result_external_id
+msgid "Result External"
+msgstr "المعرّف الخارجي للنتيجة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__retention_days
+msgid "Retention Days"
+msgstr "أيام الاحتفاظ"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_job_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_push_job_view_list
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__rule
+msgid "Rule"
+msgstr "القاعدة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__state__running
+msgid "Running"
+msgstr "قيد التشغيل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__message_has_sms_error
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة النصية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__sales
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__team_id
+msgid "Sales Team"
+msgstr "فريق المبيعات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__user_id
+msgid "Salesperson"
+msgstr "مندوب المبيعات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__audience_type__saved
+msgid "Saved / Combined"
+msgstr "محفوظ / مركّب"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__trigger__cron
+msgid "Scheduled"
+msgstr "مجدول"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__scheduled_at
+msgid "Scheduled At"
+msgstr "مجدول في"
+
+#. module: ac_ads_connector
+#: model:res.groups,comment:ac_ads_connector.group_ads_user
+msgid "See campaigns, ad sets, ads, insights and process staged leads."
+msgstr ""
+"عرض الحملات والمجموعات والإعلانات والإحصاءات ومعالجة العملاء المحتملين "
+"المستقبَلين."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__ab_testing_winner_selection
+msgid "Selection to determine the winner mailing that will be sent."
+msgstr "طريقة اختيار المراسلة الفائزة التي سيتم إرسالها."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ab_testing_schedule_datetime
+msgid "Send Final On"
+msgstr "إرسال النسخة النهائية في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__sequence
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_field_map__sequence
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__google_auth_mode__service_account
+msgid "Service Account"
+msgstr "حساب الخدمة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__google_sa_json
+msgid "Service Account JSON Key"
+msgstr "مفتاح JSON لحساب الخدمة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__operation__set_budget
+msgid "Set Budget"
+msgstr "تعيين الميزانية"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__operation__set_status
+msgid "Set Status"
+msgstr "تعيين الحالة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__google_login_customer_id
+msgid "Set when access goes through a manager account: the MCC customer id."
+msgstr "يُعيَّن عندما يمر الوصول عبر حساب مدير: معرّف عميل MCC."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_account__duplicate_policy__skip
+msgid "Skip duplicate"
+msgstr "تجاوز المكرر"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_lead__state__skipped
+msgid "Skipped (Duplicate)"
+msgstr "متجاوَز (مكرر)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__social_posts_count
+msgid "Social Media Posts"
+msgstr "منشورات التواصل الاجتماعي"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_lead.py:0
+msgid "Source: organic form submission"
+msgstr "المصدر: إرسال نموذج عضوي (غير مدفوع)"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__special_ad_categories
+msgid "Special Ad Categories"
+msgstr "فئات الإعلانات الخاصة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__spend
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__spend
+msgid "Spend"
+msgstr "الإنفاق"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__spend_30d
+msgid "Spend (30d)"
+msgstr "الإنفاق (30 يوماً)"
+
+#. module: ac_ads_connector
+#. odoo-javascript
+#: code:addons/ac_ads_connector/data/files/ads_dashboard.json:0
+msgid "Spend by Campaign"
+msgstr "الإنفاق حسب الحملة"
+
+#. module: ac_ads_connector
+#. odoo-javascript
+#: code:addons/ac_ads_connector/data/files/ads_dashboard.json:0
+msgid "Spend by Day"
+msgstr "الإنفاق حسب اليوم"
+
+#. module: ac_ads_connector
+#. odoo-javascript
+#: code:addons/ac_ads_connector/data/files/ads_dashboard.json:0
+msgid "Spend by Platform"
+msgstr "الإنفاق حسب المنصة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_kanban
+msgid "Spend, last 30 days"
+msgstr "الإنفاق، آخر 30 يوماً"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__stage_id
+msgid "Stage"
+msgstr "المرحلة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__start_datetime
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__start_datetime
+msgid "Start Datetime"
+msgstr "تاريخ ووقت البدء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__started_at
+msgid "Started At"
+msgstr "بدأ في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__state
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__state
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_push_job__state
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead_form__status
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_search
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__activity_state
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__stop_datetime
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__stop_datetime
+msgid "Stop Datetime"
+msgstr "تاريخ ووقت الانتهاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__struct_cursor
+msgid "Struct Cursor"
+msgstr "مؤشر الهيكل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__struct_synced_at
+msgid "Struct Synced At"
+msgstr "مزامنة الهيكل في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__structure
+msgid "Structure Pull"
+msgstr "سحب الهيكل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_lead__submitted_at
+msgid "Submitted At"
+msgstr "أُرسل في"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__sync_error
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__sync_error
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__sync_error
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__sync_error
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__sync_error
+msgid "Sync Error"
+msgstr "خطأ المزامنة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Sync Insights"
+msgstr "مزامنة الإحصاءات"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Sync Leads"
+msgstr "مزامنة العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_form_view_form
+msgid "Sync Leads Now"
+msgstr "مزامنة العملاء المحتملين الآن"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_sync_log_view_form
+msgid "Sync Run"
+msgstr "دورة المزامنة"
+
+#. module: ac_ads_connector
+#: model:ir.actions.act_window,name:ac_ads_connector.action_ads_sync_log
+#: model:ir.ui.menu,name:ac_ads_connector.menu_ads_sync_logs
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_sync_log_view_list
+msgid "Sync Runs"
+msgstr "دورات المزامنة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Sync Settings"
+msgstr "إعدادات المزامنة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__sync_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__sync_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_audience__sync_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__sync_status
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_mixin__sync_status
+msgid "Sync Status"
+msgstr "حالة المزامنة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Sync Structure"
+msgstr "مزامنة الهيكل"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_sync_mixin.py:0
+msgid "Sync conflict on %s"
+msgstr "تعارض مزامنة في %s"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_ad__sync_status__synced
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_adset__sync_status__synced
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__sync_status__synced
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__sync_status__synced
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_mixin__sync_status__synced
+msgid "Synced"
+msgstr "مزامن"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__meta_access_token
+msgid "System User Token"
+msgstr "رمز مستخدم النظام"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__tag_ids
+msgid "Tags"
+msgstr "الوسوم"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__targeting
+msgid "Targeting"
+msgstr "الاستهداف"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_form_view_form
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_lead_view_form
+msgid "Technical"
+msgstr "تقني"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Test Connection"
+msgstr "اختبار الاتصال"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__meta_page_id
+msgid "The Facebook Page that owns the lead forms (webhook routing key)."
+msgstr ""
+"صفحة فيسبوك المالكة لنماذج العملاء المحتملين (مفتاح توجيه الـ Webhook)."
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_ad.py:0
+msgid ""
+"The ad needs a creative: link an existing synced creative or one carrying an"
+" object_story_spec."
+msgstr "الإعلان يحتاج إلى تصميم إعلاني: اربط تصميماً مزامناً موجوداً أو تصميماً يحمل object_story_spec."
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+msgid "The ad set will be created PAUSED on the ad platform. Continue?"
+msgstr ""
+"ستُنشأ المجموعة الإعلانية بحالة «متوقفة مؤقتاً» على المنصة. هل تريد "
+"المتابعة؟"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+msgid "The ad will be created PAUSED on the ad platform. Continue?"
+msgstr "سيُنشأ الإعلان بحالة «متوقف مؤقتاً» على المنصة. هل تريد المتابعة؟"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "The campaign will be created PAUSED on the ad platform. Continue?"
+msgstr "ستُنشأ الحملة بحالة «متوقفة مؤقتاً» على المنصة. هل تريد المتابعة؟"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_ad_view_form
+msgid "This will set the ad LIVE on the ad platform. Continue?"
+msgstr "سيؤدي هذا إلى تفعيل الإعلان مباشرة على المنصة. هل تريد المتابعة؟"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_adset_view_form
+msgid "This will set the ad set LIVE on the ad platform. Continue?"
+msgstr ""
+"سيؤدي هذا إلى تفعيل المجموعة الإعلانية مباشرة على المنصة. هل تريد المتابعة؟"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "This will set the campaign LIVE on the ad platform. Continue?"
+msgstr "سيؤدي هذا إلى تفعيل الحملة مباشرة على المنصة. هل تريد المتابعة؟"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/wizard/google_auth_wizard.py:0
+msgid "This wizard only applies to Google Ads accounts."
+msgstr "هذا المعالج مخصص لحسابات إعلانات Google فقط."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__thumbnail_url
+msgid "Thumbnail Url"
+msgstr "رابط الصورة المصغرة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_creative__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__health
+msgid "Token Health"
+msgstr "صلاحية رموز الوصول"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_insight_view_list
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_performance_report_view_list
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_ad__click_count
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__tracked_click_count
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_campaign_view_form
+msgid "Tracked Clicks"
+msgstr "النقرات المتتبعة"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "Tracked Links"
+msgstr "الروابط المتتبعة"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_campaign__objective__traffic
+msgid "Traffic"
+msgstr "الزيارات"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__trigger
+msgid "Trigger"
+msgstr "المُطلِق"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_lead_form__create_crm_lead
+msgid ""
+"Turn this form's staged leads into CRM leads automatically (the account-"
+"level toggle must also be on)."
+msgstr ""
+"حوّل العملاء المحتملين المستقبَلين من هذا النموذج تلقائياً إلى عملاء محتملين"
+" في إدارة العملاء (يجب أيضاً تفعيل الخيار على مستوى الحساب)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_adset__type_name
+msgid "Type Name"
+msgstr "اسم النوع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__activity_exception_decoration
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي على السجل."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__utm_campaign_id
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__utm_campaign_id
+msgid "UTM Campaign"
+msgstr "حملة UTM"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__operation__update
+msgid "Update Fields"
+msgstr "تحديث الحقول"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_upload_wizard_view_form
+msgid "Upload"
+msgstr "رفع"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_audience.py:0
+#: model:ir.model,name:ac_ads_connector.model_ads_audience_upload_wizard
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__operation__audience_users
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_upload_wizard_view_form
+msgid "Upload Audience Members"
+msgstr "رفع أعضاء الجمهور"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_push_job__operation__conversion_upload
+msgid "Upload Click Conversion"
+msgstr "رفع تحويل النقرة"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_audience_view_form
+msgid "Upload Members"
+msgstr "رفع الأعضاء"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__use_leads
+msgid "Use Leads"
+msgstr "استخدام العملاء المحتملين"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__use_tracked_urls
+msgid "Use Tracked Short Links"
+msgstr "استخدام الروابط المختصرة المتتبعة"
+
+#. module: ac_ads_connector
+#: model:res.groups,name:ac_ads_connector.group_ads_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__utm_campaign_id
+msgid "Utm Campaign"
+msgstr "حملة UTM"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__objective_raw
+msgid "Verbatim platform objective / channel type — pushed back unchanged."
+msgstr "هدف المنصة / نوع القناة كما ورد حرفياً — يُعاد دفعه دون تغيير."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__platform_status
+msgid "Verbatim platform status (incl. effective status)."
+msgstr "حالة المنصة كما وردت حرفياً (بما فيها الحالة الفعلية)."
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_insight__video_views
+msgid "Video Views"
+msgstr "مشاهدات الفيديو"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__watermark_after
+msgid "Watermark After"
+msgstr "العلامة المائية بعد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_sync_log__watermark_before
+msgid "Watermark Before"
+msgstr "العلامة المائية قبل"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__job_type__webhook
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_sync_log__trigger__webhook
+msgid "Webhook"
+msgstr "Webhook"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__webhook_verify_token
+msgid "Webhook Verify Token"
+msgstr "رمز التحقق من الـ Webhook"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "Webhooks"
+msgstr "Webhooks"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields.selection,name:ac_ads_connector.selection__ads_audience__audience_type__website
+msgid "Website / Rule-based"
+msgstr "الموقع / قائم على قواعد"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_account__website_message_ids
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_account__website_message_ids
+#: model:ir.model.fields,help:ac_ads_connector.field_ads_campaign__website_message_ids
+msgid "Website communication history"
+msgstr "سجل مراسلات الموقع"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_campaign__ab_testing_winner_selection
+msgid "Winner Selection"
+msgstr "اختيار الفائز"
+
+#. module: ac_ads_connector
+#: model:ir.model.fields,field_description:ac_ads_connector.field_ads_performance_report__won_revenue
+msgid "Won Revenue"
+msgstr "الإيراد المحقق"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_adset.py:0
+msgid "a billing event"
+msgstr "حدث فوترة"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "a budget amount (Google campaigns require one)"
+msgstr "مبلغ ميزانية (حملات Google تتطلب واحداً)"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "a budget amount (or budget at Ad Set level)"
+msgstr "مبلغ ميزانية (أو ميزانية على مستوى المجموعة الإعلانية)"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_adset.py:0
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "a name"
+msgstr "اسم"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_adset.py:0
+msgid "a targeting spec"
+msgstr "مواصفة استهداف"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "an objective"
+msgstr "هدف"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_adset.py:0
+msgid "an optimization goal"
+msgstr "هدف تحسين"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "campaign_id"
+msgstr "campaign_id"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/crm_lead.py:0
+msgid "crm_lead_id"
+msgstr "crm_lead_id"
+
+#. module: ac_ads_connector
+#: model_terms:ir.ui.view,arch_db:ac_ads_connector.ads_account_view_form
+msgid "e.g. Main Meta Ad Account"
+msgstr "مثال: حساب Meta الإعلاني الرئيسي"
+
+#. module: ac_ads_connector
+#. odoo-python
+#: code:addons/ac_ads_connector/models/ads_campaign.py:0
+msgid "id"
+msgstr "id"

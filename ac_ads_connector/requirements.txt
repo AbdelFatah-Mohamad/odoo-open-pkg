@@ -1,0 +1,2 @@
+facebook-business>=26,<27
+google-ads>=31,<32

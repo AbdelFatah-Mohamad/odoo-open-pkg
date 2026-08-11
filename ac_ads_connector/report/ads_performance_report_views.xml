@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_performance_report_view_pivot" model="ir.ui.view">
+        <field name="name">ads.performance.report.pivot</field>
+        <field name="model">ads.performance.report</field>
+        <field name="arch" type="xml">
+            <pivot string="ROAS / Cost per Lead" sample="1">
+                <field name="utm_campaign_id" type="row"/>
+                <field name="month" interval="month" type="col"/>
+                <field name="spend" type="measure"/>
+                <field name="crm_leads" type="measure"/>
+                <field name="expected_revenue" type="measure"/>
+                <field name="won_revenue" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="ads_performance_report_view_graph" model="ir.ui.view">
+        <field name="name">ads.performance.report.graph</field>
+        <field name="model">ads.performance.report</field>
+        <field name="arch" type="xml">
+            <graph string="ROAS" type="bar" sample="1">
+                <field name="utm_campaign_id"/>
+                <field name="spend" type="measure"/>
+                <field name="won_revenue" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="ads_performance_report_view_list" model="ir.ui.view">
+        <field name="name">ads.performance.report.list</field>
+        <field name="model">ads.performance.report</field>
+        <field name="arch" type="xml">
+            <list string="Ads Performance" create="false" edit="false">
+                <field name="month"/>
+                <field name="utm_campaign_id"/>
+                <field name="account_id" optional="show"/>
+                <field name="spend" sum="Total"/>
+                <field name="clicks" sum="Total" optional="show"/>
+                <field name="platform_leads" sum="Total" optional="show"/>
+                <field name="crm_leads" sum="Total"/>
+                <field name="cost_per_crm_lead" optional="show"/>
+                <field name="expected_revenue" sum="Total"/>
+                <field name="won_revenue" sum="Total"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_ads_performance_report" model="ir.actions.act_window">
+        <field name="name">ROAS / Cost per Lead</field>
+        <field name="res_model">ads.performance.report</field>
+        <field name="view_mode">pivot,graph,list</field>
+    </record>
+
+    <menuitem id="menu_ads_performance_report" name="ROAS / Cost per Lead"
+              parent="menu_ads_reporting" action="action_ads_performance_report"
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,390 @@
+{
+ "version": "18.4.14",
+ "sheets": [
+  {
+   "id": "ads-dashboard-sheet",
+   "name": "Ads Performance",
+   "colNumber": 26,
+   "rowNumber": 120,
+   "rows": {},
+   "cols": {},
+   "merges": [],
+   "cells": {},
+   "styles": {},
+   "formats": {},
+   "borders": {},
+   "conditionalFormats": [],
+   "dataValidationRules": [],
+   "figures": [
+    {
+     "id": "ads-fig-spend-day",
+     "tag": "chart",
+     "col": 0,
+     "row": 0,
+     "offset": {
+      "x": 10,
+      "y": 10
+     },
+     "width": 476,
+     "height": 300,
+     "data": {
+      "title": {
+       "text": "Spend by Day",
+       "bold": true,
+       "fontSize": 16,
+       "color": "#1C4E80"
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "metaData": {
+       "groupBy": [
+        "date:day"
+       ],
+       "measure": "spend",
+       "order": null,
+       "resModel": "ads.insight",
+       "mode": "line"
+      },
+      "searchParams": {
+       "comparison": null,
+       "context": {},
+       "domain": [
+        [
+         "level",
+         "=",
+         "campaign"
+        ],
+        [
+         "granularity",
+         "=",
+         "day"
+        ]
+       ],
+       "groupBy": [
+        "date:day"
+       ],
+       "orderBy": []
+      },
+      "type": "odoo_line",
+      "dataSets": [],
+      "humanize": true,
+      "verticalAxisPosition": "left",
+      "stacked": false
+     }
+    },
+    {
+     "id": "ads-fig-spend-provider",
+     "tag": "chart",
+     "col": 6,
+     "row": 0,
+     "offset": {
+      "x": 20,
+      "y": 10
+     },
+     "width": 476,
+     "height": 300,
+     "data": {
+      "title": {
+       "text": "Spend by Platform",
+       "bold": true,
+       "fontSize": 16,
+       "color": "#1C4E80"
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "metaData": {
+       "groupBy": [
+        "provider"
+       ],
+       "measure": "spend",
+       "order": null,
+       "resModel": "ads.insight",
+       "mode": "pie"
+      },
+      "searchParams": {
+       "comparison": null,
+       "context": {},
+       "domain": [
+        [
+         "level",
+         "=",
+         "campaign"
+        ],
+        [
+         "granularity",
+         "=",
+         "day"
+        ]
+       ],
+       "groupBy": [
+        "provider"
+       ],
+       "orderBy": []
+      },
+      "type": "odoo_pie",
+      "dataSets": [],
+      "humanize": true,
+      "verticalAxisPosition": "left",
+      "stacked": false
+     }
+    },
+    {
+     "id": "ads-fig-spend-campaign",
+     "tag": "chart",
+     "col": 0,
+     "row": 16,
+     "offset": {
+      "x": 10,
+      "y": 20
+     },
+     "width": 476,
+     "height": 300,
+     "data": {
+      "title": {
+       "text": "Spend by Campaign",
+       "bold": true,
+       "fontSize": 16,
+       "color": "#1C4E80"
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "metaData": {
+       "groupBy": [
+        "utm_campaign_id"
+       ],
+       "measure": "spend",
+       "order": null,
+       "resModel": "ads.insight",
+       "mode": "bar"
+      },
+      "searchParams": {
+       "comparison": null,
+       "context": {},
+       "domain": [
+        [
+         "level",
+         "=",
+         "campaign"
+        ],
+        [
+         "granularity",
+         "=",
+         "day"
+        ]
+       ],
+       "groupBy": [
+        "utm_campaign_id"
+       ],
+       "orderBy": []
+      },
+      "type": "odoo_bar",
+      "dataSets": [],
+      "humanize": true,
+      "verticalAxisPosition": "left",
+      "stacked": false
+     }
+    },
+    {
+     "id": "ads-fig-leads-campaign",
+     "tag": "chart",
+     "col": 6,
+     "row": 16,
+     "offset": {
+      "x": 20,
+      "y": 20
+     },
+     "width": 476,
+     "height": 300,
+     "data": {
+      "title": {
+       "text": "Platform Leads by Campaign",
+       "bold": true,
+       "fontSize": 16,
+       "color": "#1C4E80"
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "metaData": {
+       "groupBy": [
+        "utm_campaign_id"
+       ],
+       "measure": "leads_count",
+       "order": null,
+       "resModel": "ads.insight",
+       "mode": "bar"
+      },
+      "searchParams": {
+       "comparison": null,
+       "context": {},
+       "domain": [
+        [
+         "level",
+         "=",
+         "campaign"
+        ],
+        [
+         "granularity",
+         "=",
+         "day"
+        ]
+       ],
+       "groupBy": [
+        "utm_campaign_id"
+       ],
+       "orderBy": []
+      },
+      "type": "odoo_bar",
+      "dataSets": [],
+      "humanize": true,
+      "verticalAxisPosition": "left",
+      "stacked": false
+     }
+    },
+    {
+     "id": "ads-fig-clicks-day",
+     "tag": "chart",
+     "col": 0,
+     "row": 32,
+     "offset": {
+      "x": 10,
+      "y": 30
+     },
+     "width": 476,
+     "height": 300,
+     "data": {
+      "title": {
+       "text": "Clicks by Day",
+       "bold": true,
+       "fontSize": 16,
+       "color": "#1C4E80"
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "metaData": {
+       "groupBy": [
+        "date:day"
+       ],
+       "measure": "clicks",
+       "order": null,
+       "resModel": "ads.insight",
+       "mode": "line"
+      },
+      "searchParams": {
+       "comparison": null,
+       "context": {},
+       "domain": [
+        [
+         "level",
+         "=",
+         "campaign"
+        ],
+        [
+         "granularity",
+         "=",
+         "day"
+        ]
+       ],
+       "groupBy": [
+        "date:day"
+       ],
+       "orderBy": []
+      },
+      "type": "odoo_line",
+      "dataSets": [],
+      "humanize": true,
+      "verticalAxisPosition": "left",
+      "stacked": false
+     }
+    },
+    {
+     "id": "ads-fig-conv-campaign",
+     "tag": "chart",
+     "col": 6,
+     "row": 32,
+     "offset": {
+      "x": 20,
+      "y": 30
+     },
+     "width": 476,
+     "height": 300,
+     "data": {
+      "title": {
+       "text": "Conversions by Campaign",
+       "bold": true,
+       "fontSize": 16,
+       "color": "#1C4E80"
+      },
+      "background": "#FFFFFF",
+      "legendPosition": "top",
+      "metaData": {
+       "groupBy": [
+        "utm_campaign_id"
+       ],
+       "measure": "conversions",
+       "order": null,
+       "resModel": "ads.insight",
+       "mode": "bar"
+      },
+      "searchParams": {
+       "comparison": null,
+       "context": {},
+       "domain": [
+        [
+         "level",
+         "=",
+         "campaign"
+        ],
+        [
+         "granularity",
+         "=",
+         "day"
+        ]
+       ],
+       "groupBy": [
+        "utm_campaign_id"
+       ],
+       "orderBy": []
+      },
+      "type": "odoo_bar",
+      "dataSets": [],
+      "humanize": true,
+      "verticalAxisPosition": "left",
+      "stacked": false
+     }
+    }
+   ],
+   "tables": [],
+   "areGridLinesVisible": false,
+   "isVisible": true,
+   "headerGroups": {
+    "ROW": [],
+    "COL": []
+   },
+   "comments": {}
+  }
+ ],
+ "styles": {},
+ "formats": {},
+ "borders": {},
+ "revisionId": "START_REVISION",
+ "uniqueFigureIds": true,
+ "settings": {
+  "locale": {
+   "name": "English (US)",
+   "code": "en_US",
+   "thousandsSeparator": ",",
+   "decimalSeparator": ".",
+   "dateFormat": "mm/dd/yyyy",
+   "timeFormat": "hh:mm:ss",
+   "formulaArgSeparator": ",",
+   "weekStart": 7
+  }
+ },
+ "pivots": {},
+ "pivotNextId": 1,
+ "lists": {},
+ "listNextId": 1,
+ "globalFilters": [],
+ "customTableStyles": {},
+ "chartOdooMenusReferences": {}
+}

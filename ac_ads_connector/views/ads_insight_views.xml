@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_insight_view_graph" model="ir.ui.view">
+        <field name="name">ads.insight.graph</field>
+        <field name="model">ads.insight</field>
+        <field name="arch" type="xml">
+            <graph string="Ad Performance" type="line" sample="1">
+                <field name="date" interval="day"/>
+                <field name="provider"/>
+                <field name="spend" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="ads_insight_view_pivot" model="ir.ui.view">
+        <field name="name">ads.insight.pivot</field>
+        <field name="model">ads.insight</field>
+        <field name="arch" type="xml">
+            <pivot string="Insights Analysis" sample="1">
+                <field name="utm_campaign_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="spend" type="measure"/>
+                <field name="clicks" type="measure"/>
+                <field name="conversions" type="measure"/>
+                <field name="leads_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="ads_insight_view_list" model="ir.ui.view">
+        <field name="name">ads.insight.list</field>
+        <field name="model">ads.insight</field>
+        <field name="arch" type="xml">
+            <list string="Insights" create="false" edit="false">
+                <field name="date"/>
+                <field name="account_id"/>
+                <field name="level"/>
+                <field name="campaign_id"/>
+                <field name="adset_id" optional="hide"/>
+                <field name="ad_id" optional="hide"/>
+                <field name="spend" sum="Total"/>
+                <field name="impressions" sum="Total"/>
+                <field name="clicks" sum="Total"/>
+                <field name="leads_count" sum="Total"/>
+                <field name="conversions" optional="show" sum="Total"/>
+                <field name="ctr" optional="hide"/>
+                <field name="cpc" optional="hide"/>
+                <field name="cpl" optional="hide"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="granularity" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_insight_view_search" model="ir.ui.view">
+        <field name="name">ads.insight.search</field>
+        <field name="model">ads.insight</field>
+        <field name="arch" type="xml">
+            <search string="Insights">
+                <field name="campaign_id"/>
+                <field name="account_id"/>
+                <filter string="Campaign level" name="level_campaign"
+                        domain="[('level', '=', 'campaign')]"/>
+                <filter string="Ad Set level" name="level_adset"
+                        domain="[('level', '=', 'adset')]"/>
+                <filter string="Ad level" name="level_ad" domain="[('level', '=', 'ad')]"/>
+                <separator/>
+                <filter string="Meta" name="meta" domain="[('provider', '=', 'meta')]"/>
+                <filter string="Google" name="google" domain="[('provider', '=', 'google')]"/>
+                <separator/>
+                <filter string="Daily rows" name="daily"
+                        domain="[('granularity', '=', 'day')]"/>
+                <filter string="Date" name="filter_date" date="date"/>
+                <separator/>
+                <filter string="Campaign" name="group_campaign"
+                        context="{'group_by': 'campaign_id'}"/>
+                <filter string="Account" name="group_account"
+                        context="{'group_by': 'account_id'}"/>
+                <filter string="Provider" name="group_provider"
+                        context="{'group_by': 'provider'}"/>
+                <filter string="Month" name="group_month"
+                        context="{'group_by': 'date:month'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ads_dashboard" model="ir.actions.act_window">
+        <field name="name">Ads Dashboard</field>
+        <field name="res_model">ads.insight</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="context">{'search_default_level_campaign': 1, 'search_default_daily': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No performance data yet</p>
+            <p>Insights arrive with the daily sync once an account is connected.</p>
+        </field>
+    </record>
+
+    <record id="action_ads_insight_analysis" model="ir.actions.act_window">
+        <field name="name">Insights Analysis</field>
+        <field name="res_model">ads.insight</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <field name="context">{'search_default_level_campaign': 1}</field>
+    </record>
+</odoo>

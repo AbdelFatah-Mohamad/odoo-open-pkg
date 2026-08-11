@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_account_view_form" model="ir.ui.view">
+        <field name="name">ads.account.form</field>
+        <field name="model">ads.account</field>
+        <field name="arch" type="xml">
+            <form string="Ad Account">
+                <header>
+                    <button name="action_test_connection" type="object" string="Test Connection"
+                            class="btn-primary" groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_open_google_auth_wizard" type="object"
+                            string="Connect Google" invisible="provider != 'google'"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_sync_structure" type="object" string="Sync Structure"
+                            invisible="state != 'connected'"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_sync_insights" type="object" string="Sync Insights"
+                            invisible="state != 'connected'"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_sync_leads" type="object" string="Sync Leads"
+                            invisible="state != 'connected' or not lead_sync_enabled"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,connected"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+                            invisible="active"/>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="e.g. Main Meta Ad Account"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="provider"/>
+                            <field name="external_account_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="sequence" groups="base.group_no_one"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="platform_account_name"/>
+                            <field name="currency_id"/>
+                            <field name="tz_name"/>
+                            <field name="cooldown_until" invisible="not cooldown_until"/>
+                            <field name="cooldown_reason" invisible="not cooldown_until"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Meta Credentials" invisible="provider != 'meta'"
+                              groups="ac_ads_connector.group_ads_admin">
+                            <group>
+                                <group>
+                                    <field name="meta_access_token" password="True"/>
+                                    <field name="meta_app_secret" password="True"/>
+                                    <field name="meta_api_version"/>
+                                </group>
+                                <group>
+                                    <field name="meta_business_id"/>
+                                    <field name="meta_page_id"/>
+                                    <field name="meta_page_access_token" password="True"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Google Credentials" invisible="provider != 'google'"
+                              groups="ac_ads_connector.group_ads_admin">
+                            <group>
+                                <group>
+                                    <field name="google_auth_mode" widget="radio"/>
+                                    <field name="google_developer_token" password="True"/>
+                                    <field name="google_login_customer_id"/>
+                                    <field name="google_api_version"/>
+                                </group>
+                                <group>
+                                    <field name="conversion_upload_enabled"/>
+                                    <field name="conversion_action_resource"
+                                           invisible="not conversion_upload_enabled"/>
+                                    <button name="action_list_conversion_actions"
+                                            type="object" string="List Conversion Actions"
+                                            invisible="not conversion_upload_enabled"
+                                            class="btn-link" icon="fa-search"/>
+                                    <field name="google_client_id"
+                                           invisible="google_auth_mode != 'oauth_refresh'"/>
+                                    <field name="google_client_secret" password="True"
+                                           invisible="google_auth_mode != 'oauth_refresh'"/>
+                                    <field name="google_refresh_token" password="True"
+                                           invisible="google_auth_mode != 'oauth_refresh'"/>
+                                    <field name="google_sa_json"
+                                           invisible="google_auth_mode != 'service_account'"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Leads" name="leads">
+                            <group>
+                                <group>
+                                    <field name="lead_sync_enabled"/>
+                                    <field name="lead_auto_convert"/>
+                                    <field name="lead_dedup_mode"/>
+                                    <field name="duplicate_policy"/>
+                                </group>
+                                <group>
+                                    <field name="lead_team_id"/>
+                                    <field name="lead_user_id"/>
+                                    <field name="lead_medium_id" groups="base.group_no_one"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Sync Settings" name="sync"
+                              groups="ac_ads_connector.group_ads_admin">
+                            <group>
+                                <group>
+                                    <field name="insight_sync_level"/>
+                                    <field name="insight_retention_days"/>
+                                    <field name="insight_backfill_days"/>
+                                    <field name="use_tracked_urls"/>
+                                    <field name="debug_logging"/>
+                                </group>
+                                <group>
+                                    <field name="struct_synced_at"/>
+                                    <field name="insights_synced_until"/>
+                                    <field name="forms_synced_at"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Webhooks" name="webhooks"
+                              groups="ac_ads_connector.group_ads_admin">
+                            <group>
+                                <field name="callback_url" readonly="1"/>
+                                <field name="webhook_verify_token" password="True"
+                                       invisible="provider != 'meta'"/>
+                                <field name="google_webhook_key" password="True"
+                                       invisible="provider != 'google'"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="ads_account_view_list" model="ir.ui.view">
+        <field name="name">ads.account.list</field>
+        <field name="model">ads.account</field>
+        <field name="arch" type="xml">
+            <list string="Ad Accounts">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="provider"/>
+                <field name="external_account_id"/>
+                <field name="currency_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'connected'"
+                       decoration-danger="state == 'error'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_account_view_search" model="ir.ui.view">
+        <field name="name">ads.account.search</field>
+        <field name="model">ads.account</field>
+        <field name="arch" type="xml">
+            <search string="Ad Accounts">
+                <field name="name"/>
+                <field name="external_account_id"/>
+                <filter string="Meta" name="meta" domain="[('provider', '=', 'meta')]"/>
+                <filter string="Google" name="google" domain="[('provider', '=', 'google')]"/>
+                <separator/>
+                <filter string="Connected" name="connected" domain="[('state', '=', 'connected')]"/>
+                <filter string="Error" name="error" domain="[('state', '=', 'error')]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="Provider" name="group_provider" context="{'group_by': 'provider'}"/>
+                <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ads_account" model="ir.actions.act_window">
+        <field name="name">Ad Accounts</field>
+        <field name="res_model">ads.account</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Connect your first ad account</p>
+            <p>Create an account per platform (Meta or Google Ads), paste the credentials
+               and click <b>Test Connection</b>.</p>
+        </field>
+    </record>
+
+    <record id="ads_google_auth_wizard_view_form" model="ir.ui.view">
+        <field name="name">ads.google.auth.wizard.form</field>
+        <field name="model">ads.google.auth.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Connect Google Ads">
+                <group>
+                    <field name="account_id" readonly="1"/>
+                    <field name="redirect_uri" readonly="1"/>
+                </group>
+                <div class="alert alert-info" role="status">
+                    Add the redirect URI above to your OAuth client's authorized redirect URIs in
+                    Google Cloud Console, then continue — you will be sent to Google's consent
+                    screen and back.
+                </div>
+                <footer>
+                    <button name="action_connect" type="object" string="Continue to Google"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_google_auth_wizard" model="ir.actions.act_window">
+        <field name="name">Connect Google Ads</field>
+        <field name="res_model">ads.google.auth.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_ads_account"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>

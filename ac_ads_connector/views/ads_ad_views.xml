@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_ad_view_list" model="ir.ui.view">
+        <field name="name">ads.ad.list</field>
+        <field name="model">ads.ad</field>
+        <field name="arch" type="xml">
+            <list string="Ads">
+                <field name="name"/>
+                <field name="adset_id"/>
+                <field name="campaign_id" optional="show"/>
+                <field name="account_id" optional="hide"/>
+                <field name="status" widget="badge"
+                       decoration-success="status == 'enabled'"
+                       decoration-warning="status == 'paused'"/>
+                <field name="google_ad_type" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_ad_view_form" model="ir.ui.view">
+        <field name="name">ads.ad.form</field>
+        <field name="model">ads.ad</field>
+        <field name="arch" type="xml">
+            <form string="Ad">
+                <header>
+                    <button name="action_push" type="object" string="Create on Platform"
+                            class="btn-primary" invisible="sync_status != 'draft'"
+                            confirm="The ad will be created PAUSED on the ad platform. Continue?"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_pause" type="object" string="Pause"
+                            invisible="status != 'enabled' or not external_id"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_activate" type="object" string="Activate"
+                            invisible="status != 'paused' or not external_id"
+                            confirm="This will set the ad LIVE on the ad platform. Continue?"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <field name="sync_status" invisible="1"/>
+                    <field name="external_id" invisible="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="adset_id" readonly="external_id"/>
+                            <field name="campaign_id"/>
+                            <field name="account_id"/>
+                            <field name="status"/>
+                            <field name="platform_status"/>
+                        </group>
+                        <group>
+                            <field name="creative_id"/>
+                            <field name="preview_url" widget="url"/>
+                            <field name="google_ad_type"/>
+                            <field name="link_tracker_id" readonly="1"/>
+                            <field name="click_count" invisible="not link_tracker_id"/>
+                            <button name="action_create_tracked_link" type="object"
+                                    string="Create Tracked Link" class="btn-link"
+                                    icon="fa-link" invisible="link_tracker_id"
+                                    groups="ac_ads_connector.group_ads_admin"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Technical" name="technical" groups="base.group_no_one">
+                            <group>
+                                <field name="external_id"/>
+                                <field name="sync_status"/>
+                                <field name="final_urls"/>
+                                <field name="last_synced_at"/>
+                                <field name="sync_error"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_ad" model="ir.actions.act_window">
+        <field name="name">Ads</field>
+        <field name="res_model">ads.ad</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

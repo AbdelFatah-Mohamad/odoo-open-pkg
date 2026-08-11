@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_audience_view_list" model="ir.ui.view">
+        <field name="name">ads.audience.list</field>
+        <field name="model">ads.audience</field>
+        <field name="arch" type="xml">
+            <list string="Audiences">
+                <field name="name"/>
+                <field name="account_id"/>
+                <field name="audience_type"/>
+                <field name="approximate_count"/>
+                <field name="platform_status" optional="show"/>
+                <field name="sync_status" widget="badge" optional="show"
+                       decoration-info="sync_status == 'draft'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_audience_view_form" model="ir.ui.view">
+        <field name="name">ads.audience.form</field>
+        <field name="model">ads.audience</field>
+        <field name="arch" type="xml">
+            <form string="Audience">
+                <header>
+                    <button name="action_push" type="object" string="Create on Platform"
+                            class="btn-primary" invisible="sync_status != 'draft'"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_open_upload_wizard" type="object"
+                            string="Upload Members" invisible="not external_id"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                    <field name="sync_status" invisible="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="account_id" readonly="external_id"/>
+                            <field name="audience_type" readonly="external_id"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="approximate_count"/>
+                            <field name="platform_status"/>
+                            <field name="retention_days"/>
+                            <field name="external_id" groups="base.group_no_one"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_audience" model="ir.actions.act_window">
+        <field name="name">Audiences</field>
+        <field name="res_model">ads.audience</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="ads_audience_upload_wizard_view_form" model="ir.ui.view">
+        <field name="name">ads.audience.upload.wizard.form</field>
+        <field name="model">ads.audience.upload.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Upload Audience Members">
+                <group>
+                    <field name="audience_id" readonly="1"/>
+                    <field name="partner_ids" widget="many2many_tags"/>
+                </group>
+                <div class="alert alert-info" role="status">
+                    Emails and phone numbers are normalized and SHA-256 hashed at upload
+                    time; the hashes are never stored in Odoo.
+                </div>
+                <footer>
+                    <button name="action_upload" type="object" string="Upload"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

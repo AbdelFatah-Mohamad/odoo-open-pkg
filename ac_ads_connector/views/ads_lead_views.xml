@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_lead_view_list" model="ir.ui.view">
+        <field name="name">ads.lead.list</field>
+        <field name="model">ads.lead</field>
+        <field name="arch" type="xml">
+            <list string="Platform Leads" create="false">
+                <field name="submitted_at"/>
+                <field name="contact_name"/>
+                <field name="email"/>
+                <field name="phone" optional="show"/>
+                <field name="form_id"/>
+                <field name="campaign_id" optional="show"/>
+                <field name="account_id" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'processed'"
+                       decoration-info="state == 'merged'"
+                       decoration-warning="state == 'skipped'"
+                       decoration-danger="state == 'error'"/>
+                <field name="crm_lead_id" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_lead_view_form" model="ir.ui.view">
+        <field name="name">ads.lead.form</field>
+        <field name="model">ads.lead</field>
+        <field name="arch" type="xml">
+            <form string="Platform Lead" create="false">
+                <header>
+                    <button name="action_process" type="object" string="Process"
+                            invisible="state not in ('new', 'error', 'skipped')"
+                            class="btn-primary"/>
+                    <button name="action_open_crm_lead" type="object" string="Open CRM Lead"
+                            invisible="not crm_lead_id and not duplicate_lead_id"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="contact_name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="submitted_at"/>
+                            <field name="is_organic"/>
+                        </group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="form_id"/>
+                            <field name="campaign_id"/>
+                            <field name="adset_id"/>
+                            <field name="ad_id"/>
+                            <field name="crm_lead_id"/>
+                            <field name="duplicate_lead_id"
+                                   invisible="not duplicate_lead_id"/>
+                        </group>
+                    </group>
+                    <group string="Answers">
+                        <field name="field_data" nolabel="1" widget="json"/>
+                    </group>
+                    <group string="Error" invisible="not error_message">
+                        <field name="error_message" nolabel="1"/>
+                    </group>
+                    <group string="Technical" groups="base.group_no_one">
+                        <field name="external_id"/>
+                        <field name="gclid"/>
+                        <field name="platform_refs"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ads_lead_view_search" model="ir.ui.view">
+        <field name="name">ads.lead.search</field>
+        <field name="model">ads.lead</field>
+        <field name="arch" type="xml">
+            <search string="Platform Leads">
+                <field name="contact_name"/>
+                <field name="email"/>
+                <field name="form_id"/>
+                <filter string="New" name="new" domain="[('state', '=', 'new')]"/>
+                <filter string="Errors" name="errors" domain="[('state', '=', 'error')]"/>
+                <filter string="Merged / Skipped" name="dup"
+                        domain="[('state', 'in', ('merged', 'skipped'))]"/>
+                <separator/>
+                <filter string="Form" name="group_form" context="{'group_by': 'form_id'}"/>
+                <filter string="Campaign" name="group_campaign"
+                        context="{'group_by': 'campaign_id'}"/>
+                <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ads_lead" model="ir.actions.act_window">
+        <field name="name">Platform Leads</field>
+        <field name="res_model">ads.lead</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No platform leads yet</p>
+            <p>Lead-form submissions land here and become CRM leads automatically.</p>
+        </field>
+    </record>
+
+    <!-- Lead forms (configuration) -->
+    <record id="ads_lead_form_view_list" model="ir.ui.view">
+        <field name="name">ads.lead.form.list</field>
+        <field name="model">ads.lead.form</field>
+        <field name="arch" type="xml">
+            <list string="Lead Forms">
+                <field name="name"/>
+                <field name="account_id"/>
+                <field name="status" optional="show"/>
+                <field name="create_crm_lead"/>
+                <field name="team_id" optional="show"/>
+                <field name="leads_count"/>
+                <field name="leads_synced_until" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_lead_form_view_form" model="ir.ui.view">
+        <field name="name">ads.lead.form.form</field>
+        <field name="model">ads.lead.form</field>
+        <field name="arch" type="xml">
+            <form string="Lead Form">
+                <header>
+                    <button name="action_sync_leads_now" type="object"
+                            string="Sync Leads Now"
+                            groups="ac_ads_connector.group_ads_admin"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+                            invisible="active"/>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="status"/>
+                            <field name="locale"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="create_crm_lead"/>
+                            <field name="team_id"/>
+                            <field name="user_id"/>
+                            <field name="duplicate_window_days"/>
+                            <field name="leads_synced_until"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Field Mapping" name="mapping">
+                            <field name="mapping_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="question_key"/>
+                                    <field name="question_label"/>
+                                    <field name="crm_field_id"/>
+                                    <field name="fallback_to_description"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Technical" name="technical" groups="base.group_no_one">
+                            <group>
+                                <field name="external_id"/>
+                                <field name="page_external_id"/>
+                                <field name="questions"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_lead_form" model="ir.actions.act_window">
+        <field name="name">Lead Forms</field>
+        <field name="res_model">ads.lead.form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- process wizard -->
+    <record id="ads_lead_process_wizard_view_form" model="ir.ui.view">
+        <field name="name">ads.lead.process.wizard.form</field>
+        <field name="model">ads.lead.process.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Process Leads">
+                <group>
+                    <field name="lead_ids" widget="many2many_tags" readonly="1"/>
+                    <field name="force_reprocess"/>
+                </group>
+                <footer>
+                    <button name="action_process" type="object" string="Process"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_lead_process_wizard" model="ir.actions.act_window">
+        <field name="name">Process Leads</field>
+        <field name="res_model">ads.lead.process.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_ads_lead"/>
+        <field name="binding_view_types">list</field>
+    </record>
+
+    <!-- crm.lead smart button -->
+    <record id="crm_lead_view_form_inherit_ads" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.ads</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_ads_leads" type="object" class="oe_stat_button"
+                        icon="fa-bullhorn" invisible="not ads_lead_count">
+                    <field name="ads_lead_count" widget="statinfo" string="Ad Submissions"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

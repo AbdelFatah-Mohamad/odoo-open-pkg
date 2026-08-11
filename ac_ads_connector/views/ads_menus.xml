@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_ads_root" name="Ads"
+              web_icon="ac_ads_connector,static/description/icon.png"
+              groups="ac_ads_connector.group_ads_user"
+              sequence="76"/>
+
+    <menuitem id="menu_ads_dashboard" name="Dashboard" parent="menu_ads_root"
+              action="action_ads_dashboard" sequence="10"/>
+    <menuitem id="menu_ads_campaigns" name="Campaigns" parent="menu_ads_root"
+              action="action_ads_campaign" sequence="20"/>
+    <menuitem id="menu_ads_adsets" name="Ad Sets" parent="menu_ads_root"
+              action="action_ads_adset" sequence="30"/>
+    <menuitem id="menu_ads_ads" name="Ads" parent="menu_ads_root"
+              action="action_ads_ad" sequence="40"/>
+
+    <menuitem id="menu_ads_leads" name="Leads" parent="menu_ads_root"
+              action="action_ads_lead" sequence="50"/>
+
+    <menuitem id="menu_ads_reporting" name="Reporting" parent="menu_ads_root"
+              sequence="70"/>
+    <menuitem id="menu_ads_insight_analysis" name="Insights Analysis"
+              parent="menu_ads_reporting" action="action_ads_insight_analysis"
+              sequence="10"/>
+
+    <menuitem id="menu_ads_configuration" name="Configuration" parent="menu_ads_root"
+              groups="ac_ads_connector.group_ads_admin" sequence="90"/>
+    <menuitem id="menu_ads_accounts" name="Ad Accounts" parent="menu_ads_configuration"
+              action="action_ads_account" sequence="10"/>
+    <menuitem id="menu_ads_lead_forms" name="Lead Forms" parent="menu_ads_configuration"
+              action="action_ads_lead_form" sequence="20"/>
+    <menuitem id="menu_ads_audiences" name="Audiences" parent="menu_ads_configuration"
+              action="action_ads_audience" sequence="30"/>
+    <menuitem id="menu_ads_push_jobs" name="Push Jobs" parent="menu_ads_configuration"
+              action="action_ads_push_job" sequence="70"/>
+    <menuitem id="menu_ads_sync_logs" name="Sync Runs" parent="menu_ads_configuration"
+              action="action_ads_sync_log" sequence="80"/>
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ads_push_job_view_list" model="ir.ui.view">
+        <field name="name">ads.push.job.list</field>
+        <field name="model">ads.push.job</field>
+        <field name="arch" type="xml">
+            <list string="Push Jobs" create="false">
+                <field name="create_date"/>
+                <field name="account_id"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="operation"/>
+                <field name="attempt" optional="show"/>
+                <field name="scheduled_at" optional="show"/>
+                <field name="failure_type" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-info="state in ('queued', 'in_progress')"
+                       decoration-danger="state == 'error'"/>
+                <button name="button_retry" type="object" string="Retry" icon="fa-repeat"
+                        invisible="state != 'error'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ads_push_job_view_form" model="ir.ui.view">
+        <field name="name">ads.push.job.form</field>
+        <field name="model">ads.push.job</field>
+        <field name="arch" type="xml">
+            <form string="Push Job" create="false">
+                <header>
+                    <button name="button_retry" type="object" string="Retry"
+                            invisible="state != 'error'" class="btn-primary"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="res_model"/>
+                            <field name="res_id"/>
+                            <field name="operation"/>
+                        </group>
+                        <group>
+                            <field name="attempt"/>
+                            <field name="scheduled_at"/>
+                            <field name="failure_type"/>
+                            <field name="result_external_id"/>
+                        </group>
+                    </group>
+                    <group string="Payload">
+                        <field name="payload" nolabel="1"/>
+                    </group>
+                    <group string="Failure" invisible="not failure_reason">
+                        <field name="failure_reason" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_push_job" model="ir.actions.act_window">
+        <field name="name">Push Jobs</field>
+        <field name="res_model">ads.push.job</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="ads_push_wizard_view_form" model="ir.ui.view">
+        <field name="name">ads.push.wizard.form</field>
+        <field name="model">ads.push.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Push Changes">
+                <field name="res_model" invisible="1"/>
+                <field name="res_id" invisible="1"/>
+                <field name="diff_preview" nolabel="1"/>
+                <footer>
+                    <button name="action_confirm_push" type="object" string="Push to Platform"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ads_push_wizard" model="ir.actions.act_window">
+        <field name="name">Push Changes</field>
+        <field name="res_model">ads.push.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

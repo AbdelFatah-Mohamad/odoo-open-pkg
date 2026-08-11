@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="spreadsheet_dashboard_group_ads" model="spreadsheet.dashboard.group">
+        <field name="name">Ads</field>
+        <field name="sequence">230</field>
+    </record>
+
+    <record id="spreadsheet_dashboard_ads" model="spreadsheet.dashboard">
+        <field name="name">Ads Performance</field>
+        <field name="spreadsheet_binary_data" type="base64"
+               file="ac_ads_connector/data/files/ads_dashboard.json"/>
+        <field name="main_data_model_ids"
+               eval="[(4, ref('ac_ads_connector.model_ads_insight'))]"/>
+        <field name="sample_dashboard_file_path">ac_ads_connector/data/files/ads_dashboard.json</field>
+        <field name="dashboard_group_id"
+               ref="ac_ads_connector.spreadsheet_dashboard_group_ads"/>
+        <field name="group_ids" eval="[Command.link(ref('ac_ads_connector.group_ads_user'))]"/>
+        <field name="sequence">10</field>
+        <field name="is_published">True</field>
+    </record>
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- core utm ships a Facebook source (utm.utm_source_facebook) but no Google Ads one -->
+        <record id="utm_source_google_ads" model="utm.source">
+            <field name="name">Google Ads</field>
+        </record>
+    </data>
+</odoo>
