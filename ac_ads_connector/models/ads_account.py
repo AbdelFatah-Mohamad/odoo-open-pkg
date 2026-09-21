@@ -229,6 +229,59 @@ class AdsAccount(models.Model):
                               info.get("name") or self.external_account_id,
                               currency_code or "?"))
 
+    def action_fetch_meta_assets(self):
+        """Ask Meta what this token can see, and fill in what is unambiguous.
+
+        Removes the most common setup error: hand-copying identifiers out of Business
+        Settings and pasting the wrong long number (a System User ID, a pixel/dataset ID
+        and an Ad Account ID all look alike). Page Access Tokens have no UI in Business
+        Settings at all — they only come from /me/accounts, so this is the only sane way
+        to obtain one.
+
+        Fills a field only when the answer is unambiguous (exactly one asset) and the
+        field is still empty; otherwise it lists what it found so the user picks. It never
+        overwrites a value that is already set.
+        """
+        self.ensure_one()
+        if self.provider != "meta":
+            return self._notify(_("This button is for Meta accounts."), kind="warning")
+        try:
+            assets = self._get_api().list_assets()
+        except AdsApiError as exc:
+            self.write({"state": "error"})
+            return self._notify(_("Meta refused the request: %s", str(exc)), kind="danger")
+
+        ad_accounts, pages = assets["ad_accounts"], assets["pages"]
+        vals, filled = {}, []
+        if not self.external_account_id and len(ad_accounts) == 1:
+            vals["external_account_id"] = ad_accounts[0]["id"]
+            filled.append(_("Ad Account %s", ad_accounts[0].get("name") or ad_accounts[0]["id"]))
+        if not self.meta_page_id and len(pages) == 1:
+            vals["meta_page_id"] = pages[0]["id"]
+            if pages[0].get("access_token"):
+                vals["meta_page_access_token"] = pages[0]["access_token"]
+            filled.append(_("Page %s", pages[0].get("name") or pages[0]["id"]))
+        if vals:
+            self.write(vals)
+
+        lines = []
+        if filled:
+            lines.append(_("Filled in: %s.", ", ".join(filled)))
+        if not ad_accounts:
+            lines.append(_(
+                "No ad account is visible to this token. In Business Settings, assign the "
+                "ad account to the system user with the Manage campaigns permission, then "
+                "generate a new token."))
+        elif len(ad_accounts) > 1 or self.external_account_id:
+            lines.append(_("Ad accounts: %s", "; ".join(
+                "%s (%s)" % (a.get("name") or "?", a["id"]) for a in ad_accounts)))
+        if not pages:
+            lines.append(_("No Page is visible to this token (needs pages_show_list)."))
+        elif len(pages) > 1 or self.meta_page_id:
+            lines.append(_("Pages: %s", "; ".join(
+                "%s (%s)" % (p.get("name") or "?", p["id"]) for p in pages)))
+        return self._notify(" ".join(lines), kind="success" if filled else "warning")
+
     def _handle_auth_failure(self, exc):
         """Token dead / permission revoked: park the account and wake the admins."""
         self.ensure_one()

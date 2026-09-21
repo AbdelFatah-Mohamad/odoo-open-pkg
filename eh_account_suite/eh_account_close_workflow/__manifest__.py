@@ -25,7 +25,7 @@ Pairs naturally with the dynamic reports and reconciliation modules in the suite
     'website': 'https://www.erpheritage.com.au/',
     'license': 'LGPL-3',
     'category': 'Accounting/Accounting',
-    'version': '19.0.1.1.3',
+    'version': '19.0.1.1.4',
     'depends': ['eh_account_base', 'mail'],
     'data': [
         'security/ir.model.access.csv',

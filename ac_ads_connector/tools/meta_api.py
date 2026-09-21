@@ -223,6 +223,52 @@ class MetaAdsApi(AdsApiBase):
             "raw": data,
         }
 
+    def list_assets(self):
+        """Discover what this token can actually see: ad accounts and Pages.
+
+        Deliberately bypasses `_check_credentials` and `_execute`. Both require
+        `external_account_id`, and this call exists precisely to FIND it — the user has
+        pasted a system-user token and nothing else. It is a one-shot, user-clicked
+        discovery, so it also skips the retry/cooldown machinery: someone staring at a
+        button wants the real error immediately, not three silent retries.
+
+        Returns {"ad_accounts": [{id, name, currency, timezone}], "pages": [{id, name,
+        access_token}]}. Page tokens minted from a system-user token never expire.
+        """
+        acc = self.account.sudo()
+        if not acc.meta_access_token:
+            raise AdsApiError(
+                "Fill in the System User Token first — it is what Meta is asked with.",
+                "account")
+        api = FacebookAdsApi(
+            FacebookSession(app_secret=acc.meta_app_secret or None,
+                            access_token=acc.meta_access_token),
+            api_version=acc.meta_api_version or DEFAULT_API_VERSION)
+        try:
+            ad_accounts = api.call(
+                "GET", ("me", "adaccounts"),
+                params={"fields": "id,name,currency,timezone_name,account_status",
+                        "limit": 200}).json()
+            pages = api.call(
+                "GET", ("me", "accounts"),
+                params={"fields": "id,name,access_token", "limit": 200}).json()
+        except Exception as exc:  # noqa: BLE001 - mapped, never swallowed
+            raise self._map_exception(exc) from exc
+        return {
+            "ad_accounts": [{
+                # Meta returns "act_123"; the field stores the bare digits.
+                "id": str(row.get("id", "")).removeprefix("act_"),
+                "name": row.get("name"),
+                "currency": row.get("currency"),
+                "timezone": row.get("timezone_name"),
+            } for row in (ad_accounts.get("data") or [])],
+            "pages": [{
+                "id": row.get("id"),
+                "name": row.get("name"),
+                "access_token": row.get("access_token"),
+            } for row in (pages.get("data") or [])],
+        }
+
     def _iter_edge(self, edge_callable, fields, params=None, max_pages=None, op="edge"):
         """Page-bounded iteration over an SDK Cursor; yields lists of dicts,
         one list per transport page (PAGE_SIZE items).

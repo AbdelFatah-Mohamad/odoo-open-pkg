@@ -18,7 +18,7 @@
     'website': 'https://www.erpheritage.com.au/',
     'license': 'LGPL-3',
     'category': 'Accounting/Accounting',
-    'version': '19.0.1.1.0',
+    'version': '19.0.1.1.1',
     'depends': ['eh_account_base', 'account', 'mail'],
     'data': [
         'security/ir.model.access.csv',

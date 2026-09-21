@@ -146,10 +146,12 @@
                             </field>
                         </page>
                         <page string="Checks">
-                            <button name="action_run_checks"
-                                    type="object"
-                                    string="Run Checks"
-                                    class="btn-secondary mb-2"/>
+                            <div>
+                                <button name="action_run_checks"
+                                        type="object"
+                                        string="Run Checks"
+                                        class="btn-secondary mb-2"/>
+                            </div>
                             <field name="check_ids" readonly="1">
                                 <list>
                                     <field name="code"/>

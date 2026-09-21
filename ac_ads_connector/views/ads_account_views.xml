@@ -8,6 +8,10 @@
                 <header>
                     <button name="action_test_connection" type="object" string="Test Connection"
                             class="btn-primary" groups="ac_ads_connector.group_ads_admin"/>
+                    <button name="action_fetch_meta_assets" type="object"
+                            string="Fetch from Meta" invisible="provider != 'meta'"
+                            help="Ask Meta which ad accounts and Pages this token can see, and fill them in."
+                            groups="ac_ads_connector.group_ads_admin"/>
                     <button name="action_open_google_auth_wizard" type="object"
                             string="Connect Google" invisible="provider != 'google'"
                             groups="ac_ads_connector.group_ads_admin"/>

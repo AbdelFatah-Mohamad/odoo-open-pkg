@@ -79,14 +79,16 @@
                                     <field name="total_compensation" widget="monetary" readonly="1"/>
                                 </group>
                             </group>
-                            <button name="action_populate_kmp" type="object"
-                                    string="Populate KMP Compensation from Ledger"
-                                    class="btn-secondary"
-                                    invisible="state != 'draft' or not is_kmp"/>
-                            <button name="action_prefill_share_based" type="object"
-                                    string="Prefill Share-based from IFRS 2 Engine"
-                                    class="btn-secondary"
-                                    invisible="state != 'draft'"/>
+                            <div>
+                                <button name="action_populate_kmp" type="object"
+                                        string="Populate KMP Compensation from Ledger"
+                                        class="btn-secondary"
+                                        invisible="state != 'draft' or not is_kmp"/>
+                                <button name="action_prefill_share_based" type="object"
+                                        string="Prefill Share-based from IFRS 2 Engine"
+                                        class="btn-secondary"
+                                        invisible="state != 'draft'"/>
+                            </div>
                             <field name="compensation_line_ids">
                                 <list editable="bottom">
                                     <field name="category"/>
